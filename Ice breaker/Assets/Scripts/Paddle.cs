@@ -45,6 +45,18 @@ public class Paddle : MonoBehaviour
 
             Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
             ball.rigidbody.velocity = rotation * Vector2.up * ball.rigidbody.velocity.magnitude;
+
+            Color black_color = new Color(0f, 0f, 0f, 1f);
+            Color white_color = new Color(1f, 1f, 1f, 1f);
+
+            if (ball.GetComponent<SpriteRenderer>().color == black_color)
+            {
+                ball.GetComponent<SpriteRenderer>().color = white_color; 
+            }
+            else
+            {
+                ball.GetComponent<SpriteRenderer>().color = black_color;
+            }
         }
     }
 
