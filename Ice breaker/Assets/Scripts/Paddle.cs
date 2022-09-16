@@ -6,9 +6,11 @@ public class Paddle : MonoBehaviour
     public Vector2 direction { get; private set; }
     public float speed = 30f;
     public float maxBounceAngle = 75f;
+    private Vector3 initialPosition;
 
     private void Awake() {
         rigidbody = GetComponent<Rigidbody2D>();
+        this.initialPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
     private void Update() {
@@ -58,6 +60,10 @@ public class Paddle : MonoBehaviour
                 ball.GetComponent<SpriteRenderer>().color = black_color;
             }
         }
+    }
+
+    public void ResetPaddle() {
+        gameObject.transform.position = initialPosition;
     }
 
 }
