@@ -247,6 +247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brick
       objectReference: {fileID: 0}
+    - target: {fileID: 4887090702827224105, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4887090702827224106, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -727,6 +731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brick
       objectReference: {fileID: 0}
+    - target: {fileID: 4887090702827224105, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4887090702827224106, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -1051,6 +1059,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brick
       objectReference: {fileID: 0}
+    - target: {fileID: 4887090702827224105, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
 --- !u!1 &569815492
@@ -1299,6 +1311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brick
       objectReference: {fileID: 0}
+    - target: {fileID: 4887090702827224105, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4887090702827224106, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -1424,6 +1440,10 @@ PrefabInstance:
     - target: {fileID: 4887090702827224105, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
       propertyPath: m_Name
       value: Brick
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887090702827224105, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4887090702827224106, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
       propertyPath: m_Color.b
@@ -1654,6 +1674,10 @@ PrefabInstance:
     - target: {fileID: 4887090702827224105, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
       propertyPath: m_Name
       value: Brick
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887090702827224105, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a975eca6680d94c80afe8c67c8a26600, type: 3}

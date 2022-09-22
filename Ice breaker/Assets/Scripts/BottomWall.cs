@@ -22,9 +22,7 @@ public class BottomWall : MonoBehaviour
 
         if (ball != null)
         {
-           ball.ResetBall();
-           GameObject paddle = GameObject.FindWithTag("Paddle");
-           paddle.GetComponent<Paddle>().ResetPaddle();
+           FindObjectOfType<GameManager>().Miss();
         }
     }
 }
