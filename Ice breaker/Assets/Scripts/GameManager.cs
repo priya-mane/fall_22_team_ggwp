@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     private void NewGame() {
         // this.score = 0;
+        AnalyticsManager.instance.Send(0,1);
 		score = 0;
         this.lives = 3;
         
@@ -96,6 +97,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver() {
         // NewGame();
+        AnalyticsManager.instance.Send(1, 0);
         SceneManager.LoadScene("GameOver");
     }
 

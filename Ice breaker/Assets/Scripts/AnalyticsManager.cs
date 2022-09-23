@@ -15,14 +15,14 @@ public class AnalyticsManager : MonoBehaviour
 
     private void Awake(){
         instance = this;
+        _sessionID = Random.Range(0,100000);
         DontDestroyOnLoad(this.gameObject);
     }
     
-    public void Send()
+    public void Send(int level, int complete)
     {
-        _sessionID = Random.Range(0,100000);
-        _levelId =1;
-        _completed = Random.Range(0,1);
+        _levelId = level;
+        _completed = level ==1 ? Random.Range(0,1) :complete;
         StartCoroutine(Post(_sessionID.ToString(), _levelId.ToString(), _completed.ToString()));
     }
     private IEnumerator Post(string sessionID, string levelId, string completed)
