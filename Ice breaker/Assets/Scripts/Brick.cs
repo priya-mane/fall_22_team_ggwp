@@ -8,6 +8,8 @@ public class Brick : MonoBehaviour
     public int health { get; private set; }
     public Sprite[] states = new Sprite[0];
     public bool unbreakable;
+
+    public int points = 100;
     
     // Color myColor = new Color(210f, 2f, 2f, 1f);
 
@@ -32,6 +34,8 @@ public class Brick : MonoBehaviour
         } else {
             spriteRenderer.sprite = states[health - 1];
         }
+
+        FindObjectOfType<GameManager>().Hit(this);
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
@@ -39,8 +43,6 @@ public class Brick : MonoBehaviour
         {
             Ball ball = collision.gameObject.GetComponent<Ball>();
             Color brick_color = this.GetComponent<SpriteRenderer>().color;
-
-            Debug.Log(brick_color);
 
             if (ball.GetComponent<SpriteRenderer>().color == brick_color)
             {

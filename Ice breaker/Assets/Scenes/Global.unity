@@ -200,6 +200,7 @@ MonoBehaviour:
   score: 0
   level: 1
   lives: 3
+  scoreText: {fileID: 0}
 --- !u!4 &1835041074
 Transform:
   m_ObjectHideFlags: 0

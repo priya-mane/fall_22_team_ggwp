@@ -4,7 +4,7 @@ public class Paddle : MonoBehaviour
 {
     public new Rigidbody2D rigidbody { get; private set; }
     public Vector2 direction { get; private set; }
-    public float speed = 30f;
+    private float speed = 150f;
     public float maxBounceAngle = 75f;
     private Vector3 initialPosition;
 
@@ -14,12 +14,24 @@ public class Paddle : MonoBehaviour
     }
 
     private void Update() {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
-            this.direction = Vector2.left;
-        } else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
-            this.direction = Vector2.right;
-        } else {
-            this.direction = Vector2.zero;
+        if(gameObject.tag == GameManager.Instance.GetActivePaddle()) {
+            if(gameObject.tag == "Paddle" || gameObject.tag == "TopPaddle") {
+                if (Input.GetKey(KeyCode.LeftArrow)) {
+                    this.direction = Vector2.left;
+                } else if (Input.GetKey(KeyCode.RightArrow)) {
+                    this.direction = Vector2.right;
+                } else {
+                    this.direction = Vector2.zero;
+                }
+            }else {
+                if (Input.GetKey(KeyCode.UpArrow)) {
+                    this.direction = Vector2.up;
+                } else if (Input.GetKey(KeyCode.DownArrow)) {
+                    this.direction = Vector2.down;
+                } else {
+                    this.direction = Vector2.zero;
+                }
+            }
         }
     }
 

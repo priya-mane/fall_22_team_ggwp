@@ -65,7 +65,7 @@ public class Ball : MonoBehaviour
     {
         Vector2 force = new Vector2();
         force.x = Random.Range(-1f, 1f);
-        force.y = -1f;
+        force.y = 1f;
 
         this.rigidbody.AddForce(force.normalized * speed);
     }
