@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 216655447}
   - component: {fileID: 216655449}
   - component: {fileID: 216655448}
+  - component: {fileID: 216655450}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -592,6 +593,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216655446}
   m_CullTransparentMesh: 1
+--- !u!114 &216655450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216655446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423746aafb64d4c60ac62025a8417738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &255968348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3984,7 +3997,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 11.344982
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

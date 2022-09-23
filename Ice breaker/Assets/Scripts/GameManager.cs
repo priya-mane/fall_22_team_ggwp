@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {  
-    public int score = 0;
+    public static int score = 0;
     public int level = 1;
     public int lives = 3;
     private string activePaddle = "Paddle";
     private static GameManager _instance;
-    public TextMesh scoreText;
+    // public TextMesh scoreText;
 
     public Ball ball { get; private set; }
     public Paddle paddle { get; private set; }
@@ -22,8 +22,9 @@ public class GameManager : MonoBehaviour
        SceneManager.sceneLoaded += OnLevelLoaded;
     } 
     private void Start() {
-        NewGame();
-        scoreText.text = "Score: " + score;
+        NewGame(); 
+        // scoreText.text = "Score: " + Scoring.totalScore;
+		// Scoring.text = "Score: " + score;
     }
 
     private void Update() {
@@ -39,7 +40,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void NewGame() {
-        this.score = 0;
+        // this.score = 0;
+		score = 0;
         this.lives = 3;
         
         LoadLevel(1);
@@ -47,7 +49,6 @@ public class GameManager : MonoBehaviour
 
     private void LoadLevel(int level) {
         this.level = level;
-
         SceneManager.LoadScene("Level" + level);
     }
 
@@ -58,8 +59,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void Hit(Brick brick) {
-        this.score += brick.points;
-        scoreText.text = "Score: " + score;
+        //this.score += brick.points;
+		score += brick.points;
+        // scoreText.text = "Score: " + Scoring.totalScore;
+		// Scoring.text = "Score: " + score;
 
         if (Cleared()) {
             LoadLevel(level + 1);
