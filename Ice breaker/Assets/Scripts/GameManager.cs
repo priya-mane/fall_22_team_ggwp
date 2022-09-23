@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
 		// Scoring.text = "Score: " + score;
 
         if (Cleared()) {
+            AnalyticsManager.instance.Send(1, 1);
             LoadLevel(level + 1);
         }
     }

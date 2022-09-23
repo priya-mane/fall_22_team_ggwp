@@ -22,7 +22,7 @@ public class AnalyticsManager : MonoBehaviour
     public void Send(int level, int complete)
     {
         _levelId = level;
-        _completed = level ==1 ? Random.Range(0,1) :complete;
+        _completed = complete;
         StartCoroutine(Post(_sessionID.ToString(), _levelId.ToString(), _completed.ToString()));
     }
     private IEnumerator Post(string sessionID, string levelId, string completed)
