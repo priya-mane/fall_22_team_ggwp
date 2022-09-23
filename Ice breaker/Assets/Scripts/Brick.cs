@@ -40,8 +40,6 @@ public class Brick : MonoBehaviour
             Ball ball = collision.gameObject.GetComponent<Ball>();
             Color brick_color = this.GetComponent<SpriteRenderer>().color;
 
-            Debug.Log(brick_color);
-
             if (ball.GetComponent<SpriteRenderer>().color == brick_color)
             {
                 Hit();
