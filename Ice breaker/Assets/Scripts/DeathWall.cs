@@ -37,6 +37,7 @@ public class DeathWall : MonoBehaviour
                     foreach (GameObject paddle in paddles) {
                         paddle.GetComponent<Paddle>().ResetPaddle();
                     }
+                    FindObjectOfType<GameManager>().Miss();
             }
            
         }
