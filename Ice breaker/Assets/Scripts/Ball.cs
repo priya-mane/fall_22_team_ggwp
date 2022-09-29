@@ -52,6 +52,7 @@ public class Ball : MonoBehaviour
     }
 
     public void ResetBall() {
+        AnalyticsManager.instance.ballReset++;
         Color white_color = new Color(1f, 1f, 1f, 1f);
         this.rigidbody.velocity = Vector2.zero;
         this.rigidbody.angularVelocity = 0f;
