@@ -14,7 +14,7 @@ public class Scoring : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("here");
+        // Debug.Log("here");
         TMPro.TextMeshProUGUI txtMy = this.GetComponent<TMPro.TextMeshProUGUI>();
         txtMy.text = "Score: " + GameManager.score;
         
