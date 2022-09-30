@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     public static int score = 0;
     public int level = 1;
     public int lives = 3;
-    private string activePaddle = "Paddle";
     private static GameManager _instance;
     // public TextMesh scoreText;
 
@@ -28,15 +27,6 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update() {
-        if (Input.GetKey(KeyCode.W)) {
-            this.activePaddle = "TopPaddle";
-        } else if (Input.GetKey(KeyCode.D)) {
-            this.activePaddle = "RightPaddle";
-        } else if (Input.GetKey(KeyCode.A)){
-            this.activePaddle = "LeftPaddle";
-        } else if (Input.GetKey(KeyCode.S)){
-            this.activePaddle = "Paddle";
-        }
     }
 
     private void NewGame() {
@@ -46,6 +36,7 @@ public class GameManager : MonoBehaviour
         this.lives = 3;
         
         LoadLevel(1);
+		// LoadLevel(2);
     }
 
     private void LoadLevel(int level) {
@@ -90,11 +81,15 @@ public class GameManager : MonoBehaviour
         }
 
         return num;
+<<<<<<< HEAD
     }
 
     public string GetActivePaddle() {
         return this.activePaddle;
+=======
+>>>>>>> c85ee4599c731a439b036351747707ebaa03a179
     }
+
 
     public static GameManager Instance
     {

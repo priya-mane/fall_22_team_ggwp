@@ -12,6 +12,8 @@ TagManager:
   - BottomWall
   - LeftWall
   - RightWall
+  - leftWormhole
+  - rightWormhole
   layers:
   - Default
   - TransparentFX
