@@ -31,7 +31,9 @@ public class GameManager : MonoBehaviour
 
     private void NewGame() {
         // this.score = 0;
-        AnalyticsManager.instance.Send(0,1);
+        if(level == 1){
+            AnalyticsManager.instance.Send(0,1);
+        }
 		score = 0;
         this.lives = 3;
         
@@ -81,13 +83,6 @@ public class GameManager : MonoBehaviour
         }
 
         return num;
-<<<<<<< HEAD
-    }
-
-    public string GetActivePaddle() {
-        return this.activePaddle;
-=======
->>>>>>> c85ee4599c731a439b036351747707ebaa03a179
     }
 
 
