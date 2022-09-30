@@ -8,6 +8,8 @@ public class Brick : MonoBehaviour
     public int health { get; private set; }
     public Sprite[] states = new Sprite[0];
     public bool unbreakable;
+	private Vector3 brickPosition;
+	public GameObject Capsule;
 
     public int points = 100;
     
@@ -18,7 +20,7 @@ public class Brick : MonoBehaviour
     private void Start() {
         if (!this.unbreakable) {
             this.health = this.states.Length;
-            spriteRenderer.sprite = this.states[this.health - 1];
+            // spriteRenderer.sprite = this.states[this.health - 1];
         }
     }
 
@@ -43,19 +45,18 @@ public class Brick : MonoBehaviour
             Color brick_color = this.GetComponent<SpriteRenderer>().color;
             Color power_brick_color = new Color(243.0f/255.0f, 38f/255.0f, 38f/255.0f, 255f/255.0f);
 
-            // Debug.Log("Collided****");
-            Debug.Log("Brick color = "+brick_color);
-            Debug.Log("const color = "+power_brick_color);
-            Debug.Log("brick material color = " + this.GetComponent<SpriteRenderer>().material.color);
+			Debug.Log(brick_color);
 
             if (ball.GetComponent<SpriteRenderer>().color == brick_color)
             {
-                Debug.Log("brick break");
                 Hit();
             }
-            else if (this.GetComponent<SpriteRenderer>().color == power_brick_color)
+            if (this.GetComponent<SpriteRenderer>().color == power_brick_color)
             {
-                Debug.Log("Power brick hit!");
+				this.brickPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+                Debug.Log("Power brick hit!");				
+				Hit();
+				Instantiate(Capsule, this.brickPosition, Quaternion.identity);
             }
             
         }
