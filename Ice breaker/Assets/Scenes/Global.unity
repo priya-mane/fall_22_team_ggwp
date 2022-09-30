@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71cd0d574dc82453095e572ba2d197ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  URL: https://docs.google.com/forms/d/1sVwYPrYkX4fS6puE_-Oc7hU7ZfxaORwZhxLaNZ2hFK8/formResponse
   ballReset: 0
 --- !u!1 &1835041072
 GameObject:
@@ -197,10 +198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15db600270fc44384b22d2818b78eda5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
   level: 1
   lives: 3
-  scoreText: {fileID: 0}
+  heart1: {fileID: 1835041072}
+  heart2: {fileID: 1835041072}
+  heart3: {fileID: 1835041072}
 --- !u!4 &1835041074
 Transform:
   m_ObjectHideFlags: 0

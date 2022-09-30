@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public int level = 1;
     public int lives = 3;
     private static GameManager _instance;
-    // public TextMesh scoreText;
 
     public Ball ball { get; private set; }
     public Paddle paddle { get; private set; }
@@ -22,8 +21,6 @@ public class GameManager : MonoBehaviour
     } 
     private void Start() {
         NewGame(); 
-        // scoreText.text = "Score: " + Scoring.totalScore;
-		// Scoring.text = "Score: " + score;
     }
 
     private void Update() {
@@ -33,7 +30,7 @@ public class GameManager : MonoBehaviour
         // this.score = 0;
         AnalyticsManager.instance.Send(0,1);
 		score = 0;
-        GameManager.lives = 3;
+        lives = 3;
         
         LoadLevel(1);
 		// LoadLevel(2);
@@ -51,10 +48,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void Hit(Brick brick) {
-        //this.score += brick.points;
 		score += brick.points;
-        // scoreText.text = "Score: " + Scoring.totalScore;
-		// Scoring.text = "Score: " + score;
 
         if (Cleared()) {
             AnalyticsManager.instance.Send(1, 1);
@@ -106,10 +100,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void Miss() {
-        GameManager.lives--;
+        lives--;
 
-        if(GameManager.lives == 0){
-           GameOver();
+        if(lives == 0) {
+            GameOver();
         } 
     }
 }
