@@ -4,7 +4,7 @@ public class Paddle : MonoBehaviour
 {
     public new Rigidbody2D rigidbody { get; private set; }
     public Vector2 direction { get; private set; }
-    private float speed = 150f;
+    private float speed = 10f;
     public float maxBounceAngle = 75f;
     private Vector3 initialPosition;
 
@@ -14,30 +14,28 @@ public class Paddle : MonoBehaviour
     }
 
     private void Update() {
-        if(gameObject.tag == GameManager.Instance.GetActivePaddle()) {
-            if(gameObject.tag == "Paddle" || gameObject.tag == "TopPaddle") {
-                if (Input.GetKey(KeyCode.LeftArrow)) {
-                    this.direction = Vector2.left;
-                } else if (Input.GetKey(KeyCode.RightArrow)) {
-                    this.direction = Vector2.right;
-                } else {
-                    this.direction = Vector2.zero;
-                }
-            }else {
-                if (Input.GetKey(KeyCode.UpArrow)) {
-                    this.direction = Vector2.up;
-                } else if (Input.GetKey(KeyCode.DownArrow)) {
-                    this.direction = Vector2.down;
-                } else {
-                    this.direction = Vector2.zero;
-                }
-            }
+        if (Input.GetKey(KeyCode.LeftArrow)) {
+            this.direction = Vector2.left;
+        } else if (Input.GetKey(KeyCode.RightArrow)) {
+            this.direction = Vector2.right;
+        } else {
+            this.direction = Vector2.zero;
         }
     }
 
+    private float GetRandomNumber(float minimum, float maximum) { 
+        System.Random random = new System.Random();
+        return (float)(random.NextDouble() * (maximum - minimum) + minimum);
+    }
     private void FixedUpdate() {
-        if (this.direction != Vector2.zero) {
-            this.rigidbody.AddForce(this.direction * this.speed);
+        if((gameObject.tag == "Paddle" || gameObject.tag == "TopPaddle") && this.direction != Vector2.zero) {
+            this.transform.Translate(this.direction * this.speed*Time.deltaTime);
+        }
+        if(gameObject.tag == "LeftPaddle" || gameObject.tag == "RightPaddle") {
+            Vector3 pointA = new Vector3(this.initialPosition.x, -7, 0);
+            Vector3 pointB = new Vector3(this.initialPosition.x, 7, 0);
+            float factor = GetRandomNumber(1.1f, 1.2f);
+            transform.position= Vector3.Lerp(pointA, pointB, Mathf.PingPong(Time.time / speed, 1f));
         }
     }
 
@@ -55,7 +53,7 @@ public class Paddle : MonoBehaviour
 
             float currentAngle = Vector2.SignedAngle(Vector2.up, ball.rigidbody.velocity);
             float bounceAngle = (offset / maxOffset) * maxBounceAngle;
-            float newAngle = Mathf.Clamp(currentAngle + bounceAngle, -maxBounceAngle, maxBounceAngle);
+            float newAngle = currentAngle + bounceAngle;
 
             Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
             ball.rigidbody.velocity = rotation * Vector2.up * ball.rigidbody.velocity.magnitude;

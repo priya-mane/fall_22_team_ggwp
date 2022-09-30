@@ -1251,6 +1251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 074cfc7b5d8dc420dbf88731879e0c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
   maxBounceAngle: 75
 --- !u!61 &546781852
 BoxCollider2D:
@@ -1860,6 +1861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 074cfc7b5d8dc420dbf88731879e0c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
   maxBounceAngle: 75
 --- !u!61 &809317081
 BoxCollider2D:
@@ -1968,7 +1970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809317079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.17, y: -0.38, z: 0}
+  m_LocalPosition: {x: 21, y: 5, z: 0}
   m_LocalScale: {x: 0.115809746, y: 8.041222, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2990,6 +2992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 074cfc7b5d8dc420dbf88731879e0c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
   maxBounceAngle: 75
 --- !u!61 &1738355000
 BoxCollider2D:
@@ -3098,7 +3101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738354998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.96, y: -0.38, z: 0}
+  m_LocalPosition: {x: -21, y: -5, z: 0}
   m_LocalScale: {x: 0.115809746, y: 8.041222, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4186,6 +4189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 074cfc7b5d8dc420dbf88731879e0c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
   maxBounceAngle: 75
 --- !u!1 &2131625954
 GameObject:

@@ -22,24 +22,19 @@ public class DeathWall : MonoBehaviour
 
         if (ball != null)
         {
-            if((gameObject.tag == "TopWall" && GameManager.Instance.GetActivePaddle() == "TopPaddle") ||
-                (gameObject.tag == "BottomWall" && GameManager.Instance.GetActivePaddle() == "Paddle") ||
-                (gameObject.tag == "LeftWall" && GameManager.Instance.GetActivePaddle() == "LeftPaddle") ||
-                (gameObject.tag == "RightWall" && GameManager.Instance.GetActivePaddle() == "RightPaddle")) {
-                    Debug.Log("the ball should be reset");
-                    ball.ResetBall();
-                    List<GameObject> paddles = new List<GameObject> {
-                        GameObject.FindWithTag("TopPaddle"),
-                        GameObject.FindWithTag("Paddle"),
-                        GameObject.FindWithTag("LeftPaddle"),
-                        GameObject.FindWithTag("RightPaddle")
-                    };
-                    foreach (GameObject paddle in paddles) {
-                        paddle.GetComponent<Paddle>().ResetPaddle();
-                    }
-                    FindObjectOfType<GameManager>().Miss();
+            if(gameObject.tag == "TopWall" || gameObject.tag == "BottomWall") {
+                ball.ResetBall();
+                List<GameObject> paddles = new List<GameObject> {
+                    GameObject.FindWithTag("TopPaddle"),
+                    GameObject.FindWithTag("Paddle"),
+                    GameObject.FindWithTag("LeftPaddle"),
+                    GameObject.FindWithTag("RightPaddle")
+                };
+                foreach (GameObject paddle in paddles) {
+                    paddle.GetComponent<Paddle>().ResetPaddle();
+                }
+                FindObjectOfType<GameManager>().Miss();
             }
-           
         }
     }
 }
