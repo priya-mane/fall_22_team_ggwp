@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 		score = 0;
         this.lives = 3;
         
-        // LoadLevel(1);
+        LoadLevel(1);
 		LoadLevel(2);
     }
 
