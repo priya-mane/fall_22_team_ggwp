@@ -27,8 +27,8 @@ public class DeathWall : MonoBehaviour
                 List<GameObject> paddles = new List<GameObject> {
                     GameObject.FindWithTag("TopPaddle"),
                     GameObject.FindWithTag("Paddle"),
-                    GameObject.FindWithTag("LeftPaddle"),
-                    GameObject.FindWithTag("RightPaddle")
+                    // GameObject.FindWithTag("LeftPaddle"),
+                    // GameObject.FindWithTag("RightPaddle")
                 };
                 foreach (GameObject paddle in paddles) {
                     paddle.GetComponent<Paddle>().ResetPaddle();
