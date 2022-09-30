@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {  
     public static int score = 0;
     public static int level = 1;
-    public static int lives = 3;
+    public static int lives = 5;
     private static GameManager _instance;
 
     public Ball ball { get; private set; }
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         // this.score = 0;
         AnalyticsManager.instance.Send(0,1);
 		score = 0;
-        lives = 3;
+        lives = 5;
         
         LoadLevel(1);
 		//LoadLevel(2);

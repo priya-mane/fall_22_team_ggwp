@@ -15,6 +15,10 @@ public class Lives : MonoBehaviour
             Destroy(hearts[1].gameObject);
         } else if(GameManager.lives < 3) {
             Destroy(hearts[2].gameObject);
+        } else if(GameManager.lives < 4) {
+            Destroy(hearts[3].gameObject);
+        } else if(GameManager.lives < 5) {
+            Destroy(hearts[4].gameObject);
         }
     }
 }
