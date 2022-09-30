@@ -72,6 +72,18 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
+    private int NumerOfBrickCleared() {
+        int num = 0;
+        for (int i = 0; i < bricks.Length; i++) {
+            if (bricks[i].gameObject.activeInHierarchy && !bricks[i].unbreakable) {
+                num++;
+            }
+        }
+
+        return num;
+    }
+
+
     public static GameManager Instance
     {
         get
@@ -86,6 +98,10 @@ public class GameManager : MonoBehaviour
     private void GameOver() {
         // NewGame();
         AnalyticsManager.instance.Send(1, 0);
+
+        int num = NumerOfBrickCleared();
+        AnalyticsManager.instance.Send2(1, num);
+        
         SceneManager.LoadScene("GameOver");
     }
 
