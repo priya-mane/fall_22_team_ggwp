@@ -99,10 +99,10 @@ public class GameManager : MonoBehaviour
 
     private void GameOver() {
         // NewGame();
-        AnalyticsManager.instance.Send(1, 0);
+        AnalyticsManager.instance.Send(level, 0);
 
         int num = NumerOfBrickCleared();
-        AnalyticsManager.instance.Send2(1, num);
+        AnalyticsManager.instance.Send2(level, num);
         
         SceneManager.LoadScene("GameOver");
     }
