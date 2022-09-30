@@ -5,10 +5,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {  
     public static int score = 0;
-    public int level = 1;
-    public int lives = 3;
+    public static int level = 1;
+    public static int lives = 3;
     private static GameManager _instance;
-    // public TextMesh scoreText;
 
     public Ball ball { get; private set; }
     public Paddle paddle { get; private set; }
@@ -22,8 +21,6 @@ public class GameManager : MonoBehaviour
     } 
     private void Start() {
         NewGame(); 
-        // scoreText.text = "Score: " + Scoring.totalScore;
-		// Scoring.text = "Score: " + score;
     }
 
     private void Update() {
@@ -33,14 +30,14 @@ public class GameManager : MonoBehaviour
         // this.score = 0;
         AnalyticsManager.instance.Send(0,1);
 		score = 0;
-        this.lives = 3;
+        lives = 3;
         
         LoadLevel(1);
-		// LoadLevel(2);
+		//LoadLevel(2);
     }
 
     private void LoadLevel(int level) {
-        this.level = level;
+        GameManager.level = level;
         SceneManager.LoadScene("Level" + level);
     }
 
@@ -51,10 +48,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void Hit(Brick brick) {
-        //this.score += brick.points;
 		score += brick.points;
-        // scoreText.text = "Score: " + Scoring.totalScore;
-		// Scoring.text = "Score: " + score;
 
         if (Cleared()) {
             AnalyticsManager.instance.Send(1, 1);
@@ -106,10 +100,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void Miss() {
-        this.lives--;
+        lives--;
 
-        if(this.lives == 0){
-           GameOver();
+        if(lives == 0) {
+            GameOver();
         } 
     }
 }
