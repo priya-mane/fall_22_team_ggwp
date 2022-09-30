@@ -14,6 +14,20 @@ public class Paddle : MonoBehaviour
     }
 
     private void Update() {
+        Color active_color = new Color(255.0f/255.0f, 255.0f/255.0f, 255.0f/255.0f, 255f/255.0f);
+        Color inactive_color = new Color(255.0f/255.0f, 255.0f/255.0f, 0f/255.0f, 90f/255.0f);
+        
+        if(gameObject.tag == GameManager.Instance.GetActivePaddle())
+        {
+            // change color to white
+            this.GetComponent<SpriteRenderer>().color = active_color;
+        }
+        else
+        {
+            // change color to yellow
+            this.GetComponent<SpriteRenderer>().color = inactive_color;
+        }
+
         if(gameObject.tag == GameManager.Instance.GetActivePaddle()) {
             if(gameObject.tag == "Paddle" || gameObject.tag == "TopPaddle") {
                 if (Input.GetKey(KeyCode.LeftArrow)) {

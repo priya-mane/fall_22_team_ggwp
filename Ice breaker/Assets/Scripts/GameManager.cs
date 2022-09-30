@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {  
     public static int score = 0;
-    public int level = 1;
-    public int lives = 3;
+    public static int level = 1;
+    public static int lives = 3;
     private string activePaddle = "Paddle";
     private static GameManager _instance;
     // public TextMesh scoreText;
@@ -43,14 +43,14 @@ public class GameManager : MonoBehaviour
         // this.score = 0;
         AnalyticsManager.instance.Send(0,1);
 		score = 0;
-        this.lives = 3;
+        GameManager.lives = 3;
         
-        // LoadLevel(1);
-		LoadLevel(2);
+        LoadLevel(1);
+		// LoadLevel(2);
     }
 
     private void LoadLevel(int level) {
-        this.level = level;
+        GameManager.level = level;
         SceneManager.LoadScene("Level" + level);
     }
 
@@ -104,9 +104,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void Miss() {
-        this.lives--;
+        GameManager.lives--;
 
-        if(this.lives == 0){
+        if(GameManager.lives == 0){
            GameOver();
         } 
     }

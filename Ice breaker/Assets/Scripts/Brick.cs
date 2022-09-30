@@ -11,8 +11,6 @@ public class Brick : MonoBehaviour
 
     public int points = 100;
     
-    // Color myColor = new Color(210f, 2f, 2f, 1f);
-
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -43,20 +41,19 @@ public class Brick : MonoBehaviour
         {
             Ball ball = collision.gameObject.GetComponent<Ball>();
             Color brick_color = this.GetComponent<SpriteRenderer>().color;
-            Color power_brick_color = new Color(0.953f, 0.149f, 0.149f, 1.000f);
+            Color power_brick_color = new Color(243.0f/255.0f, 38f/255.0f, 38f/255.0f, 255f/255.0f);
 
             // Debug.Log("Collided****");
             Debug.Log("Brick color = "+brick_color);
             Debug.Log("const color = "+power_brick_color);
-            Debug.Log(brick_color.Equals(power_brick_color));
-            Debug.Log(brick_color == power_brick_color);
+            Debug.Log("brick material color = " + this.GetComponent<SpriteRenderer>().material.color);
 
             if (ball.GetComponent<SpriteRenderer>().color == brick_color)
             {
                 Debug.Log("brick break");
                 Hit();
             }
-            else if ((int)(brick_color.r * 1000) == (int)(power_brick_color.r * 1000))
+            else if (this.GetComponent<SpriteRenderer>().color == power_brick_color)
             {
                 Debug.Log("Power brick hit!");
             }
