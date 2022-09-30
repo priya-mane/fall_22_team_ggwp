@@ -5,7 +5,7 @@ public class Paddle : MonoBehaviour
     public new Rigidbody2D rigidbody { get; private set; }
     public Vector2 direction { get; private set; }
     private float speed = 10f;
-    public float maxBounceAngle = 75f;
+    public float maxBounceAngle = 60f;
     private Vector3 initialPosition;
 
     private void Awake() {
@@ -53,7 +53,7 @@ public class Paddle : MonoBehaviour
 
             float currentAngle = Vector2.SignedAngle(Vector2.up, ball.rigidbody.velocity);
             float bounceAngle = (offset / maxOffset) * maxBounceAngle;
-            float newAngle = currentAngle + bounceAngle;
+            float newAngle = Mathf.Clamp(currentAngle + bounceAngle, -maxBounceAngle, maxBounceAngle);
 
             Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
             ball.rigidbody.velocity = rotation * Vector2.up * ball.rigidbody.velocity.magnitude;

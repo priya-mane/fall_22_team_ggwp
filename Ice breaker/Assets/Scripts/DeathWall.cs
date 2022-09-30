@@ -22,7 +22,7 @@ public class DeathWall : MonoBehaviour
 
         if (ball != null)
         {
-            if(gameObject.tag == "TopWall" || gameObject.tag == "BottomWall") {
+            if(gameObject.tag == "BottomWall") {
                 ball.ResetBall();
                 List<GameObject> paddles = new List<GameObject> {
                     GameObject.FindWithTag("TopPaddle"),
