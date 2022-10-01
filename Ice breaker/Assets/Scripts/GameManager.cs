@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {  
     public static int score = 0;
-    public int level = 1;
-    public int lives = 3;
+    public static int level = 1;
+    public static int lives = 3;
     private static GameManager _instance;
 
     public Ball ball { get; private set; }
@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour
 		score = 0;
         lives = 3;
         
-        // LoadLevel(1);
-		LoadLevel(2);
+        LoadLevel(1);
+		//LoadLevel(2);
     }
 
     private void LoadLevel(int level) {
