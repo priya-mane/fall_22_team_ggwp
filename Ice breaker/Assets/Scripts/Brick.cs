@@ -54,7 +54,8 @@ public class Brick : MonoBehaviour
             if (this.GetComponent<SpriteRenderer>().color == power_brick_color)
             {
 				this.brickPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-                Debug.Log("Power brick hit!");				
+                Debug.Log("Power brick hit!");
+                this.points=300;				
 				Hit();
 				Instantiate(Capsule, this.brickPosition, Quaternion.identity);
             }
