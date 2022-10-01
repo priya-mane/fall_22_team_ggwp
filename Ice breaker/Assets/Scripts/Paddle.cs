@@ -4,7 +4,7 @@ public class Paddle : MonoBehaviour
 {
     public new Rigidbody2D rigidbody { get; private set; }
     public Vector2 direction { get; private set; }
-    private float speed = 10f;
+    private float speed = 20f;
     public float maxBounceAngle = 60f;
     private Vector3 initialPosition;
 
@@ -56,7 +56,7 @@ public class Paddle : MonoBehaviour
             float newAngle = Mathf.Clamp(currentAngle + bounceAngle, -maxBounceAngle, maxBounceAngle);
 
             Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
-            ball.rigidbody.velocity = rotation * Vector2.up * ball.rigidbody.velocity.magnitude;
+            ball.rigidbody.velocity = ball.rigidbody.velocity*1.05f;
 
             Color black_color = new Color(0f, 0f, 0f, 1f);
             Color white_color = new Color(1f, 1f, 1f, 1f);
