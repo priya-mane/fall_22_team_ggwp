@@ -83,9 +83,6 @@ public class GameManager : MonoBehaviour
         return num;
     }
 
-    public string GetActivePaddle() {
-        return this.activePaddle;
-    }
 
     public static GameManager Instance
     {
