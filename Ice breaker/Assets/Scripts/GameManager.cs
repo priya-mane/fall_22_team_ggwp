@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 
         if (Cleared()) {
             AnalyticsManager.instance.Send(1, 1);
-            LoadLevel(level + 1);
+            SceneManager.LoadScene("Levels");
         }
     }
 
