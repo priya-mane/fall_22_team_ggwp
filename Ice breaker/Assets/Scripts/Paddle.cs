@@ -7,6 +7,7 @@ public class Paddle : MonoBehaviour
     private float speed = 20f;
     public float maxBounceAngle = 60f;
     private Vector3 initialPosition;
+    public float jumpAmount = 10;
 
     private void Awake() {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -20,6 +21,11 @@ public class Paddle : MonoBehaviour
             this.direction = Vector2.right;
         } else {
             this.direction = Vector2.zero;
+        }
+
+         if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rigidbody.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
         }
     }
 
@@ -48,16 +54,25 @@ public class Paddle : MonoBehaviour
             Vector2 paddlePosition = transform.position;
             Vector2 contactPoint = collision.GetContact(0).point;
 
-            float offset = paddlePosition.x - contactPoint.x;
-            float maxOffset = collision.otherCollider.bounds.size.x / 2;
 
-            float currentAngle = Vector2.SignedAngle(Vector2.up, ball.rigidbody.velocity);
-            float bounceAngle = (offset / maxOffset) * maxBounceAngle;
-            float newAngle = Mathf.Clamp(currentAngle + bounceAngle, -maxBounceAngle, maxBounceAngle);
+            // This is to reflect the ball
 
-            Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
-            ball.rigidbody.velocity = ball.rigidbody.velocity*1.05f;
+            // float offset = paddlePosition.x - contactPoint.x;
+            // float maxOffset = collision.otherCollider.bounds.size.x / 2;
 
+            // float currentAngle = Vector2.SignedAngle(Vector2.up, ball.rigidbody.velocity);
+            // float bounceAngle = (offset / maxOffset) * maxBounceAngle;
+            // float newAngle = Mathf.Clamp(currentAngle + bounceAngle, -maxBounceAngle, maxBounceAngle);
+
+            // Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
+            // ball.rigidbody.velocity = ball.rigidbody.velocity*1.05f;
+
+            // ----------------------
+
+
+            ball.setPaddle(this.gameObject);
+
+            ball.gameObject.transform.position = this.gameObject.transform.position;
             Color black_color = new Color(0f, 0f, 0f, 1f);
             Color white_color = new Color(1f, 1f, 1f, 1f);
 
