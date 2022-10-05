@@ -8,6 +8,12 @@ public class Ball : MonoBehaviour
     private Vector3 startPosition;
     private Vector3 endPosition;
     private LaunchPreview launchPreview;
+    public int mode = 0;
+    public float timer = 1000f;
+    public float delta = 1f;
+    public float currentTimer = 0f;
+    public bool withPaddle = false;
+    public GameObject currentPaddle;
 
     private void Awake() {
         this.rigidbody = GetComponent<Rigidbody2D>();
@@ -29,7 +35,26 @@ public class Ball : MonoBehaviour
         }
         if(Input.GetMouseButtonUp(0)) {
             EndDrag(worldPosition);
+            withPaddle = false;
         }
+
+        if(currentTimer > 0){
+            currentTimer -= delta;
+            this.mode = 1;
+        }
+        else{
+            currentTimer = 0f;
+            this.mode = 0;
+        }
+
+        if(withPaddle){
+            positionWithPaddle();
+        }
+    
+    }
+
+    public void setTimer(){
+        this.currentTimer = this.timer;
     }
 
     private void StartDrag(Vector3 worldPosition) {
@@ -60,12 +85,27 @@ public class Ball : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = white_color;
     }
 
+    public void setPaddle(GameObject paddle){
+        this.currentPaddle = paddle;
+        this.withPaddle = true;
+        this.rigidbody.velocity = Vector2.zero;
+        this.rigidbody.angularVelocity = 0f;
+    }
+
+    public void positionWithPaddle(){
+        if(this.currentPaddle.tag == "TopPaddle"){
+            this.gameObject.transform.position = this.currentPaddle.transform.position + Vector3.down;
+        }
+        else{
+            this.gameObject.transform.position = this.currentPaddle.transform.position + Vector3.up;
+        }
+    }
+
     private void SetRandomTrajectory()
     {
         Vector2 force = new Vector2();
         force.x = Random.Range(-1f, 1f);
         force.y = 1f;
-
         this.rigidbody.AddForce(force.normalized * speed);
     }
 }
