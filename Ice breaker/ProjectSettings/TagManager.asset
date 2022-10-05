@@ -15,6 +15,7 @@ TagManager:
   - leftWormhole
   - rightWormhole
   - goodie
+  - Bar
   layers:
   - Default
   - TransparentFX
