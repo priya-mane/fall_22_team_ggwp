@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 		score = 0;
         lives = 5;
         
-        SceneManager.LoadScene("Level4");
+        SceneManager.LoadScene("Level6");
         // LoadLevel(1);
 		//LoadLevel(2);
     }
