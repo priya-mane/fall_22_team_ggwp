@@ -10,6 +10,7 @@ public class DragObject : MonoBehaviour
     void OnMouseDown(){
         zCord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         mOffset = gameObject.transform.position - GetMosPosition();
+        GameManager.selectedObject = this.gameObject;
     }
     private Vector3 GetMosPosition(){
         Vector3 mousePosition = Input.mousePosition;
