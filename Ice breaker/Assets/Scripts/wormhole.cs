@@ -14,29 +14,29 @@ public class Wormhole : MonoBehaviour
     }
 
     private GameObject level_16_get_other_wormhole(GameObject gameObject){
-        GameObject otherWormhole = GameObject.FindWithTag("level-16-bottomrightWormhole");
-        if(gameObject.tag == "level-16-topleftWormhole"){
-            otherWormhole = GameObject.FindWithTag("level-16-bottomrightWormhole");
+        GameObject otherWormhole = GameObject.FindWithTag("bottomrightWormhole");
+        if(gameObject.tag == "topleftWormhole"){
+            otherWormhole = GameObject.FindWithTag("bottomrightWormhole");
         }
-        else if(gameObject.tag == "level-16-toprightWormhole"){
-            otherWormhole = GameObject.FindWithTag("level-16-bottomleftWormhole");
+        else if(gameObject.tag == "toprightWormhole"){
+            otherWormhole = GameObject.FindWithTag("bottomleftWormhole");
         }
-        else if(gameObject.tag == "level-16-bottomleftWormhole"){
-            otherWormhole = GameObject.FindWithTag("level-16-toprightWormhole");
+        else if(gameObject.tag == "bottomleftWormhole"){
+            otherWormhole = GameObject.FindWithTag("toprightWormhole");
         }
         else{
-            otherWormhole = GameObject.FindWithTag("level-16-topleftWormhole");
+            otherWormhole = GameObject.FindWithTag("topleftWormhole");
         }
         return otherWormhole;
     }
 
     private GameObject level_16_get_src_wormholes(GameObject gameObject)
     {
-        if(gameObject.tag == "level-16-bottomleftWormhole"){
-            return GameObject.FindWithTag("level-16-toprightWormhole");
+        if(gameObject.tag == "bottomleftWormhole"){
+            return GameObject.FindWithTag("toprightWormhole");
         }
         else{
-            return GameObject.FindWithTag("level-16-bottomrightWormhole");
+            return GameObject.FindWithTag("bottomrightWormhole");
         }
     }
 
@@ -115,7 +115,6 @@ public class Wormhole : MonoBehaviour
                     collision.gameObject.transform.position = otherWormhole.transform.position;
 
                     float newAngle = Vector2.SignedAngle(Vector2.up, brick.GetComponent<Rigidbody2D>().velocity);
-
                     Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
                     brick.GetComponent<Rigidbody2D>().velocity = rotation * Vector2.up * brick.GetComponent<Rigidbody2D>().velocity.magnitude;
                     nextCollisionMinTime = Time.time + wormholeCooldownTime;

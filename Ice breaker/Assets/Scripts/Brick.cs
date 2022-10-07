@@ -27,7 +27,7 @@ public class Brick : MonoBehaviour
     private void Update(){
         //Moving bricks
         if(moving_brick){
-        this.gameObject.transform.position += new Vector3(0.02f, 0f, 0f);
+        this.gameObject.transform.position += new Vector3(0.03f, 0f, 0f);
         }
     }
 
@@ -57,8 +57,6 @@ public class Brick : MonoBehaviour
 
             Vector3 position = ball.gameObject.transform.position;
             Vector3 velocity = ball.rigidbody.velocity;
-            Debug.Log(position);
-            Debug.Log(velocity);
 
             Color brick_color = this.GetComponent<SpriteRenderer>().color;
             Color power_brick_color = new Color(243.0f/255.0f, 38f/255.0f, 38f/255.0f, 255f/255.0f);
@@ -72,9 +70,7 @@ public class Brick : MonoBehaviour
             if (this.GetComponent<SpriteRenderer>().color == power_brick_color)
             {
 				this.brickPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-                Debug.Log("Power brick hit!");
                 this.points=300;	
-               // ball.setTimer();	
 				Hit();
 				Instantiate(Capsule, this.brickPosition, Quaternion.identity);
             }
@@ -94,8 +90,6 @@ public class Brick : MonoBehaviour
             }
             Vector3 position = ball.gameObject.transform.position;
             Vector3 velocity = ball.rigidbody.velocity;
-            Debug.Log(position);
-            Debug.Log(velocity);
 
             Color brick_color = this.GetComponent<SpriteRenderer>().color;
             Color power_brick_color = new Color(243.0f/255.0f, 38f/255.0f, 38f/255.0f, 255f/255.0f);

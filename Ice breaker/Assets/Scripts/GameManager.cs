@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 		score = 0;
         lives = 5;
         
-        LoadLevel(15);
+        LoadLevel(7);
 		//LoadLevel(2);
     }
 

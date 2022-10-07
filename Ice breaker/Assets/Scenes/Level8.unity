@@ -1379,8 +1379,8 @@ GameObject:
   - component: {fileID: 1033654531}
   - component: {fileID: 1033654530}
   m_Layer: 6
-  m_Name: Paddle (1)
-  m_TagString: level-16-topleftWormhole
+  m_Name: Wormhole_left_top
+  m_TagString: topleftWormhole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1660,8 +1660,8 @@ GameObject:
   - component: {fileID: 1165758596}
   - component: {fileID: 1165758595}
   m_Layer: 7
-  m_Name: Paddle (5)
-  m_TagString: level-16-bottomrightWormhole
+  m_Name: Wormhold_right_bottom
+  m_TagString: bottomrightWormhole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1785,8 +1785,8 @@ GameObject:
   - component: {fileID: 1174793822}
   - component: {fileID: 1174793826}
   m_Layer: 6
-  m_Name: Paddle (3)
-  m_TagString: level-16-toprightWormhole
+  m_Name: Wormhole_right_top
+  m_TagString: toprightWormhole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2163,8 +2163,8 @@ GameObject:
   - component: {fileID: 1520848802}
   - component: {fileID: 1520848801}
   m_Layer: 7
-  m_Name: Paddle (4)
-  m_TagString: level-16-bottomleftWormhole
+  m_Name: Wormhole_left_bottom
+  m_TagString: bottomleftWormhole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2726,6 +2726,7 @@ MonoBehaviour:
   currentTimer: 0
   withPaddle: 0
   currentPaddle: {fileID: 0}
+  mouseFlag: 0
 --- !u!114 &1951747081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2744,6 +2745,7 @@ MonoBehaviour:
   currentTimer: 0
   withPaddle: 0
   currentPaddle: {fileID: 0}
+  mouseFlag: 0
 --- !u!120 &1951747082
 LineRenderer:
   m_ObjectHideFlags: 0

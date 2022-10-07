@@ -20,6 +20,11 @@ TagManager:
   - level-16-topleftWormhole
   - level-16-bottomleftWormhole
   - Brick
+  - Bar
+  - toprightWormhole
+  - topleftWormhole
+  - bottomrightWormhole
+  - bottomleftWormhole
   layers:
   - Default
   - TransparentFX

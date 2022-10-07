@@ -14,6 +14,7 @@ public class Ball : MonoBehaviour
     public float currentTimer = 0f;
     public bool withPaddle = false;
     public GameObject currentPaddle;
+    public bool mouseFlag;
 
     private void Awake() {
         this.rigidbody = GetComponent<Rigidbody2D>();
