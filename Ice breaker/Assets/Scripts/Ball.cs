@@ -10,6 +10,10 @@ public class Ball : MonoBehaviour
     private LaunchPreview launchPreview;
     private Vector3 ballPosition;
     private bool mouseFlag=false;
+    public bool withPaddle = false;
+    public GameObject currentPaddle;
+    private RotatingPaddle rotatingPaddle;
+    private Vector3 velocitywithPaddle;
 
     private void Awake() {
         this.rigidbody = GetComponent<Rigidbody2D>();
@@ -30,18 +34,60 @@ public class Ball : MonoBehaviour
     private void Update() {
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.back*-10;
         this.ballPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-            if(mouseFlag){
-                if(Input.GetMouseButtonDown(0)) {
-                    StartDrag(worldPosition);
-                }
-                if(Input.GetMouseButton(0)) {
-                    ContinueDrag(worldPosition);
-                }
-                if(Input.GetMouseButtonUp(0)) {
-                    EndDrag(worldPosition);
-                    mouseFlag = false;
-                }
+        if(mouseFlag){
+            if(Input.GetMouseButtonDown(0)) {
+                StartDrag(worldPosition);
             }
+            if(Input.GetMouseButton(0)) {
+                ContinueDrag(worldPosition);
+            }
+            if(Input.GetMouseButtonUp(0)) {
+                EndDrag(worldPosition);
+                withPaddle = false;
+                mouseFlag = false;
+            }
+        }
+        if(withPaddle){
+            // Debug.Log("position with paddle is getting called");
+            positionWithPaddle();
+        }
+    }
+
+    public void setPaddle(GameObject paddle){
+        this.currentPaddle = paddle;
+        this.withPaddle = true;
+        this.rigidbody.velocity = Vector2.zero;
+        this.rigidbody.angularVelocity = 0f;
+    }
+
+    public void setRotatingPaddle(RotatingPaddle paddle) {
+        this.rotatingPaddle = paddle;
+        this.currentPaddle = paddle.gameObject;
+        this.withPaddle = true;
+        this.velocitywithPaddle = this.rigidbody.velocity;
+        this.rigidbody.velocity = Vector2.zero;
+        this.rigidbody.angularVelocity = 0f;
+    }
+
+    public void positionWithPaddle(){
+        if(this.currentPaddle.tag == "TopPaddle"){
+            this.gameObject.transform.position = this.currentPaddle.transform.position + Vector3.down;
+        }
+        else if(this.currentPaddle.tag == "RotatingPaddle") {
+            if(this.currentPaddle.transform.eulerAngles.z >= 315.0f){
+                this.rotatingPaddle.Rotate();
+            }
+            // float angle = (3.14159265f / 180f) * this.gameObject.transform.eulerAngles.z;
+            this.gameObject.transform.position = Vector3.up + this.rotatingPaddle.transform.position;
+            Vector2 forceToBeApplied = this.rotatingPaddle.RedirectBall(this.velocitywithPaddle);
+            this.rigidbody.AddForce(forceToBeApplied * speed*1.2f);
+            withPaddle = false;
+            this.rotatingPaddle = null;
+            this.currentPaddle = null;
+        }
+        else{
+            this.gameObject.transform.position = this.currentPaddle.transform.position + Vector3.up;
+        }
     }
 
     private void StartDrag(Vector3 worldPosition) {

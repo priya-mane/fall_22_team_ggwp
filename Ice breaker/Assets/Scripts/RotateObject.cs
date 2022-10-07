@@ -21,7 +21,6 @@ public class RotateObject : MonoBehaviour
      void Update () { 
 
         if (GameManager.selectedObject == this.gameObject){
-            Debug.Log(",khgddsjhfg,sldjgkf");
             if (Input.GetKey(KeyCode.RightArrow)){
         transform.Rotate(0,0, 20 * Time.deltaTime);
         } else if (Input.GetKey(KeyCode.LeftArrow)){
