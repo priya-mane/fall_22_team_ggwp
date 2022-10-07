@@ -24,15 +24,15 @@ public class DeathWall : MonoBehaviour
             
                 ball.ResetBall();
                 FindObjectOfType<GameManager>().Miss();
-                List<GameObject> paddles = new List<GameObject> {
-                    GameObject.FindWithTag("Bar"),
-                    GameObject.FindWithTag("Paddle"),
-                    // GameObject.FindWithTag("LeftPaddle"),
-                    // GameObject.FindWithTag("RightPaddle")
-                };
-                foreach (GameObject paddle in paddles) {
-                    paddle.GetComponent<Paddle>().ResetPaddle();
-                }
+                // List<GameObject> paddles = new List<GameObject> {
+                //     GameObject.FindWithTag("Bar"),
+                //     GameObject.FindWithTag("Paddle"),
+                //     // GameObject.FindWithTag("LeftPaddle"),
+                //     // GameObject.FindWithTag("RightPaddle")
+                // };
+                // foreach (GameObject paddle in paddles) {
+                //     paddle.GetComponent<Paddle>().ResetPaddle();
+                // }
             
         }
     }

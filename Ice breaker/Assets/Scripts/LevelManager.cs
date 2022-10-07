@@ -20,6 +20,8 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel(int levelInd){
         GameManager.level = levelInd;
+        GameManager.lives = 5;
+        AnalyticsManager.instance.Send2(levelInd);
         SceneManager.LoadScene("Level" + levelInd);
     }
 

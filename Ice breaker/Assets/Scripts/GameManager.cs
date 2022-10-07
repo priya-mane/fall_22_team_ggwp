@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     private void NewGame() {
         // this.score = 0;
         if(level == 1){
-            AnalyticsManager.instance.Send(0,1);
+            AnalyticsManager.instance.Send(0,1,0);
         }
 		score = 0;
         lives = 5;
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 		score += brick.points;
 
         if (Cleared()) {
-            AnalyticsManager.instance.Send(1, 1);
+            AnalyticsManager.instance.Send(level, 1, lives);
             SceneManager.LoadScene("Levels");
         }
     }
@@ -93,11 +93,9 @@ public class GameManager : MonoBehaviour
     }
 
     private void GameOver() {
-        // NewGame();
-        AnalyticsManager.instance.Send(level, 0);
+        AnalyticsManager.instance.Send(level, 0, lives);
 
         int num = NumerOfBrickCleared();
-        AnalyticsManager.instance.Send2(level, num);
         
         SceneManager.LoadScene("GameOver");
     }
