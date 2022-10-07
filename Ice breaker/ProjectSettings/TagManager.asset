@@ -17,6 +17,7 @@ TagManager:
   - goodie
   - Bar
   - rotatingPaddle
+  - RotatingPaddle
   layers:
   - Default
   - TransparentFX

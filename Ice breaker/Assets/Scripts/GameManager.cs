@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {  
@@ -12,9 +13,11 @@ public class GameManager : MonoBehaviour
     public Ball ball { get; private set; }
     public Paddle paddle { get; private set; }
     public Brick[] bricks { get; private set; }
+    public List<IPaddle> activePaddles;
 
     private void Awake(){
         _instance = this;
+        activePaddles = new List<IPaddle>();
        DontDestroyOnLoad(gameObject);
 
        SceneManager.sceneLoaded += OnLevelLoaded;
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour
     private void NewGame() {
         // this.score = 0;
         AnalyticsManager.instance.Send(0,1);
+        UnregisterPaddles();
 		score = 0;
         lives = 5;
         
@@ -38,6 +42,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void LoadLevel(int level) {
+        UnregisterPaddles();
         GameManager.level = level;
         SceneManager.LoadScene("Level" + level);
     }
@@ -78,6 +83,13 @@ public class GameManager : MonoBehaviour
         return num;
     }
 
+    public void RegisterPaddles(IPaddle paddle) {
+        activePaddles.Add(paddle);
+    }
+
+    public void UnregisterPaddles() {
+        activePaddles = new List<IPaddle>();
+    }
 
     public static GameManager Instance
     {
@@ -92,6 +104,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver() {
         // NewGame();
+        UnregisterPaddles();
         AnalyticsManager.instance.Send(1, 0);
 
         int num = NumerOfBrickCleared();
