@@ -8,11 +8,11 @@ public class Brick : MonoBehaviour
     public int health { get; private set; }
     public Sprite[] states = new Sprite[0];
     public bool unbreakable;
+	private Vector3 brickPosition;
+	public GameObject Capsule;
 
     public int points = 100;
     
-    // Color myColor = new Color(210f, 2f, 2f, 1f);
-
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -20,7 +20,7 @@ public class Brick : MonoBehaviour
     private void Start() {
         if (!this.unbreakable) {
             this.health = this.states.Length;
-            spriteRenderer.sprite = this.states[this.health - 1];
+            // spriteRenderer.sprite = this.states[this.health - 1];
         }
     }
 
@@ -43,23 +43,21 @@ public class Brick : MonoBehaviour
         {
             Ball ball = collision.gameObject.GetComponent<Ball>();
             Color brick_color = this.GetComponent<SpriteRenderer>().color;
-            Color power_brick_color = new Color(0.9530f, 0.1490f, 0.1490f, 1.000f);
+            Color power_brick_color = new Color(243.0f/255.0f, 38f/255.0f, 38f/255.0f, 255f/255.0f);
 
-            // Debug.Log("Collided****");
-            Debug.Log("Brick color = "+brick_color+(int)(brick_color.r * 1000));
-            Debug.Log("const color = "+power_brick_color+(int)(power_brick_color.r * 1000));
-            Debug.Log(brick_color.Equals(power_brick_color));
-
-            Debug.Log((int)(brick_color.r * 1000) == (int)(power_brick_color.r * 1000));
+			Debug.Log(brick_color);
 
             if (ball.GetComponent<SpriteRenderer>().color == brick_color)
             {
-                Debug.Log("brick break");
                 Hit();
             }
-            else if (brick_color.Equals(power_brick_color))
+            if (this.GetComponent<SpriteRenderer>().color == power_brick_color)
             {
+				this.brickPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
                 Debug.Log("Power brick hit!");
+                this.points=300;				
+				Hit();
+				Instantiate(Capsule, this.brickPosition, Quaternion.identity);
             }
             
         }

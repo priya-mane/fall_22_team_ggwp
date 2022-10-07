@@ -8,6 +8,8 @@ public class Ball : MonoBehaviour
     private Vector3 startPosition;
     private Vector3 endPosition;
     private LaunchPreview launchPreview;
+    private Vector3 ballPosition;
+    private bool mouseFlag=false;
 
     private void Awake() {
         this.rigidbody = GetComponent<Rigidbody2D>();
@@ -19,17 +21,27 @@ public class Ball : MonoBehaviour
         // Invoke(nameof(SetRandomTrajectory), 1f);
     }
 
+    private void OnMouseOver() {
+        if(this.rigidbody.velocity == Vector2.zero){
+            mouseFlag = true;
+        }
+    }
+
     private void Update() {
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.back*-10;
-        if(Input.GetMouseButtonDown(0)) {
-            StartDrag(worldPosition);
-        }
-        if(Input.GetMouseButton(0)) {
-            ContinueDrag(worldPosition);
-        }
-        if(Input.GetMouseButtonUp(0)) {
-            EndDrag(worldPosition);
-        }
+        this.ballPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+            if(mouseFlag){
+                if(Input.GetMouseButtonDown(0)) {
+                    StartDrag(worldPosition);
+                }
+                if(Input.GetMouseButton(0)) {
+                    ContinueDrag(worldPosition);
+                }
+                if(Input.GetMouseButtonUp(0)) {
+                    EndDrag(worldPosition);
+                    mouseFlag = false;
+                }
+            }
     }
 
     private void StartDrag(Vector3 worldPosition) {

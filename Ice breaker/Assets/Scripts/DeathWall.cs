@@ -19,13 +19,13 @@ public class DeathWall : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Ball ball = collision.gameObject.GetComponent<Ball>();
-
         if (ball != null)
         {
-            if(gameObject.tag == "BottomWall") {
+            
                 ball.ResetBall();
+                FindObjectOfType<GameManager>().Miss();
                 List<GameObject> paddles = new List<GameObject> {
-                    GameObject.FindWithTag("TopPaddle"),
+                    GameObject.FindWithTag("Bar"),
                     GameObject.FindWithTag("Paddle"),
                     // GameObject.FindWithTag("LeftPaddle"),
                     // GameObject.FindWithTag("RightPaddle")
@@ -33,8 +33,7 @@ public class DeathWall : MonoBehaviour
                 foreach (GameObject paddle in paddles) {
                     paddle.GetComponent<Paddle>().ResetPaddle();
                 }
-                FindObjectOfType<GameManager>().Miss();
-            }
+            
         }
     }
 }
