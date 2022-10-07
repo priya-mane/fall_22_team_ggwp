@@ -10,8 +10,8 @@ public class Brick : MonoBehaviour
     public bool unbreakable;
 	private Vector3 brickPosition;
 	public GameObject Capsule;
-
     public int points = 100;
+    public bool moving_brick;
     
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -21,6 +21,13 @@ public class Brick : MonoBehaviour
         if (!this.unbreakable) {
             this.health = this.states.Length;
             // spriteRenderer.sprite = this.states[this.health - 1];
+        }
+    }
+
+    private void Update(){
+        //Moving bricks
+        if(moving_brick){
+        this.gameObject.transform.position += new Vector3(0.02f, 0f, 0f);
         }
     }
 

@@ -15,6 +15,11 @@ TagManager:
   - leftWormhole
   - rightWormhole
   - goodie
+  - level-16-toprightWormhole
+  - level-16-bottomrightWormhole
+  - level-16-topleftWormhole
+  - level-16-bottomleftWormhole
+  - Brick
   layers:
   - Default
   - TransparentFX
