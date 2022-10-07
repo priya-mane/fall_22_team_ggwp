@@ -13,6 +13,7 @@ public class Ball : MonoBehaviour
     public bool withPaddle = false;
     public GameObject currentPaddle;
     private RotatingPaddle rotatingPaddle;
+    private Vector3 velocitywithPaddle;
 
     private void Awake() {
         this.rigidbody = GetComponent<Rigidbody2D>();
@@ -63,6 +64,7 @@ public class Ball : MonoBehaviour
         this.rotatingPaddle = paddle;
         this.currentPaddle = paddle.gameObject;
         this.withPaddle = true;
+        this.velocitywithPaddle = this.rigidbody.velocity;
         this.rigidbody.velocity = Vector2.zero;
         this.rigidbody.angularVelocity = 0f;
     }
@@ -77,7 +79,7 @@ public class Ball : MonoBehaviour
             }
             // float angle = (3.14159265f / 180f) * this.gameObject.transform.eulerAngles.z;
             this.gameObject.transform.position = Vector3.up + this.rotatingPaddle.transform.position;
-            Vector2 forceToBeApplied = this.rotatingPaddle.RedirectBall(this.initialPosition);
+            Vector2 forceToBeApplied = this.rotatingPaddle.RedirectBall(this.velocitywithPaddle);
             this.rigidbody.AddForce(forceToBeApplied * speed*1.2f);
             withPaddle = false;
             this.rotatingPaddle = null;
