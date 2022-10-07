@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void LoadLevel(int levelInd){
+        GameManager.level = levelInd;
         SceneManager.LoadScene("Level" + levelInd);
     }
 
