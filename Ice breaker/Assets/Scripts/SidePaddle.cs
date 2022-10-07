@@ -15,4 +15,21 @@ public class SidePaddle : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        Ball ball = other.gameObject.GetComponent<Ball>();
+        if (ball != null)
+        {
+            Color black_color = new Color(0f, 0f, 0f, 1f);
+            Color white_color = new Color(1f, 1f, 1f, 1f);
+
+            if (this.GetComponent<SpriteRenderer>().color == black_color) {
+                ball.GetComponent<SpriteRenderer>().color = black_color; 
+            }
+            else
+            {
+                ball.GetComponent<SpriteRenderer>().color = white_color;
+            }
+        }
+    }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {  
@@ -8,13 +9,15 @@ public class GameManager : MonoBehaviour
     public static int level = 1;
     public static int lives = 5;
     private static GameManager _instance;
-
+    public static GameObject selectedObject;
     public Ball ball { get; private set; }
     public Paddle paddle { get; private set; }
     public Brick[] bricks { get; private set; }
+    public List<IPaddle> activePaddles;
 
     private void Awake(){
         _instance = this;
+        activePaddles = new List<IPaddle>();
        DontDestroyOnLoad(gameObject);
 
        SceneManager.sceneLoaded += OnLevelLoaded;
@@ -28,16 +31,20 @@ public class GameManager : MonoBehaviour
 
     private void NewGame() {
         // this.score = 0;
-        AnalyticsManager.instance.Send(0,1);
+        if(level == 1){
+            AnalyticsManager.instance.Send(0,1,0);
+        }
+        UnregisterPaddles();
 		score = 0;
         lives = 5;
         
         SceneManager.LoadScene("Levels");
-        // LoadLevel(1);
+        //LoadLevel(1);
 		//LoadLevel(2);
     }
 
     private void LoadLevel(int level) {
+        UnregisterPaddles();
         GameManager.level = level;
         SceneManager.LoadScene("Level" + level);
     }
@@ -52,7 +59,7 @@ public class GameManager : MonoBehaviour
 		score += brick.points;
 
         if (Cleared()) {
-            AnalyticsManager.instance.Send(1, 1);
+            AnalyticsManager.instance.Send(level, 1, lives);
             SceneManager.LoadScene("Levels");
         }
     }
@@ -78,6 +85,13 @@ public class GameManager : MonoBehaviour
         return num;
     }
 
+    public void RegisterPaddles(IPaddle paddle) {
+        activePaddles.Add(paddle);
+    }
+
+    public void UnregisterPaddles() {
+        activePaddles = new List<IPaddle>();
+    }
 
     public static GameManager Instance
     {
@@ -91,11 +105,11 @@ public class GameManager : MonoBehaviour
     }
 
     private void GameOver() {
+        AnalyticsManager.instance.Send(level, 0, lives);
         // NewGame();
-        AnalyticsManager.instance.Send(1, 0);
+        UnregisterPaddles();
 
         int num = NumerOfBrickCleared();
-        AnalyticsManager.instance.Send2(1, num);
         
         SceneManager.LoadScene("GameOver");
     }

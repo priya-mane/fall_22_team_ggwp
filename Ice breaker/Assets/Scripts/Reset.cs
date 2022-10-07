@@ -26,6 +26,6 @@ public class Reset : MonoBehaviour
     {
         GameManager.lives = 5;
         GameManager.score = 0;
-        SceneManager.LoadScene("Level"+GameManager.level);
+        SceneManager.LoadScene("Level"+ GameManager.level);
     }
 }

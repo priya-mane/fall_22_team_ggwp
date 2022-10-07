@@ -15,6 +15,9 @@ TagManager:
   - leftWormhole
   - rightWormhole
   - goodie
+  - Bar
+  - rotatingPaddle
+  - RotatingPaddle
   layers:
   - Default
   - TransparentFX
