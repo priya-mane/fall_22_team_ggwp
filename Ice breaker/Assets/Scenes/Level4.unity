@@ -394,6 +394,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6092658075775267004, guid: c217cf23f92ec4f389947df9160f6598, type: 3}
+      propertyPath: otherWormholeTagName
+      value: rightWormhole
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092658075775267004, guid: c217cf23f92ec4f389947df9160f6598, type: 3}
+      propertyPath: successorWormholeTagName
+      value: rightWormhole
+      objectReference: {fileID: 0}
     - target: {fileID: 6092658075775267005, guid: c217cf23f92ec4f389947df9160f6598, type: 3}
       propertyPath: m_Name
       value: Paddle (1)
@@ -653,6 +661,14 @@ PrefabInstance:
     - target: {fileID: 6677883038424168193, guid: 3a4fa59216cf142d89f1aa737c839a49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677883038424168195, guid: 3a4fa59216cf142d89f1aa737c839a49, type: 3}
+      propertyPath: otherWormholeTagName
+      value: leftWormhole
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677883038424168195, guid: 3a4fa59216cf142d89f1aa737c839a49, type: 3}
+      propertyPath: successorWormholeTagName
+      value: leftWormhole
       objectReference: {fileID: 0}
     - target: {fileID: 6677883038424168199, guid: 3a4fa59216cf142d89f1aa737c839a49, type: 3}
       propertyPath: m_Name
