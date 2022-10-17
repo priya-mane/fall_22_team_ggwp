@@ -37,9 +37,8 @@ public class GameManager : MonoBehaviour
         UnregisterPaddles();
 		score = 0;
         lives = 5;
-        
+        //LoadLevel(9);
         SceneManager.LoadScene("Levels");
-        //LoadLevel(1);
 		//LoadLevel(2);
     }
 
