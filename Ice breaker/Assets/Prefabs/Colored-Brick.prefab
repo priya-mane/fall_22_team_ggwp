@@ -131,3 +131,5 @@ MonoBehaviour:
   points: 100
   timerIsRunning: 0
   color: 1
+  timeBar: {fileID: 0}
+  isTimerOn: 1

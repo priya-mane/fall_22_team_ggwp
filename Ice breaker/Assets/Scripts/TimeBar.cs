@@ -13,21 +13,22 @@ public class TimeBar : MonoBehaviour
    public void Start(){
         timeRemaining = 10;
         timeprev = 10;
-        Debug.Log(FindObjectOfType<GameManager>().NumerOfBrickCleared());
-    //    if(FindObjectOfType<GameManager>().NumerOfBrickCleared()[0]==0){
-    //         Color c = new Color(0f/255f, 0f/255f, 255f/255f, 1);
-    //         slider.gameObject.transform.Find("Fill").GetComponent<Image>().color = c;
-    //         timeRemaining = 30;
-    //         timeprev = 30;
-    //         color +=1;
-    //        if(FindObjectOfType<GameManager>().NumerOfBrickCleared()[1]==0){
-    //             c = new Color(255f/255f, 255f/255f, 0f/255f, 1);
-    //             slider.gameObject.transform.Find("Fill").GetComponent<Image>().color = c;
-    //             timerIsRunning = false;
-    //        }
-    //    }
-       SetTimer(100);
-       timerIsRunning = true;
+        timerIsRunning = true;
+       int[] n = FindObjectOfType<GameManager>().NumerOfBrickCleared();
+       Debug.Log(color + " " );
+       if(n[0]==0){
+            Color c = new Color(0f/255f, 0f/255f, 255f/255f, 1);
+            slider.gameObject.transform.Find("Fill").GetComponent<Image>().color = c;
+            timeRemaining = 30;
+            timeprev = 30;
+            color +=1;
+           if(n[1]==0){
+                c = new Color(255f/255f, 255f/255f, 0f/255f, 1);
+                slider.gameObject.transform.Find("Fill").GetComponent<Image>().color = c;
+                timerIsRunning = false;
+           }
+       }
+       SetMaxTime(100);
    }
    void Update()
     {
@@ -37,6 +38,7 @@ public class TimeBar : MonoBehaviour
             {
                 timeRemaining -= Time.deltaTime;
                 SetTimer((int)(timeRemaining*100/timeprev));
+                Debug.Log(timeRemaining);
                 // if(FindObjectOfType<GameManager>().NumerOfBrickCleared()[color-1]==0){
                 //     timeRemaining =0;
                 // }
@@ -63,11 +65,11 @@ public class TimeBar : MonoBehaviour
     }
    public void SetTimer(int time){
        slider.value = time;
-       Debug.Log(slider.value + "Value");
+    //    Debug.Log(slider.value + "Value");
    }
    public void SetMaxTime( int time){
        slider.maxValue = time;
        slider.value = time;
-       Debug.Log(slider.value + "start Value");
+    //    Debug.Log(slider.value + "start Value");
    }
 }   

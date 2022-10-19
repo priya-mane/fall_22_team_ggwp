@@ -16,6 +16,7 @@ public class Brick : MonoBehaviour
     public bool timerIsRunning = false;
     public int color;
     public TimeBar timeBar;
+    public bool isTimerOn;
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -25,24 +26,26 @@ public class Brick : MonoBehaviour
             this.health = this.states.Length;
             // spriteRenderer.sprite = this.states[this.health - 1];
         }
-        timerIsRunning = true;
-        //timeBar.SetMaxTime(100);
-        if(color ==1){
-            timeRemaining = 10;
-            timeprev = 10;
-        }
-        else if(color == 2){
-            timeRemaining = 30;
-            timeprev = 30;
-            
-        }
-        else{
-            timerIsRunning = false;
+        if(isTimerOn){
+            timerIsRunning = true;
+            //timeBar.SetMaxTime(100);
+            if(color ==1){
+                timeRemaining = 10;
+                timeprev = 10;
+            }
+            else if(color == 2){
+                timeRemaining = 30;
+                timeprev = 30;
+                
+            }
+            else{
+                timerIsRunning = false;
+            }
         }
     }
     void Update()
     {
-        if (timerIsRunning)
+        if (timerIsRunning && isTimerOn)
         {
             if (timeRemaining > 0)
             {
