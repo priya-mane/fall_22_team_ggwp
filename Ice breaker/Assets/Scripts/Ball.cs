@@ -26,11 +26,13 @@ public class Ball : MonoBehaviour
     }
 
     private void OnMouseOver() {
+  
+    }
+    void OnMouseDown(){
         if(this.rigidbody.velocity == Vector2.zero){
             mouseFlag = true;
         }
     }
-
     private void Update() {
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.back*-10;
         this.ballPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
@@ -128,5 +130,10 @@ public class Ball : MonoBehaviour
         force.y = 1f;
 
         this.rigidbody.AddForce(force.normalized * speed);
+    }
+    
+    public void SetColor(Color color){
+        Debug.Log(color.ToString() + " Ball.cs");
+         gameObject.GetComponent<SpriteRenderer>().color = color;
     }
 }

@@ -23,12 +23,12 @@ public class AnalyticsManager : MonoBehaviour
     {
         _levelId = level;
         _completed = complete;
-        StartCoroutine(Post(_sessionID.ToString(), _levelId.ToString(), _completed.ToString(), lives.ToString()));
+        // StartCoroutine(Post(_sessionID.ToString(), _levelId.ToString(), _completed.ToString(), lives.ToString()));
     }
     public void Send2(int level)
     {
         _levelId = level;
-        StartCoroutine(Post2(_sessionID.ToString(), _levelId.ToString()));
+        // StartCoroutine(Post2(_sessionID.ToString(), _levelId.ToString()));
     }
     private IEnumerator Post(string sessionID, string levelId, string completed, string lives)
     {
