@@ -18,6 +18,7 @@ TagManager:
   - Bar
   - rotatingPaddle
   - RotatingPaddle
+  - Magnet
   layers:
   - Default
   - TransparentFX
