@@ -115,6 +115,8 @@ public class Ball : MonoBehaviour
         Color white_color = new Color(1f, 1f, 1f, 1f);
         this.rigidbody.velocity = Vector2.zero;
         this.rigidbody.angularVelocity = 0f;
+        this.rigidbody.gravityScale = 0;
+        this.rigidbody.drag = 0;
         gameObject.transform.position = initialPosition;
         gameObject.GetComponent<SpriteRenderer>().color = white_color;
     }
