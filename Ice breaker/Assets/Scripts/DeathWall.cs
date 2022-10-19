@@ -21,7 +21,6 @@ public class DeathWall : MonoBehaviour
         Ball ball = collision.gameObject.GetComponent<Ball>();
         if (ball != null)
         {
-            
                 ball.ResetBall();
                 FindObjectOfType<GameManager>().Miss();
                 foreach (IPaddle paddle in GameManager.Instance.activePaddles) {

@@ -11,6 +11,9 @@ public class Blocker : MonoBehaviour
         if(collision.gameObject.name == "Ball"){
             ball.ResetBall();
             FindObjectOfType<GameManager>().Miss();
+            foreach (IPaddle paddle in GameManager.Instance.activePaddles) {
+                paddle.ResetPaddle();
+            }
         }
     }
 }

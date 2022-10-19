@@ -62,10 +62,10 @@ public class RotatingPaddle : MonoBehaviour, IPaddle
       this.gameObject.transform.Rotate(0.0f, 0.0f, zAngle);
     }
 
-    public Vector2 RedirectBall(Vector3 ballPosition) {
+    public Vector3 RedirectBall(Vector3 ballPosition) {
       Vector3 direction = (ballPosition - this.initialPosition).normalized;
-      Vector2 resultVector = Vector2.Perpendicular(direction).normalized;
-      return resultVector;
+      direction = Quaternion.AngleAxis(-zAngle, Vector3.forward) * direction;
+      return direction;
     }
 
 }
