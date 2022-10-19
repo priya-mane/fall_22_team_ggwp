@@ -6,6 +6,7 @@ public class DragObject : MonoBehaviour
 {
     private Vector3 mOffset;
     private float zCord;
+    public bool vertical;
 
     void OnMouseDown(){
         zCord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
@@ -15,6 +16,12 @@ public class DragObject : MonoBehaviour
     private Vector3 GetMosPosition(){
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = zCord;
+        if(vertical){
+            mousePosition.x = 0f;
+        }
+        else{
+            mousePosition.y = 0f;
+        }
         return Camera.main.ScreenToWorldPoint(mousePosition);
     }
     void OnMouseDrag(){

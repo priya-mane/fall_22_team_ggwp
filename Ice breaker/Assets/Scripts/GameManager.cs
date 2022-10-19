@@ -28,7 +28,9 @@ public class GameManager : MonoBehaviour
 
     private void Update() {
     }
-
+    public void SetBallColor(Color color){
+        ball.SetColor(color);
+    }
     private void NewGame() {
         // this.score = 0;
         if(level == 1){
@@ -74,11 +76,19 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
-    private int NumerOfBrickCleared() {
-        int num = 0;
+    public int[] NumerOfBrickCleared() {
+        int[] num = new int[3];
+
         for (int i = 0; i < bricks.Length; i++) {
             if (bricks[i].gameObject.activeInHierarchy && !bricks[i].unbreakable) {
-                num++;
+                if(bricks[i].gameObject.GetComponent<SpriteRenderer>().color == new Color(1f,0f,0f,1)){
+                    num[0]+=1;
+                }
+                else if(bricks[i].gameObject.GetComponent<SpriteRenderer>().color == new Color(0f,0f,1f,1)){
+                    num[1]+=1;
+                }else{
+                    num[2]+=1;
+                }
             }
         }
 
@@ -109,7 +119,7 @@ public class GameManager : MonoBehaviour
         // NewGame();
         UnregisterPaddles();
 
-        int num = NumerOfBrickCleared();
+        int num = SumArray(NumerOfBrickCleared());
         
         SceneManager.LoadScene("GameOver");
     }
@@ -121,4 +131,13 @@ public class GameManager : MonoBehaviour
             GameOver();
         } 
     }
+    private int SumArray(int[] toBeSummed)
+ {
+     int sum = 0;
+     foreach (int item in toBeSummed)
+     {
+         sum += item;
+     }
+     return sum;
+ }
 }
