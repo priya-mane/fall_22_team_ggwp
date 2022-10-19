@@ -25,6 +25,13 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("Level" + levelInd);
     }
 
+    public void LoadTutorialLevel(int levelInd) {
+        GameManager.level = levelInd;
+        GameManager.lives = 5;
+        AnalyticsManager.instance.Send2(levelInd);
+        SceneManager.LoadScene("T" + levelInd);
+    }
+
     // Update is called once per frame
     void Update()
     {
