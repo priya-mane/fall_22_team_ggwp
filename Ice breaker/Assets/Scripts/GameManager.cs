@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {  
     public static int score = 0;
     public static int level = 1;
-    public static int lives = 5;
+    public static int lives = 10;
     private static GameManager _instance;
     public static GameObject selectedObject;
     public Ball ball { get; private set; }
@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour
         }
         UnregisterPaddles();
 		score = 0;
-        lives = 5;
-        //LoadLevel(9);
+        lives = 10;
+        
         SceneManager.LoadScene("Levels");
 		//LoadLevel(2);
     }
