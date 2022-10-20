@@ -20,7 +20,6 @@ public class ring : MonoBehaviour
         KeyCode spacekey = KeyCode.Space;
         if(Input.GetKeyDown("space"))
         {
-            Debug.Log("wergfsgsdffgsdfgddsxfweafx");
             // this.transform.rotation = Quaternion.Euler(-this.transform.rotation.x, -this.transform.rotation.y,
             //    -this.transform.rotation.z);
              flag *= -1;
@@ -34,7 +33,7 @@ public class ring : MonoBehaviour
     {
         if (ball_inside == true)
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
+            collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 5;
             collision.gameObject.GetComponent<Rigidbody2D>().drag = 10;
         }
     }
