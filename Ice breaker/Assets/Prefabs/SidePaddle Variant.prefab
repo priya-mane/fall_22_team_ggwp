@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7362182666437191627, guid: 3cde07397ac9f4ad68defaf743bc2326, type: 3}
       propertyPath: m_Name
-      value: SidePaddle
+      value: SidePaddle Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7362182666437191627, guid: 3cde07397ac9f4ad68defaf743bc2326, type: 3}
       propertyPath: m_TagString
@@ -139,15 +139,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31879fbbf98fc4f2b9b394348ecd0044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1500641448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601701365176366589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae0d30aaa677b4557af27d565eb612a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  vertical: 0

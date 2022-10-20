@@ -14,18 +14,19 @@ public class GameManager : MonoBehaviour
     public Paddle paddle { get; private set; }
     public Brick[] bricks { get; private set; }
     public List<IPaddle> activePaddles;
-	
+    private Color red_color;
+	 private Color blue_color;
+    private Color yellow_color;
 
     private void Awake()
 {
         _instance = this;
         activePaddles = new List<IPaddle>();
-       DontDestroyOnLoad(gameObject);
-		/*
-		red_color = new Color(149f/255f,73f/255f,62f/255f,1);
-		blue_color = new Color(149f/255f,73f/255f,62f/255f,1);
-		yellow_color = new Color(149f/255f,73f/255f,62f/255f,1);
-		*/
+        DontDestroyOnLoad(gameObject);
+        red_color = (Color) (Color32) new Color(149f/255f,73f/255f,62f/255f,1);
+        blue_color = (Color) (Color32) new Color(60f/255f,75f/255f,161f/255f,1);
+        yellow_color = (Color) (Color32) new Color(178f/255f,150f/255f,53f/255f,1);
+		
 
        SceneManager.sceneLoaded += OnLevelLoaded;
     } 
@@ -87,10 +88,10 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < bricks.Length; i++) {
             if (bricks[i].gameObject.activeInHierarchy && !bricks[i].unbreakable) {
-                if(bricks[i].gameObject.GetComponent<SpriteRenderer>().color == new Color(1f,0f,0f,1)){
+                if((Color) (Color32) bricks[i].gameObject.GetComponent<SpriteRenderer>().color == red_color){
                     num[0]+=1;
                 }
-                else if(bricks[i].gameObject.GetComponent<SpriteRenderer>().color == new Color(0f,0f,1f,1)){
+                else if((Color) (Color32) bricks[i].gameObject.GetComponent<SpriteRenderer>().color == blue_color){
                     num[1]+=1;
                 }else{
                     num[2]+=1;
