@@ -521,6 +521,7 @@ GameObject:
   - component: {fileID: 1307717350}
   - component: {fileID: 1307717349}
   - component: {fileID: 1307717353}
+  - component: {fileID: 1307717354}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -623,6 +624,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39f90138840a044358cd99668f2dd1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1307717354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307717348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7de132a64114b11bd61e30d8bf3d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &1346108633 stripped
@@ -796,7 +809,11 @@ PrefabInstance:
     - target: {fileID: 3951875187542972399, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 706348942}
+      objectReference: {fileID: 1307717354}
+    - target: {fileID: 3951875187542972399, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetTutorialLevel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
 --- !u!1001 &6416027628610713881
@@ -897,6 +914,14 @@ PrefabInstance:
     - target: {fileID: 6416027628202258459, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1307717353}
+      objectReference: {fileID: 1307717354}
+    - target: {fileID: 6416027628202258459, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Home
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416027628202258459, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Reset, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}

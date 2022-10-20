@@ -67,9 +67,10 @@ public class GameManager : MonoBehaviour
     public void Hit(Brick brick) {
 		score += brick.points;
 
-        if (Cleared()) {
+        if (Cleared()) 
+		{
             AnalyticsManager.instance.Send(level, 1, lives);
-            SceneManager.LoadScene("Levels");
+            SceneManager.LoadScene("WinScreen");
         }
     }
 
@@ -83,7 +84,8 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
-    public int[] NumerOfBrickCleared() {
+    public int[] NumerOfBrickCleared() 
+	{
         int[] num = new int[3];
 
         for (int i = 0; i < bricks.Length; i++) {
