@@ -24,8 +24,13 @@ public class Reset : MonoBehaviour
 
     public void ResetLevel()
     {
-        GameManager.lives = 5;
+        GameManager.lives = 10;
         GameManager.score = 0;
         SceneManager.LoadScene("Level"+ GameManager.level);
+    }
+    public void ResetTutorialLevel() {
+        GameManager.lives = 10;
+        GameManager.score = 0;
+        SceneManager.LoadScene("T"+ GameManager.level);
     }
 }

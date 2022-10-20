@@ -323,6 +323,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.58431375
       objectReference: {fileID: 0}
+    - target: {fileID: 831812189722440871, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1079555839155187092, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}
       propertyPath: isTimerOn
       value: 1
@@ -675,6 +679,7 @@ GameObject:
   - component: {fileID: 1864065063}
   - component: {fileID: 1864065062}
   - component: {fileID: 1864065061}
+  - component: {fileID: 1864065065}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -765,6 +770,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1864065065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864065060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7de132a64114b11bd61e30d8bf3d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1952542085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -790,11 +807,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2961415976126488278, guid: b2e510062f697469698e303e5ddbe34e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.024
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2961415976126488278, guid: b2e510062f697469698e303e5ddbe34e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1561
+      value: -3.3
       objectReference: {fileID: 0}
     - target: {fileID: 2961415976126488278, guid: b2e510062f697469698e303e5ddbe34e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -838,6 +855,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1864065064}
     m_Modifications:
+    - target: {fileID: 2744222997491412096, guid: b87ad5be8fb7f459b97af27d9280a63b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744222997491412096, guid: b87ad5be8fb7f459b97af27d9280a63b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1864065065}
+    - target: {fileID: 2744222997491412096, guid: b87ad5be8fb7f459b97af27d9280a63b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetTutorialLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744222997491412096, guid: b87ad5be8fb7f459b97af27d9280a63b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Reset, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744222997491412096, guid: b87ad5be8fb7f459b97af27d9280a63b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2744222997491412098, guid: b87ad5be8fb7f459b97af27d9280a63b, type: 3}
       propertyPath: m_Name
       value: Reset
@@ -1115,6 +1152,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4818786726337599156, guid: e24e336826c764b679ed6c586abf8731, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4818786726337599158, guid: e24e336826c764b679ed6c586abf8731, type: 3}
       propertyPath: m_Name
       value: Blue brick
@@ -1284,6 +1325,10 @@ PrefabInstance:
     - target: {fileID: 5849466223284611033, guid: 951f1dd56dc4c4500bbf102362ddfaa4, type: 3}
       propertyPath: m_Name
       value: Yellow brick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849466223284611035, guid: 951f1dd56dc4c4500bbf102362ddfaa4, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6079032795751235304, guid: 951f1dd56dc4c4500bbf102362ddfaa4, type: 3}
       propertyPath: isTimerOn
