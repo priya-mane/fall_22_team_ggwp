@@ -21,6 +21,13 @@ public class Reset : MonoBehaviour
     {
         SceneManager.LoadScene("Level"+GameManager.level);
     }
+    
+    public void Home()
+    {
+        GameManager.lives = 10;
+        GameManager.score = 0;
+        SceneManager.LoadScene("Levels");
+    }
 
     public void ResetLevel()
     {

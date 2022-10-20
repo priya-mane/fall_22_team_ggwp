@@ -421,6 +421,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Home
       objectReference: {fileID: 0}
+    - target: {fileID: 6416027628202258459, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 894426423}
+    - target: {fileID: 6416027628202258459, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Home
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416027628202258459, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Reset, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
 --- !u!224 &794142843 stripped
@@ -440,6 +452,7 @@ GameObject:
   - component: {fileID: 894426421}
   - component: {fileID: 894426420}
   - component: {fileID: 894426419}
+  - component: {fileID: 894426423}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -531,6 +544,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &894426423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894426418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7de132a64114b11bd61e30d8bf3d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1100499420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -629,6 +654,14 @@ PrefabInstance:
     - target: {fileID: 3951875187542972397, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
       propertyPath: m_Name
       value: restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951875187542972399, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 894426423}
+    - target: {fileID: 3951875187542972399, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetTutorialLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
