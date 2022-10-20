@@ -108,7 +108,7 @@ public class Ball : MonoBehaviour
         Vector3 direction = endPosition - startPosition;
         direction.Normalize();
         launchPreview.HidePreview();
-        AnalyticsManager.instance.Send2(GameManager.level);
+ //       AnalyticsManager.instance.Send2(GameManager.level);
         this.rigidbody.AddForce(-1*direction*this.speed);
     }
 
