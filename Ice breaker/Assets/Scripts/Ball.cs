@@ -81,7 +81,7 @@ public class Ball : MonoBehaviour
             }
             // float angle = (3.14159265f / 180f) * this.gameObject.transform.eulerAngles.z;
             this.gameObject.transform.position = Vector3.up + this.rotatingPaddle.transform.position;
-            Vector2 forceToBeApplied = this.rotatingPaddle.RedirectBall(this.velocitywithPaddle);
+            Vector3 forceToBeApplied = this.rotatingPaddle.RedirectBall(this.velocitywithPaddle);
             this.rigidbody.AddForce(forceToBeApplied * speed*1.2f);
             withPaddle = false;
             this.rotatingPaddle = null;
@@ -108,7 +108,7 @@ public class Ball : MonoBehaviour
         Vector3 direction = endPosition - startPosition;
         direction.Normalize();
         launchPreview.HidePreview();
-        AnalyticsManager.instance.Send2(GameManager.level);
+ //       AnalyticsManager.instance.Send2(GameManager.level);
         this.rigidbody.AddForce(-1*direction*this.speed);
     }
 
