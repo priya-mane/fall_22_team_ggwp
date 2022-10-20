@@ -14,11 +14,18 @@ public class GameManager : MonoBehaviour
     public Paddle paddle { get; private set; }
     public Brick[] bricks { get; private set; }
     public List<IPaddle> activePaddles;
+	
 
-    private void Awake(){
+    private void Awake()
+{
         _instance = this;
         activePaddles = new List<IPaddle>();
        DontDestroyOnLoad(gameObject);
+		/*
+		red_color = new Color(149f/255f,73f/255f,62f/255f,1);
+		blue_color = new Color(149f/255f,73f/255f,62f/255f,1);
+		yellow_color = new Color(149f/255f,73f/255f,62f/255f,1);
+		*/
 
        SceneManager.sceneLoaded += OnLevelLoaded;
     } 

@@ -97,6 +97,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7084816869490144965, guid: 843c9b8f12a37412eaa1208992307d9f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084816869490144965, guid: 843c9b8f12a37412eaa1208992307d9f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084816869490144965, guid: 843c9b8f12a37412eaa1208992307d9f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.23529412
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 843c9b8f12a37412eaa1208992307d9f, type: 3}
 --- !u!4 &6809069104902953362 stripped
@@ -163,6 +175,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3206919207281874387, guid: 17aa64e386e794da282620326f1056a2, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206919207281874387, guid: 17aa64e386e794da282620326f1056a2, type: 3}
+      propertyPath: m_Color.b
+      value: 0.24313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206919207281874387, guid: 17aa64e386e794da282620326f1056a2, type: 3}
+      propertyPath: m_Color.g
+      value: 0.28627452
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206919207281874387, guid: 17aa64e386e794da282620326f1056a2, type: 3}
+      propertyPath: m_Color.r
+      value: 0.58431375
+      objectReference: {fileID: 0}
     - target: {fileID: 3206919207281874412, guid: 17aa64e386e794da282620326f1056a2, type: 3}
       propertyPath: m_Name
       value: RedColorChoice
@@ -184,6 +212,18 @@ PrefabInstance:
     - target: {fileID: 2662909004249048009, guid: f65efea9e49bf48f5997d9e41b502f76, type: 3}
       propertyPath: m_Name
       value: YellowColorChoice
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662909004249048010, guid: f65efea9e49bf48f5997d9e41b502f76, type: 3}
+      propertyPath: m_Color.b
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662909004249048010, guid: f65efea9e49bf48f5997d9e41b502f76, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662909004249048010, guid: f65efea9e49bf48f5997d9e41b502f76, type: 3}
+      propertyPath: m_Color.r
+      value: 0.69803923
       objectReference: {fileID: 0}
     - target: {fileID: 2662909004249048011, guid: f65efea9e49bf48f5997d9e41b502f76, type: 3}
       propertyPath: m_RootOrder

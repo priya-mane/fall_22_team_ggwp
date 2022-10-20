@@ -90,18 +90,23 @@ public class Brick : MonoBehaviour
             Ball ball = collision.gameObject.GetComponent<Ball>();
             Color brick_color = this.GetComponent<SpriteRenderer>().color;
             Color power_brick_color = new Color(243.0f/255.0f, 38f/255.0f, 38f/255.0f, 255f/255.0f);
-
-            if (ball.GetComponent<SpriteRenderer>().color == brick_color)
+			var c1 = ball.GetComponent<SpriteRenderer>().color; 
+			var c2= brick_color;
+			//c1 = new Color(int(c1.r*255), int(c1.g*255), int(c1.b*255));
+			//c1 = new Color(int(c1.r*255), int(c1.g*255), int(c1.b*255)); 
+			Debug.Log(c1);
+			Debug.Log(c2);
+            if ((Color)(Color32)c1 == (Color)(Color32)c2)
             {
                 Hit();
             }
             if (this.GetComponent<SpriteRenderer>().color == power_brick_color)
             {
 				this.brickPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-                Debug.Log("Power brick hit!");
+                //Debug.Log("Power brick hit!");
                 this.points=300;				
 				Hit();
-				Instantiate(Capsule, this.brickPosition, Quaternion.identity);
+				//Instantiate(Capsule, this.brickPosition, Quaternion.identity);
             }
 
         }
