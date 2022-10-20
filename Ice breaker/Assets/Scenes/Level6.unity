@@ -613,6 +613,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlippingPaddle
       objectReference: {fileID: 0}
+    - target: {fileID: 5384804220430008573, guid: c8e129ff9d2e9497aa7607562d333eb4, type: 3}
+      propertyPath: zAngle
+      value: -120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8e129ff9d2e9497aa7607562d333eb4, type: 3}
 --- !u!1001 &1184777980
