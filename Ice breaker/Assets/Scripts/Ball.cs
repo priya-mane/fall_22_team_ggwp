@@ -96,6 +96,7 @@ public class Ball : MonoBehaviour
         startPosition = worldPosition;
         launchPreview.ShowPreview();
         launchPreview.SetStartPoint(transform.position);
+
     }
 
     private void ContinueDrag(Vector3 worldPosition) {
