@@ -25,10 +25,11 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("Level" + levelInd);
     }
 
-    public void LoadTutorialLevel(int levelInd) {
+    public void LoadTutorialLevel(int levelInd) 
+	{
         GameManager.level = levelInd;
         GameManager.lives = 10;
-        AnalyticsManager.instance.Send2(levelInd);
+        //AnalyticsManager.instance.Send2(levelInd);
         SceneManager.LoadScene("T" + levelInd);
     }
 
