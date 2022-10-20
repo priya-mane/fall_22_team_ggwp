@@ -653,7 +653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1079555839155187092, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}
       propertyPath: isTimerOn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}
@@ -3017,7 +3017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5165539061255737223, guid: e24e336826c764b679ed6c586abf8731, type: 3}
       propertyPath: isTimerOn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5165539061255737223, guid: e24e336826c764b679ed6c586abf8731, type: 3}
       propertyPath: timerIsRunning
@@ -3155,7 +3155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6079032795751235304, guid: 951f1dd56dc4c4500bbf102362ddfaa4, type: 3}
       propertyPath: isTimerOn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 951f1dd56dc4c4500bbf102362ddfaa4, type: 3}
