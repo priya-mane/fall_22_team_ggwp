@@ -36,7 +36,7 @@ public class Spring : MonoBehaviour {
 			Debug.Log("z rotation:" + this.gameObject.transform.eulerAngles.z);
 			float angle = (3.14159265f / 180f) * this.gameObject.transform.eulerAngles.z;
 			ball.rigidbody.velocity = new Vector3(-Mathf.Sin(angle), Mathf.Cos(angle), 0f)*magnitude;
-
+			/*
             Color black_color = new Color(0f, 0f, 0f, 1f);
             Color white_color = new Color(1f, 1f, 1f, 1f);
 
@@ -46,6 +46,7 @@ public class Spring : MonoBehaviour {
             else {
                 ball.GetComponent<SpriteRenderer>().color = black_color;
             }
+			*/
         }
     }
 

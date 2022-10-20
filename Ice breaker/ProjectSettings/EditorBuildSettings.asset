@@ -69,6 +69,9 @@ EditorBuildSettings:
     path: Assets/Scenes/T5.unity
     guid: 12bd217e8ab3344ab800a43c25cfe1cc
   - enabled: 1
+    path: Assets/Scenes/T8.unity
+    guid: 730fe79add62e4b60b70c5de88c8c655
+  - enabled: 1
     path: Assets/Scenes/T6.unity
     guid: 076dde3c83cd2456e954a0e86f4edd20
   - enabled: 1
