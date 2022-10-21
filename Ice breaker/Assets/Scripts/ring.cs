@@ -12,6 +12,7 @@ public class ring : MonoBehaviour
     void Start()
     {
         ball_inside = false;
+        rot_ang = 6.0f * Time.deltaTime;
     }
 
     // Update is called once per frame
