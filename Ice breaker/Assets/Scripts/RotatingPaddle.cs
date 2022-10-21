@@ -54,7 +54,7 @@ public class RotatingPaddle : MonoBehaviour, IPaddle
     }
 
     public void ResetPaddle() {
-        gameObject.transform.position = initialPosition;
+        // gameObject.transform.position = initialPosition;
         this.gameObject.transform.rotation = this.initialRotation;
     }
 

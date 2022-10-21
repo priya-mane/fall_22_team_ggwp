@@ -8,7 +8,7 @@ public class Lives : MonoBehaviour
     public GameObject[] hearts;
 
     void Update() {
-
+/*
         if(GameManager.lives < 1) {
             Destroy(hearts[0].gameObject);
         } else if(GameManager.lives < 2) {
@@ -20,5 +20,6 @@ public class Lives : MonoBehaviour
         } else if(GameManager.lives < 5) {
             Destroy(hearts[4].gameObject);
         }
+*/
     }
 }

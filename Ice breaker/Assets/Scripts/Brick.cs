@@ -12,41 +12,52 @@ public class Brick : MonoBehaviour
 	public GameObject Capsule;
     public int points = 100;
     private float timeRemaining;
-    private float timeprev;
-    public bool timerIsRunning = false;
-    public int color;
-    public TimeBar timeBar;
+    private bool timerIsRunning = false;
+    private int color = 1;
     public bool isTimerOn;
-    private void Awake() {
+    private Color red_color;
+	private Color blue_color;
+    private Color yellow_color;
+    
+    private void Awake() 
+	{
         spriteRenderer = GetComponent<SpriteRenderer>();
+		
     }
 
-    private void Start() {
+    private void Start() 
+	{
+		red_color = new Color(149f/255f,73f/255f,62f/255f,1);
+        blue_color = new Color(60f/255f,75f/255f,161f/255f,1);
+        yellow_color = new Color(178f/255f,150f/255f,53f/255f,1);
+
         if (!this.unbreakable) {
             this.health = this.states.Length;
             // spriteRenderer.sprite = this.states[this.health - 1];
         }
-        if(isTimerOn){
+        if(isTimerOn)
+		{
+            
             timerIsRunning = true;
-            //timeBar.SetMaxTime(100);
-            if(color ==1){
+            if(color ==1)
+			{
                 timeRemaining = 10;
-                timeprev = 10;
             }
-            else if(color == 2){
+            else if(color == 2)
+			{
                 timeRemaining = 30;
-                timeprev = 30;
-                
             }
             else{
                 timerIsRunning = false;
             }
         }
+         
     }
     void Update()
     {
         if (timerIsRunning && isTimerOn)
         {
+            // Debug.Log(color+ " "+timeRemaining + " update");
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
@@ -54,15 +65,14 @@ public class Brick : MonoBehaviour
             else
             {
                 if(color == 1){
-                    // Debug.Log("Blue" + timeRemaining.ToString());
-                    this.GetComponent<SpriteRenderer>().color = new Color(0.0f, 0.0f,255.0f, 1);
+                    Debug.Log("Blue" + timeRemaining.ToString());
+                    this.GetComponent<SpriteRenderer>().color = blue_color;
                     timeRemaining = 20;
-                    timeprev = 20;
                     color +=1;
                 }
                 else if(color == 2){
-                    // Debug.Log("Yellow" + timeRemaining.ToString());
-                    this.GetComponent<SpriteRenderer>().color = new Color(255.0f, 255.0f,0.0f, 1);
+                    Debug.Log("Yellow" + timeRemaining.ToString());
+                    this.GetComponent<SpriteRenderer>().color = yellow_color;
                     timerIsRunning = false;
                     color +=1;
                 }
@@ -80,6 +90,10 @@ public class Brick : MonoBehaviour
         } else {
             spriteRenderer.sprite = states[health - 1];
         }
+		
+		Color brick_color = this.GetComponent<SpriteRenderer>().color;
+		Debug.Log("color = "+brick_color);
+		Debug.Log("blue color = "+blue_color);
 
         FindObjectOfType<GameManager>().Hit(this);
     }
@@ -89,20 +103,33 @@ public class Brick : MonoBehaviour
         {
             Ball ball = collision.gameObject.GetComponent<Ball>();
             Color brick_color = this.GetComponent<SpriteRenderer>().color;
-            Color power_brick_color = new Color(243.0f/255.0f, 38f/255.0f, 38f/255.0f, 255f/255.0f);
+            
+			var c1 = ball.GetComponent<SpriteRenderer>().color; 
+			var c2 = brick_color;
 
-            if (ball.GetComponent<SpriteRenderer>().color == brick_color)
+			Debug.Log(c1);
+			Debug.Log(c2);
+            if ((Color)(Color32)c1 == (Color)(Color32)c2)
             {
+				if ((Color)(Color32)brick_color == (Color)(Color32)red_color)
+				{	
+					this.points = 300;
+				}
+				else if ( (Color)(Color32)brick_color == (Color)(Color32)blue_color)
+				{	
+					this.points = 200;
+				}
+				else
+				{	
+					this.points = 100;
+				}
+
                 Hit();
             }
-            if (this.GetComponent<SpriteRenderer>().color == power_brick_color)
-            {
-				this.brickPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-                Debug.Log("Power brick hit!");
-                this.points=300;				
-				Hit();
-				Instantiate(Capsule, this.brickPosition, Quaternion.identity);
+            else{
+                AnalyticsManager.instance.mishit_capture(GameManager.level);
             }
+            
 
         }
     }

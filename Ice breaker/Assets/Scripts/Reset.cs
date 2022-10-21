@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Reset : MonoBehaviour
 {
+    private LevelManager levelManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +20,37 @@ public class Reset : MonoBehaviour
 
     public void ResetGame()
     {
-        SceneManager.LoadScene("Level"+GameManager.level);
+        levelManager.LoadTutorialLevel(GameManager.level);
+    }
+    
+    public void Home()
+    {
+        GameManager.lives = 10;
+        GameManager.score = 0;
+
+        AnalyticsManager.instance.process_analytics_one();
+        AnalyticsManager.instance.process_analytics_five();
+        AnalyticsManager.instance.process_analytics_six();
+        SceneManager.LoadScene("Levels");
     }
 
     public void ResetLevel()
     {
-        GameManager.lives = 5;
+        GameManager.lives = 10;
         GameManager.score = 0;
-        SceneManager.LoadScene("Level"+ GameManager.level);
+        levelManager = FindObjectOfType<LevelManager>();
+        levelManager.LoadTutorialLevel(GameManager.level);
+        // SceneManager.LoadScene("Level"+ GameManager.level);
+    }
+    public void ResetTutorialLevel() {
+        GameManager.lives = 10;
+        GameManager.score = 0;
+        
+        AnalyticsManager.instance.process_analytics_one();
+        AnalyticsManager.instance.process_analytics_five();
+        AnalyticsManager.instance.process_analytics_six();
+        levelManager = FindObjectOfType<LevelManager>();
+        levelManager.LoadTutorialLevel(GameManager.level);
+        // SceneManager.LoadScene("T"+ GameManager.level);
     }
 }

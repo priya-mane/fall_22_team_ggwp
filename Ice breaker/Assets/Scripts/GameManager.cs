@@ -2,23 +2,32 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 public class GameManager : MonoBehaviour
 {  
     public static int score = 0;
     public static int level = 1;
-    public static int lives = 5;
-    private static GameManager _instance;
+    public static int lives = 10;
+    public static GameManager _instance;
     public static GameObject selectedObject;
     public Ball ball { get; private set; }
     public Paddle paddle { get; private set; }
     public Brick[] bricks { get; private set; }
     public List<IPaddle> activePaddles;
-
-    private void Awake(){
+    private Color red_color;
+	 private Color blue_color;
+    private Color yellow_color;
+    public LevelManager levelManager;
+    private void Awake()
+{
         _instance = this;
         activePaddles = new List<IPaddle>();
-       DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
+        red_color = (Color) (Color32) new Color(149f/255f,73f/255f,62f/255f,1);
+        blue_color = (Color) (Color32) new Color(60f/255f,75f/255f,161f/255f,1);
+        yellow_color = (Color) (Color32) new Color(178f/255f,150f/255f,53f/255f,1);
+		
 
        SceneManager.sceneLoaded += OnLevelLoaded;
     } 
@@ -27,6 +36,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update() {
+        LevelManager.timeLeft -= Time.deltaTime;
     }
     public void SetBallColor(Color color){
         ball.SetColor(color);
@@ -34,12 +44,12 @@ public class GameManager : MonoBehaviour
     private void NewGame() {
         // this.score = 0;
         if(level == 1){
-            AnalyticsManager.instance.Send(0,1,0);
+            AnalyticsManager.instance.process_analytics_four(0);
         }
         UnregisterPaddles();
 		score = 0;
-        lives = 5;
-        //LoadLevel(9);
+        lives = 10;
+        
         SceneManager.LoadScene("Levels");
 		//LoadLevel(2);
     }
@@ -58,10 +68,26 @@ public class GameManager : MonoBehaviour
 
     public void Hit(Brick brick) {
 		score += brick.points;
+        if(LevelManager.timeLeft > 0 ){
+            AnalyticsManager.instance.brick_hit(level);
+        }
 
-        if (Cleared()) {
-            AnalyticsManager.instance.Send(level, 1, lives);
-            SceneManager.LoadScene("Levels");
+        if (Cleared()) 
+		{
+            AnalyticsManager.instance.process_analytics_one();
+            AnalyticsManager.instance.process_analytics_two( lives, level);
+
+            
+            var endtime = DateTime.Now;
+
+            AnalyticsManager.instance.process_analytics_three((int)(endtime - LevelManager.starttime).TotalSeconds, level);
+            AnalyticsManager.instance.level_completed(level);
+            AnalyticsManager.instance.process_analytics_four(level);
+
+            AnalyticsManager.instance.process_analytics_five();
+            AnalyticsManager.instance.process_analytics_six();
+
+            SceneManager.LoadScene("WinScreen");
         }
     }
 
@@ -75,15 +101,16 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
-    public int[] NumerOfBrickCleared() {
+    public int[] NumerOfBrickCleared() 
+	{
         int[] num = new int[3];
 
         for (int i = 0; i < bricks.Length; i++) {
             if (bricks[i].gameObject.activeInHierarchy && !bricks[i].unbreakable) {
-                if(bricks[i].gameObject.GetComponent<SpriteRenderer>().color == new Color(1f,0f,0f,1)){
+                if((Color) (Color32) bricks[i].gameObject.GetComponent<SpriteRenderer>().color == red_color){
                     num[0]+=1;
                 }
-                else if(bricks[i].gameObject.GetComponent<SpriteRenderer>().color == new Color(0f,0f,1f,1)){
+                else if((Color) (Color32) bricks[i].gameObject.GetComponent<SpriteRenderer>().color == blue_color){
                     num[1]+=1;
                 }else{
                     num[2]+=1;
@@ -114,7 +141,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void GameOver() {
-        AnalyticsManager.instance.Send(level, 0, lives);
+        // AnalyticsManager.instance.Send(level, 0, lives);
         // NewGame();
         UnregisterPaddles();
 

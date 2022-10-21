@@ -28,7 +28,7 @@ public class LaunchPreview : MonoBehaviour
 
     public void SetEndPoint(Vector3 worldPosition) {
         Vector3 offset = worldPosition - dragStartpoint;
-        Vector3 endPoint = transform.position + offset;
+        Vector3 endPoint = transform.position + 2.5f*offset;
 
         lineRenderer.SetPosition(1, endPoint);
     }
