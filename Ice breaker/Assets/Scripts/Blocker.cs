@@ -7,7 +7,7 @@ public class Blocker : MonoBehaviour
     private float rot_ang ;
 
     private void Start(){
-        rot_ang = -15.0f * Time.deltaTime;
+        rot_ang = -3.0f * Time.deltaTime;
     }
 
     private void Update(){
