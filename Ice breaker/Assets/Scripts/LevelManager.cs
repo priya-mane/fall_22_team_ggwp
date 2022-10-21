@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LevelManager : MonoBehaviour
 {
     int levelsUnlocked;
+    public static float timeLeft;
 
+    public static DateTime starttime;
     public Button[] buttons;
     void Start()
     {
@@ -21,12 +24,14 @@ public class LevelManager : MonoBehaviour
     public void LoadLevel(int levelInd){
         GameManager.level = levelInd;
         GameManager.lives = 10;
-        AnalyticsManager.instance.Send2(levelInd);
+        // AnalyticsManager.instance.Send2(levelInd);
         SceneManager.LoadScene("Level" + levelInd);
     }
 
     public void LoadTutorialLevel(int levelInd) 
 	{
+        timeLeft = 5f;
+        starttime = DateTime.Now;
         GameManager.level = levelInd;
         GameManager.lives = 10;
         //AnalyticsManager.instance.Send2(levelInd);

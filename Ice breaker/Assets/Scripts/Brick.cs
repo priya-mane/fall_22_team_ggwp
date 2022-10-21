@@ -126,6 +126,9 @@ public class Brick : MonoBehaviour
 
                 Hit();
             }
+            else{
+                AnalyticsManager.instance.mishit_capture(GameManager.level);
+            }
             
 
         }

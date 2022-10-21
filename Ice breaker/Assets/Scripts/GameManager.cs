@@ -2,13 +2,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 public class GameManager : MonoBehaviour
 {  
     public static int score = 0;
     public static int level = 1;
     public static int lives = 10;
-    private static GameManager _instance;
+    public static GameManager _instance;
     public static GameObject selectedObject;
     public Ball ball { get; private set; }
     public Paddle paddle { get; private set; }
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
     private Color red_color;
 	 private Color blue_color;
     private Color yellow_color;
-
+    public LevelManager levelManager;
     private void Awake()
 {
         _instance = this;
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update() {
+        LevelManager.timeLeft -= Time.deltaTime;
     }
     public void SetBallColor(Color color){
         ball.SetColor(color);
@@ -42,7 +44,7 @@ public class GameManager : MonoBehaviour
     private void NewGame() {
         // this.score = 0;
         if(level == 1){
-            AnalyticsManager.instance.Send(0,1,0);
+            AnalyticsManager.instance.process_analytics_four(0);
         }
         UnregisterPaddles();
 		score = 0;
@@ -66,10 +68,25 @@ public class GameManager : MonoBehaviour
 
     public void Hit(Brick brick) {
 		score += brick.points;
+        if(LevelManager.timeLeft > 0 ){
+            AnalyticsManager.instance.brick_hit(level);
+        }
 
         if (Cleared()) 
 		{
-            AnalyticsManager.instance.Send(level, 1, lives);
+            AnalyticsManager.instance.process_analytics_one();
+            AnalyticsManager.instance.process_analytics_two( lives, level);
+
+            
+            var endtime = DateTime.Now;
+
+            AnalyticsManager.instance.process_analytics_three((int)(endtime - LevelManager.starttime).TotalSeconds, level);
+            AnalyticsManager.instance.level_completed(level);
+            AnalyticsManager.instance.process_analytics_four(level);
+
+            AnalyticsManager.instance.process_analytics_five();
+            AnalyticsManager.instance.process_analytics_six();
+
             SceneManager.LoadScene("WinScreen");
         }
     }
@@ -124,7 +141,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void GameOver() {
-        AnalyticsManager.instance.Send(level, 0, lives);
+        // AnalyticsManager.instance.Send(level, 0, lives);
         // NewGame();
         UnregisterPaddles();
 
