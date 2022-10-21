@@ -8,7 +8,6 @@ public class ring : MonoBehaviour
     public EdgeCollider2D edg_collider;
     private bool ball_inside;
     private float rot_ang;
-    private int flag =1;
     void Start()
     {
         ball_inside = false;
@@ -18,23 +17,27 @@ public class ring : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.transform.Rotate(0, 0, rot_ang);
         KeyCode spacekey = KeyCode.Space;
-        if(Input.GetKeyDown("space"))
+        if(Input.GetKeyDown(spacekey))
         {
-            // this.transform.rotation = Quaternion.Euler(-this.transform.rotation.x, -this.transform.rotation.y,
-            //    -this.transform.rotation.z);
-             flag *= -1;
+            //this.transform.rotation = Quaternion.Euler(-this.transform.rotation.x, -this.transform.rotation.y,
+              //  -this.transform.rotation.z);
+              rot_ang = -1 * rot_ang;
         }
-        rot_ang = flag * 10.0f * 0.008f;
-        this.transform.Rotate(0,0,rot_ang);
-       Debug.Log(rot_ang);
+        /*
+        if (edg_collider.isTrigger == true)
+        {
+            Debug.Log("ball entered");
+        }
+        */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (ball_inside == true)
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 5;
+            collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
             collision.gameObject.GetComponent<Rigidbody2D>().drag = 10;
         }
     }
