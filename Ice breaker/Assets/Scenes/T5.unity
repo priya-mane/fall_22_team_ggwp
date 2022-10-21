@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paddle
       objectReference: {fileID: 0}
+    - target: {fileID: 7362182666437191636, guid: 3cde07397ac9f4ad68defaf743bc2326, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfe91aa1ba65446dca1489c0d2e78ba4, type: 3}
     - target: {fileID: 7362182666437191638, guid: 3cde07397ac9f4ad68defaf743bc2326, type: 3}
       propertyPath: m_Enabled
       value: 0
