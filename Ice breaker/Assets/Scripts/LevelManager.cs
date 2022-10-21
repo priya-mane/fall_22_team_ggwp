@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadTutorialLevel(int levelInd) 
 	{
-        timeLeft = 5f;
+        timeLeft = 20f;
         starttime = DateTime.Now;
         GameManager.level = levelInd;
         GameManager.lives = 10;
