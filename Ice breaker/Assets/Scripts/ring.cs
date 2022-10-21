@@ -37,7 +37,7 @@ public class ring : MonoBehaviour
     {
         if (ball_inside == true)
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
+            collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 5;
             collision.gameObject.GetComponent<Rigidbody2D>().drag = 10;
         }
     }
