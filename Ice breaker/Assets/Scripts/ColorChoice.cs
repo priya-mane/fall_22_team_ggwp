@@ -24,7 +24,7 @@ public class ColorChoice : MonoBehaviour
     private int counter = 0;
    void Update() 
    {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             counter = (counter+1)%3;
             FindObjectOfType<GameManager>().SetBallColor(colors[counter]);
