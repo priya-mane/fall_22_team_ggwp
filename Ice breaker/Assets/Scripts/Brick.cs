@@ -41,11 +41,11 @@ public class Brick : MonoBehaviour
             timerIsRunning = true;
             if(color ==1)
 			{
-                timeRemaining = 10;
+                timeRemaining = 20;
             }
             else if(color == 2)
 			{
-                timeRemaining = 30;
+                timeRemaining = 40;
             }
             else{
                 timerIsRunning = false;

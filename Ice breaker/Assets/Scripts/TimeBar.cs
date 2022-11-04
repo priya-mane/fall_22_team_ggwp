@@ -20,8 +20,8 @@ public class TimeBar : MonoBehaviour
         blue_color = new Color(60f/255f,75f/255f,161f/255f,1);
         yellow_color = new Color(178f/255f,150f/255f,53f/255f,1);
 
-        timeRemaining = 10;
-        timeprev = 10;
+        timeRemaining = 20;
+        timeprev = 20;
         timerIsRunning = true;
         int[] n = FindObjectOfType<GameManager>().NumerOfBrickCleared();
         slider.gameObject.transform.Find("Fill").GetComponent<Image>().color = red_color;
@@ -29,8 +29,8 @@ public class TimeBar : MonoBehaviour
         if(n[0]==0){
                 Color c = blue_color;
                 slider.gameObject.transform.Find("Fill").GetComponent<Image>().color = c;
-                timeRemaining = 30;
-                timeprev = 30;
+                timeRemaining = 40;
+                timeprev = 40;
                 color +=1;
             if(n[1]==0){
                     c = yellow_color;
