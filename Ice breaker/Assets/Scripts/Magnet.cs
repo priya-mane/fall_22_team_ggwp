@@ -33,7 +33,7 @@ public class Magnet : MonoBehaviour
   {
     for (int i = 0; i < caughtRigidbodies.Count; i++)
     {
-      caughtRigidbodies[i].velocity = (transform.position - (caughtRigidbodies[i].transform.position)) * magnetForce * Time.deltaTime;
+      caughtRigidbodies[i].velocity = (transform.position - (caughtRigidbodies[i].transform.position)) * magnetForce;
     }
   }
 

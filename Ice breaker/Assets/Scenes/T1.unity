@@ -1948,7 +1948,7 @@ GameObject:
   - component: {fileID: 1270845592}
   - component: {fileID: 1270845591}
   m_Layer: 0
-  m_Name: shift (1)
+  m_Name: tab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1995,7 +1995,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 878151fa48e8e4dd39754f6ea52839b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb3bc58c2047646cb819af95ab5cfbdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
