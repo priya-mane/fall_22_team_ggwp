@@ -10,18 +10,33 @@ public class Ball : MonoBehaviour
     private LaunchPreview launchPreview;
     private Vector3 ballPosition;
     private bool mouseFlag=false;
+	private bool ballReleased=false;
+	private bool startMonitor = false;
     public bool withPaddle = false;
     public GameObject currentPaddle;
     private RotatingPaddle rotatingPaddle;
     private Vector3 velocitywithPaddle;
+	int size = 3;
+	//int[] score_track = new int[7]{0, 0, 0, 0, 0, 0, 0};
+	Vector3[] score_track = new Vector3[3];
+	int interval = 1; 
+    int nextTime = 0;
+	int lag = 0;
 
-    private void Awake() {
+    private void Awake() 
+	{
+		for ( int i = 0; i < size; i++ ) 
+		{
+			score_track[i] = new Vector3(0.0f, 0.0f, 0.0f);
+		}
         this.rigidbody = GetComponent<Rigidbody2D>();
         this.launchPreview = GetComponent<LaunchPreview>();
         this.initialPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
-    private void Start() {
+
+    private void Start() 
+	{
         // Invoke(nameof(SetRandomTrajectory), 1f);
     }
 
@@ -34,9 +49,39 @@ public class Ball : MonoBehaviour
         }
     }
     private void Update() {
+
+		if (ballReleased==true && startMonitor==false)
+		{
+			startMonitor = true;
+			lag = nextTime-1;
+			Debug.Log("start monitoring at " + lag);
+		}
+		if (Time.time >= nextTime) 
+		{ 
+			if (startMonitor==true)
+			{
+				// Debug.Log("time since launch "+ (nextTime-lag));
+				int indx = (nextTime-1-lag)%size;
+				Debug.Log("past loc = " + score_track[indx]);
+				Debug.Log("curr_loc = " + this.gameObject.transform.position);
+				if ( nextTime-lag>=size && Vector3.Distance(score_track[indx],this.gameObject.transform.position)<=0.01)
+				{
+					// reset ball
+					Debug.Log("Destroy ball");
+					ResetBall();
+					FindObjectOfType<GameManager>().Miss();
+				}
+				// score_track[indx] = GameManager.score;
+				score_track[indx] = this.gameObject.transform.position;
+				
+			}
+			nextTime += interval;
+         }
+
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.back*-10;
         this.ballPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-        if(mouseFlag){
+        if(mouseFlag)
+		{
             if(Input.GetMouseButtonDown(0)) {
                 StartDrag(worldPosition);
             }
@@ -47,12 +92,14 @@ public class Ball : MonoBehaviour
                 EndDrag(worldPosition);
                 withPaddle = false;
                 mouseFlag = false;
+				ballReleased = true;
             }
         }
         if(withPaddle){
             // Debug.Log("position with paddle is getting called");
             positionWithPaddle();
         }
+
     }
 
     public void setPaddle(GameObject paddle){
@@ -120,6 +167,9 @@ public class Ball : MonoBehaviour
         this.rigidbody.angularVelocity = 0f;
         this.rigidbody.gravityScale = 0;
         this.rigidbody.drag = 0;
+		this.ballReleased = false;
+		this.nextTime = 0;
+		this.startMonitor = false;
         gameObject.transform.position = initialPosition;
         gameObject.GetComponent<SpriteRenderer>().color = white_color;
     }

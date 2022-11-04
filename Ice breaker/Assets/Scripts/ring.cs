@@ -17,7 +17,7 @@ public class ring : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        KeyCode spacekey = KeyCode.Space;
+        // KeyCode spacekey = KeyCode.Space;
         if(Input.GetKeyDown("space"))
         {
             // this.transform.rotation = Quaternion.Euler(-this.transform.rotation.x, -this.transform.rotation.y,
@@ -25,8 +25,10 @@ public class ring : MonoBehaviour
              flag *= -1;
         }
         rot_ang = flag *50.0f * 0.008f;
+        // for local
+        rot_ang = flag *5.0f * 0.008f;
         this.transform.Rotate(0,0,rot_ang);
-       Debug.Log(rot_ang);
+       // Debug.Log(rot_ang);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -41,7 +43,6 @@ public class ring : MonoBehaviour
     {
         if (other.gameObject.name == "Ball")
         {
-            Debug.Log("Ball entered");
             other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0.0f, 0.0f, 0.0f);
             // other.gameObject.GetComponent<Rigidbody>().useGravity = true;
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(0.0f, -2.8f, 0.0f), ForceMode2D.Impulse);
