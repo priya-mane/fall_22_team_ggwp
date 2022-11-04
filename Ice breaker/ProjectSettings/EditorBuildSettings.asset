@@ -63,29 +63,38 @@ EditorBuildSettings:
     path: Assets/Scenes/T1.unity
     guid: 684c847608d9f4e5e98035365ed24ebb
   - enabled: 1
-    path: Assets/Scenes/T3.unity
+    path: Assets/Scenes/T2.unity
     guid: 628322ae9b2d04aee93708273a97a9a7
   - enabled: 1
-    path: Assets/Scenes/T2.unity
-    guid: 36a43cd5e444f4ba09c60b469107d39d
-  - enabled: 1
-    path: Assets/Scenes/T4.unity
+    path: Assets/Scenes/T3.unity
     guid: 9635a31294da14cd1917f6a6617063d8
   - enabled: 1
-    path: Assets/Scenes/T7.unity
-    guid: 15077ea5eb12e4faba04c43e0d9ed754
-  - enabled: 1
-    path: Assets/Scenes/T5.unity
+    path: Assets/Scenes/T4.unity
     guid: 12bd217e8ab3344ab800a43c25cfe1cc
   - enabled: 1
-    path: Assets/Scenes/T8.unity
+    path: Assets/Scenes/T5.unity
+    guid: 15077ea5eb12e4faba04c43e0d9ed754
+  - enabled: 1
+    path: Assets/Scenes/T6.unity
     guid: 730fe79add62e4b60b70c5de88c8c655
+  - enabled: 1
+    path: Assets/Scenes/T7.unity
+    guid: 36a43cd5e444f4ba09c60b469107d39d
+  - enabled: 1
+    path: Assets/Scenes/T8.unity
+    guid: 076dde3c83cd2456e954a0e86f4edd20
+  - enabled: 1
+    path: Assets/Scenes/T9.unity
+    guid: d07087c67f1b24f178e8b6d0e6b1f1df
+  - enabled: 1
+    path: Assets/Scenes/T12.unity
+    guid: 28bde67f3ea4a4c63a552ca3d2810718
+  - enabled: 1
+    path: Assets/Scenes/T12.unity
+    guid: 7e435af4cc4e844e69ce23e70dcbf825
   - enabled: 1
     path: Assets/Scenes/T11.unity
     guid: 9e6981a1a805849f3a9b6085d554f2e4
-  - enabled: 1
-    path: Assets/Scenes/T6.unity
-    guid: 076dde3c83cd2456e954a0e86f4edd20
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 78af150d84508444abbf43e04a8acf7a
