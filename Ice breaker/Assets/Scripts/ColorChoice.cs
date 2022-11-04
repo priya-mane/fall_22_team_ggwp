@@ -16,9 +16,24 @@ public class ColorChoice : MonoBehaviour
 
    }
    */
+    List<Color> colors = new List<Color>(){
+            new Color(149f/255f, 73f/255f, 62f/255f, 1),
+            new Color(60f/255f, 75f/255f, 161f/255f, 1),
+            new Color(178f/255f, 150f/255f, 53f/255f, 1)
+        };
+    private int counter = 0;
+   void Update() 
+   {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            counter = (counter+1)%3;
+            FindObjectOfType<GameManager>().SetBallColor(colors[counter]);
+        }
+   }
    public void SelectColorRed()
    {
        //Color c = this.GetComponent<SpriteRenderer>().color;
+       counter = 0;
        Color c = new Color(149f/255f, 73f/255f, 62f/255f, 1);
        FindObjectOfType<GameManager>().SetBallColor(c);
 
@@ -27,6 +42,7 @@ public class ColorChoice : MonoBehaviour
    public void SelectColorBlue()
    {
        //Color c = this.GetComponent<SpriteRenderer>().color;
+       counter = 1;
        Color c = new Color(60f/255f, 75f/255f, 161f/255f, 1);
        FindObjectOfType<GameManager>().SetBallColor(c);
 
@@ -35,6 +51,7 @@ public class ColorChoice : MonoBehaviour
    public void SelectColorYellow()
    {
        //Color c = this.GetComponent<SpriteRenderer>().color;
+       counter = 2;
        Color c = new Color(178f/255f, 150f/255f, 53f/255f, 1);
        FindObjectOfType<GameManager>().SetBallColor(c);
 
