@@ -625,6 +625,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -312.863
       objectReference: {fileID: 0}
+    - target: {fileID: 2025777543095149482, guid: a3f5c678083114105943c5cd5871e555, type: 3}
+      propertyPath: shouldOscillate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2025777543095149493, guid: a3f5c678083114105943c5cd5871e555, type: 3}
       propertyPath: m_Name
       value: AttractingMagnet

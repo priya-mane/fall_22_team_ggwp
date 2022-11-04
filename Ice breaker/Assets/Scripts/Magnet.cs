@@ -9,11 +9,11 @@ public class Magnet : MonoBehaviour
 
   public float magnetForce = 100;
   public bool shouldRepel = false;
-  public bool shouldOscillate = true;
+  public bool shouldOscillate = false;
   private Transform circle;
   private CircleCollider2D collider;
-  private Vector3 delta=new Vector3(-0.005f, -0.005f, 0.0f);
-  private float colliderDelta = -0.005f;
+  private Vector3 delta=new Vector3(-0.03f, -0.03f, 0.0f);
+  private float colliderDelta = -0.03f;
   private Vector3 initialScale;
   List<Rigidbody2D> caughtRigidbodies = new List<Rigidbody2D>();
 
