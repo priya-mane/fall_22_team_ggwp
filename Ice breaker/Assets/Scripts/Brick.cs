@@ -92,8 +92,6 @@ public class Brick : MonoBehaviour
         }
 		
 		Color brick_color = this.GetComponent<SpriteRenderer>().color;
-		Debug.Log("color = "+brick_color);
-		Debug.Log("blue color = "+blue_color);
 
         FindObjectOfType<GameManager>().Hit(this);
     }

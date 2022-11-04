@@ -7,7 +7,7 @@ public class motion_x_axis : MonoBehaviour
     public float speed = 0.1f;
 	public Rigidbody body;
 	public Vector3 startPos ;
-	public Vector3 endPos;
+	private Vector3 endPos;
 	public float oscillation_distance = 3f;
     // Start is called before the first frame update
     void Start()
