@@ -19,29 +19,28 @@ public class safety_wall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("up"))
+        if (Input.GetKey("w"))
         {
-            Debug.Log("up arrow key pressed");
             top_wall.SetActive(true);
             bottom_wall.SetActive(false);
             right_wall.SetActive(false);
             left_wall.SetActive(false);
         }
-        else if (Input.GetKey("down"))
+        else if (Input.GetKey("s"))
         {
             bottom_wall.SetActive(true);
             top_wall.SetActive(false);
             right_wall.SetActive(false);
             left_wall.SetActive(false);
         }
-        else if (Input.GetKey("right"))
+        else if (Input.GetKey("d"))
         {
             right_wall.SetActive(true);
             bottom_wall.SetActive(false);
             top_wall.SetActive(false);
             left_wall.SetActive(false);
         }
-        else if (Input.GetKey("left"))
+        else if (Input.GetKey("a"))
         {
             left_wall.SetActive(true);
             bottom_wall.SetActive(false);
