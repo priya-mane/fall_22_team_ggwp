@@ -17,7 +17,7 @@ public class ring : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        KeyCode spacekey = KeyCode.Space;
+        // KeyCode spacekey = KeyCode.Space;
         if(Input.GetKeyDown("space"))
         {
             // this.transform.rotation = Quaternion.Euler(-this.transform.rotation.x, -this.transform.rotation.y,

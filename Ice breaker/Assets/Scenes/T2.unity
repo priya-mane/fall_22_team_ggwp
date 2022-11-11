@@ -1454,6 +1454,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7834109089706386974, guid: a094b678ee1b1c34eac5fc5bcded16aa, type: 3}
+      propertyPath: successorWormholeTagName
+      value: leftWormhole
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a094b678ee1b1c34eac5fc5bcded16aa, type: 3}
 --- !u!1 &1260021688

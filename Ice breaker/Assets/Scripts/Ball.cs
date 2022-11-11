@@ -15,13 +15,15 @@ public class Ball : MonoBehaviour
     private RotatingPaddle rotatingPaddle;
     private Vector3 velocitywithPaddle;
 
-    private void Awake() {
+    private void Awake() 
+    {
         this.rigidbody = GetComponent<Rigidbody2D>();
         this.launchPreview = GetComponent<LaunchPreview>();
         this.initialPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
-    private void Start() {
+    private void Start() 
+    {
         // Invoke(nameof(SetRandomTrajectory), 1f);
     }
 
@@ -33,7 +35,8 @@ public class Ball : MonoBehaviour
             mouseFlag = true;
         }
     }
-    private void Update() {
+    private void Update() 
+    {
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.back*-10;
         this.ballPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         if(mouseFlag){
