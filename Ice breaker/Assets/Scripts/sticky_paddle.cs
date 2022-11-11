@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class sticky_paddle : MonoBehaviour
 {
+
+    private Ball ball;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,12 +15,20 @@ public class sticky_paddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Y) && ball != null)
+        {
+            if(ball.rigidbody.velocity.magnitude == 0){
+                float y_diff = transform.position.y - ball.gameObject.transform.position.y;
+                float x_diff = - transform.position.x + ball.gameObject.transform.position.x;
+                Vector3 temp = new Vector3(x_diff, y_diff ,0.0f);
+                ball.gameObject.transform.position = transform.position + temp;
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Ball ball = collision.gameObject.GetComponent<Ball>();
+        ball = collision.gameObject.GetComponent<Ball>();
         if (ball != null)
         {
             Vector2 paddlePosition = transform.position;
