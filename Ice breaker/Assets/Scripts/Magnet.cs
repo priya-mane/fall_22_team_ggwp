@@ -12,8 +12,8 @@ public class Magnet : MonoBehaviour
   public bool shouldOscillate = false;
   private Transform circle;
   private CircleCollider2D collider;
-  private Vector3 delta=new Vector3(-0.03f, -0.03f, 0.0f);
-  private float colliderDelta = -0.03f;
+  private Vector3 delta=new Vector3(-0.003f, -0.003f, 0.0f);
+  private float colliderDelta = -0.003f;
   private Vector3 initialScale;
   List<Rigidbody2D> caughtRigidbodies = new List<Rigidbody2D>();
 
