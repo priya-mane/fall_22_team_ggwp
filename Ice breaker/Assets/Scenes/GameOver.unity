@@ -431,7 +431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Over!
+  m_text: game over!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -651,19 +651,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 2.972406
       objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 4.007112
       objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: -0.0425
       objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7
+      value: -2.1535
       objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -783,6 +783,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1307717352}
     m_Modifications:
+    - target: {fileID: 3951875187395057087, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
+      propertyPath: m_text
+      value: try again
+      objectReference: {fileID: 0}
     - target: {fileID: 3951875187542972396, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -871,6 +875,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: restart
       objectReference: {fileID: 0}
+    - target: {fileID: 3951875187542972398, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951875187542972398, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 44f3f8615a20c40559a3d447a4979228, type: 3}
+    - target: {fileID: 3951875187542972398, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
+      propertyPath: m_Color.a
+      value: 0.6666667
+      objectReference: {fileID: 0}
     - target: {fileID: 3951875187542972399, guid: 1848af003dc1a409995c6a7890caf520, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -888,6 +904,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1307717352}
     m_Modifications:
+    - target: {fileID: 6416027627747471206, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
+      propertyPath: m_text
+      value: levels
+      objectReference: {fileID: 0}
     - target: {fileID: 6416027628202258456, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -975,6 +995,18 @@ PrefabInstance:
     - target: {fileID: 6416027628202258457, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
       propertyPath: m_Name
       value: Home
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416027628202258458, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416027628202258458, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 15adf3043e0324fbd94f5767d2c99b74, type: 3}
+    - target: {fileID: 6416027628202258458, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
+      propertyPath: m_Color.a
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 6416027628202258459, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
