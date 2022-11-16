@@ -9,7 +9,6 @@ public class Brick : MonoBehaviour
     public Sprite[] states = new Sprite[0];
     public bool unbreakable;
 	private Vector3 brickPosition;
-	public GameObject Capsule;
     public int points = 100;
     private float timeRemaining;
     private bool timerIsRunning = false;
@@ -18,6 +17,7 @@ public class Brick : MonoBehaviour
     private Color red_color;
 	private Color blue_color;
     private Color yellow_color;
+	public GameObject coinPrefab;
     
     private void Awake() 
 	{
@@ -109,6 +109,7 @@ public class Brick : MonoBehaviour
 			Debug.Log(c2);
             if ((Color)(Color32)c1 == (Color)(Color32)c2)
             {
+				
 				if ((Color)(Color32)brick_color == (Color)(Color32)red_color)
 				{	
 					this.points = 300;
@@ -121,6 +122,12 @@ public class Brick : MonoBehaviour
 				{	
 					this.points = 100;
 				}
+
+				if (coinPrefab != null)
+				{
+					Instantiate(coinPrefab, this.gameObject.transform.position, Quaternion.identity);
+				}
+
 
                 Hit();
             }
