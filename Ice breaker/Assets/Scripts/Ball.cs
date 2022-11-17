@@ -139,7 +139,6 @@ public class Ball : MonoBehaviour
     public void SetColor(Color color){
         //Debug.Log(color.ToString() + " Ball.cs");
         //gameObject.GetComponent<Renderer>().material.SetColor("_Color", color);
-        Debug.Log(color.ToString() + " Ball.cs");
         gameObject.GetComponent<SpriteRenderer>().color = color;
         }
     
