@@ -19,6 +19,7 @@ TagManager:
   - rotatingPaddle
   - RotatingPaddle
   - Magnet
+  - star
   layers:
   - Default
   - TransparentFX

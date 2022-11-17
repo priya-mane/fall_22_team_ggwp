@@ -14,6 +14,7 @@ public class Ball : MonoBehaviour
     public GameObject currentPaddle;
     private RotatingPaddle rotatingPaddle;
     private Vector3 velocitywithPaddle;
+    public GameObject[] stars;
 
     private void Awake() 
     {
@@ -141,6 +142,13 @@ public class Ball : MonoBehaviour
         //gameObject.GetComponent<Renderer>().material.SetColor("_Color", color);
         Debug.Log(color.ToString() + " Ball.cs");
         gameObject.GetComponent<SpriteRenderer>().color = color;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.CompareTag("star")){
+            other.gameObject.SetActive(false);
+            GameManager.stars = GameManager.stars + 1;
         }
+    }
     
 }
