@@ -597,7 +597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 831812189722440868, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 831812189722440868, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -635,6 +635,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red brick
       objectReference: {fileID: 0}
+    - target: {fileID: 831812189722440870, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9cb7bb55428fd534a86d54896663ab4d, type: 3}
     - target: {fileID: 831812189722440870, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}
       propertyPath: m_Color.b
       value: 0.24313727
@@ -914,8 +918,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9cb7bb55428fd534a86d54896663ab4d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1048,8 +1052,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9cb7bb55428fd534a86d54896663ab4d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1665,6 +1669,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2831126898091595259, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7ae478e888eca4ef499b6809ba545c8d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
 --- !u!1 &1371231436
@@ -2761,8 +2769,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9cb7bb55428fd534a86d54896663ab4d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2987,6 +2995,10 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4818786726337599157, guid: e24e336826c764b679ed6c586abf8731, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9cb7bb55428fd534a86d54896663ab4d, type: 3}
     - target: {fileID: 4818786726337599158, guid: e24e336826c764b679ed6c586abf8731, type: 3}
       propertyPath: m_Name
       value: Blue brick
@@ -3270,6 +3282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yellow brick
       objectReference: {fileID: 0}
+    - target: {fileID: 5849466223284611034, guid: 951f1dd56dc4c4500bbf102362ddfaa4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9cb7bb55428fd534a86d54896663ab4d, type: 3}
     - target: {fileID: 5849466223284611035, guid: 951f1dd56dc4c4500bbf102362ddfaa4, type: 3}
       propertyPath: m_Size.x
       value: 2.5
