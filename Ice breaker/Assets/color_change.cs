@@ -18,7 +18,7 @@ public class color_change : MonoBehaviour
     {
         if (Time.time >= nextTime)
         {
-            Debug.Log(colors_[nextTime % 3]);
+            // Debug.Log(colors_[nextTime % 3]);
             this.GetComponent<SpriteRenderer>().color = colors_[nextTime % 3];
             nextTime += interval;
         }
