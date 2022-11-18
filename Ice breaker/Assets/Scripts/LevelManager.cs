@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
         // for(int i=0;i<buttons.Length; i++){
         //     buttons[i].interactable = true;
         // }
-
+        
         levelMapping["Easy1"]=1;
         levelMapping["Easy2"]=2;
         levelMapping["Easy3"]=3;
@@ -47,6 +47,78 @@ public class LevelManager : MonoBehaviour
         GameManager.lives = 10;
         // AnalyticsManager.instance.Send2(levelInd);
         SceneManager.LoadScene("Level" + levelInd);
+    }
+
+    public int MaxLevelPerCategory(string category){
+        int max_level=-1;
+        foreach(var entry in levelMapping)
+        {
+            if(getCategory(entry.Key) == category){
+                max_level = Math.Max(getCategoryLevel(entry.Key), max_level);
+            }
+        }
+        return max_level;
+    }
+
+    public string getCategory(string level){
+        string b = string.Empty;
+        for (int i=0; i< level.Length; i++)
+        {
+            if (Char.IsDigit(level[i]))
+            {
+                return b;
+            }
+            b += level[i];
+        }
+        return b;
+    }
+
+    public int getCategoryLevel(string level){
+        string b = string.Empty;
+        for (int i=0; i< level.Length; i++)
+        {
+            if (Char.IsDigit(level[i]))
+            {
+                b += level[i];
+            }
+            
+        }
+        return int.Parse(b);
+    }
+
+    public int GetNextLevel(int level){
+
+        
+        string current_level=""; 
+        foreach(var entry in levelMapping)
+        {
+            if(entry.Value == level){
+                current_level = entry.Key;
+                break;
+            }
+        }
+
+        string cat = getCategory(current_level);
+        int max_cat_levels = MaxLevelPerCategory(cat);
+        int catLevel = getCategoryLevel(current_level);
+        string nextLevel;
+
+        if(catLevel == max_cat_levels){
+            if(cat == "Easy"){
+                nextLevel = "Medium1";
+            }
+            if(cat == "Medium"){
+                nextLevel = "Hard1";
+            }
+            else{
+                nextLevel = "Easy1";
+            }
+        }
+        else{
+            nextLevel = cat+Convert.ToString(catLevel+1);
+        }
+
+        return levelMapping[nextLevel];
     }
 
     public void LoadTutorialLevel(int levelInd) 
