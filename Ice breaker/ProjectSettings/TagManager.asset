@@ -14,11 +14,12 @@ TagManager:
   - RightWall
   - leftWormhole
   - rightWormhole
-  - goodie
   - Bar
   - rotatingPaddle
   - RotatingPaddle
   - Magnet
+  - coin
+  - safetyWall
   layers:
   - Default
   - TransparentFX

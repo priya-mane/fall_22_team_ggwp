@@ -26,7 +26,8 @@ public class DeathWall : MonoBehaviour
                 foreach (IPaddle paddle in GameManager.Instance.activePaddles) {
                     paddle.ResetPaddle();
                 }
-            
         }
+		
+
     }
 }
