@@ -6,6 +6,7 @@ public class RotatingPaddle : MonoBehaviour, IPaddle
     public Vector2 direction { get; private set; }
     private float speed = 20f;
     public float maxBounceAngle = 60f;
+    public bool shouldMatchColor = false;
     private Vector3 initialPosition;
     public float zAngle = -90.0f;
     private Quaternion initialRotation;
@@ -49,7 +50,13 @@ public class RotatingPaddle : MonoBehaviour, IPaddle
 
         if (ball != null)
         {
-            ball.setRotatingPaddle(this);
+            Color ballColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
+            Color paddleColor = gameObject.GetComponent<SpriteRenderer>().color;
+            bool shouldRotate = shouldMatchColor ? Common.IsSameColor(ballColor, paddleColor) : true;
+            if(shouldRotate)
+            {
+                ball.setRotatingPaddle(this);
+            }
         }
     }
 

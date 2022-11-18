@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int beamColorIndex = 0;
     void Start()
     {
-        
+        GetComponent<SpriteRenderer>().color = Common.COLORS[beamColorIndex];
     }
 
     // Update is called once per frame
