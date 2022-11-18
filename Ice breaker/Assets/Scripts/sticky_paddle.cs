@@ -34,5 +34,11 @@ public class sticky_paddle : MonoBehaviour
             Vector2 paddlePosition = transform.position;
             ball.rigidbody.velocity = new Vector3(0f, 0f, 0f);
         }
+
+        if (collision.gameObject.tag == "coin")
+        {
+            Debug.Log("coin landed");
+            GameManager.score += 200;
+        }
     }
 }
