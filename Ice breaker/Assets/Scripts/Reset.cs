@@ -57,7 +57,9 @@ public class Reset : MonoBehaviour
     public void NextLevel() {
         GameManager.lives = 10;
         GameManager.score = 0;
+
         levelManager = FindObjectOfType<LevelManager>();
-        levelManager.LoadTutorialLevel(GameManager.level + 1);
+        int lvl = levelManager.GetNextLevel(GameManager.level);
+        levelManager.LoadTutorialLevel(lvl);
     }
 }
