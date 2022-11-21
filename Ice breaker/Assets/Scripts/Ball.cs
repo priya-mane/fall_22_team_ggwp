@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class Ball : MonoBehaviour
 {
@@ -13,6 +14,13 @@ public class Ball : MonoBehaviour
     private bool mouseFlag=false;
     public bool withPaddle = false;
     public GameObject currentPaddle;
+    public GameObject dynamic_lvl_pivot;
+    
+    [SerializeField] private Transform previousRoom;
+    [SerializeField] private Transform nextRoom;
+    
+    [SerializeField] private CameraController cam;
+    
     private RotatingPaddle rotatingPaddle;
     private Vector3 velocitywithPaddle;
     public GameObject[] stars;
@@ -126,14 +134,28 @@ public class Ball : MonoBehaviour
         this.rigidbody.angularVelocity = 0f;
         this.rigidbody.gravityScale = 0;
         this.rigidbody.drag = 0;
-        gameObject.transform.position = initialPosition;
+        Debug.Log("camera = " + cam.transform.position);
+        Debug.Log("room = " + nextRoom.position);
+        if (dynamic_lvl_pivot != null && (Math.Abs(cam.transform.position.x - nextRoom.position.x) <= 4.0f) )
+        {
+            // reset to connecting sticky paddle
+            gameObject.transform.position = dynamic_lvl_pivot.transform.position;
+            Vector3 temp = new Vector3(0.0f, -0.5f ,0.0f);
+            gameObject.transform.position = transform.position + temp;
+        }
+        else
+        {
+            // reset to support
+            gameObject.transform.position = initialPosition;
+        }
+        
         gameObject.GetComponent<SpriteRenderer>().color = white_color;
     }
 
     private void SetRandomTrajectory()
     {
         Vector2 force = new Vector2();
-        force.x = Random.Range(-1f, 1f);
+        force.x = UnityEngine.Random.Range(-1f, 1f);
         force.y = 1f;
 
         this.rigidbody.AddForce(force.normalized * speed);

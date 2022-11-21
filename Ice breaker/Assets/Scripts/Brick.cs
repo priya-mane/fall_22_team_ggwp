@@ -58,7 +58,7 @@ public class Brick : MonoBehaviour
     {
         if (timerIsRunning && isTimerOn)
         {
-            // Debug.Log(color+ " "+timeRemaining + " update");
+            
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
@@ -66,13 +66,13 @@ public class Brick : MonoBehaviour
             else
             {
                 if(color == 1){
-                    Debug.Log("Blue" + timeRemaining.ToString());
+                    
                     this.GetComponent<SpriteRenderer>().color = blue_color;
                     timeRemaining = 20;
                     color +=1;
                 }
                 else if(color == 2){
-                    Debug.Log("Yellow" + timeRemaining.ToString());
+                    
                     this.GetComponent<SpriteRenderer>().color = yellow_color;
                     timerIsRunning = false;
                     color +=1;
@@ -105,10 +105,8 @@ public class Brick : MonoBehaviour
             
 			var c1 = ball.GetComponent<SpriteRenderer>().color; 
 			var c2 = brick_color;
-
-			Debug.Log(c1);
-			Debug.Log(c2);
-            if ((Color)(Color32)c1 == (Color)(Color32)c2 || (isHealthBrick==true))
+			
+			if ((Color)(Color32)c1 == (Color)(Color32)c2 || (isHealthBrick==true))
             {
 				
 				if ((Color)(Color32)brick_color == (Color)(Color32)red_color)
