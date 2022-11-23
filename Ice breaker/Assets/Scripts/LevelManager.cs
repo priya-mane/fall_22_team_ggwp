@@ -40,6 +40,7 @@ public class LevelManager : MonoBehaviour
         levelMapping["Hard2"]=12;
         levelMapping["Hard3"]=13;
         levelMapping["Hard4"]=17;
+        levelMapping["Hard5"]=35;
     }
 
     public void LoadLevel(int levelInd){
