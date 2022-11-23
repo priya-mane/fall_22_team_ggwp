@@ -23,7 +23,8 @@ public class DeathWall : MonoBehaviour
         {
                 ball.ResetBall();
                 FindObjectOfType<GameManager>().Miss();
-                foreach (IPaddle paddle in GameManager.Instance.activePaddles) {
+                foreach (IPaddle paddle in GameManager.Instance.activePaddles) 
+                {
                     paddle.ResetPaddle();
                 }
         }
