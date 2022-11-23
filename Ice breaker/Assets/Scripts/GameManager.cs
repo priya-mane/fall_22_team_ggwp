@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         lives = 10;
         stars = 0;
         
-        SceneManager.LoadScene("Levels");
+        SceneManager.LoadScene("Home");
 		//LoadLevel(2);
     }
 
