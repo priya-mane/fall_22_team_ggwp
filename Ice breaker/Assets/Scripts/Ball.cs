@@ -14,7 +14,9 @@ public class Ball : MonoBehaviour
     private bool mouseFlag=false;
     public bool withPaddle = false;
     public GameObject currentPaddle;
-    public GameObject dynamic_lvl_pivot;
+	//public GameObject door;
+    //public GameObject dynamic_lvl_pivot;
+	//public GameObject support;
     
     [SerializeField] private Transform previousRoom;
     [SerializeField] private Transform nextRoom;
@@ -134,9 +136,11 @@ public class Ball : MonoBehaviour
         this.rigidbody.angularVelocity = 0f;
         this.rigidbody.gravityScale = 0;
         this.rigidbody.drag = 0;
-        Debug.Log("camera = " + cam.transform.position);
-        Debug.Log("room = " + nextRoom.position);
-        if (dynamic_lvl_pivot != null && (Math.Abs(cam.transform.position.x - nextRoom.position.x) <= 4.0f) )
+		gameObject.transform.position = initialPosition;
+		cam.transform.position = new Vector3(0.0f, 0.0f ,-10.0f);
+		
+        /*
+        if (dynamic_lvl_pivot != null && !(support.GetComponent<Renderer>().isVisible) )
         {
             // reset to connecting sticky paddle
             gameObject.transform.position = dynamic_lvl_pivot.transform.position;
@@ -148,7 +152,8 @@ public class Ball : MonoBehaviour
             // reset to support
             gameObject.transform.position = initialPosition;
         }
-        
+		*/
+		gameObject.transform.position = initialPosition;
         gameObject.GetComponent<SpriteRenderer>().color = white_color;
     }
 
