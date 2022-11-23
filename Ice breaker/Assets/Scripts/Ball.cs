@@ -137,7 +137,11 @@ public class Ball : MonoBehaviour
         this.rigidbody.gravityScale = 0;
         this.rigidbody.drag = 0;
 		gameObject.transform.position = initialPosition;
-		cam.transform.position = new Vector3(0.0f, 0.0f ,-10.0f);
+		if (cam != null)
+		{
+			cam.transform.position = new Vector3(0.0f, 0.0f ,-10.0f);
+		}
+		
 		
         /*
         if (dynamic_lvl_pivot != null && !(support.GetComponent<Renderer>().isVisible) )
