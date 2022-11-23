@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    [SerializeField] FlashImage _flashImage = null;
     public new Rigidbody2D rigidbody { get; private set; }
     private float speed = 300f;
     private Vector3 initialPosition;
@@ -118,6 +119,7 @@ public class Ball : MonoBehaviour
 
     public void ResetBall() {
         // AnalyticsManager.instance.ballReset++;
+        _flashImage.startFalsh(.50f,  .3f, Color.red);
         Color white_color = new Color(1f, 1f, 1f, 1f);
         this.rigidbody.velocity = Vector2.zero;
         this.rigidbody.angularVelocity = 0f;
