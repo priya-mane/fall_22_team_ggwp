@@ -23,23 +23,29 @@ public class Reset : MonoBehaviour
         levelManager.LoadTutorialLevel(GameManager.level);
     }
     
-    public void Home()
+    public void Home(string levelType)
     {
         GameManager.lives = 10;
         GameManager.score = 0;
-        GameManager.stars = 0;
 
         AnalyticsManager.instance.process_analytics_one();
         AnalyticsManager.instance.process_analytics_five();
         AnalyticsManager.instance.process_analytics_six();
-        SceneManager.LoadScene("Levels");
+        if(levelType == "easy"){
+            SceneManager.LoadScene("EasyLevels");
+        }
+        if(levelType == "medium"){
+            SceneManager.LoadScene("MediumLevels");
+        }
+        if(levelType == "hard"){
+            SceneManager.LoadScene("HardLevels");
+        }
     }
 
     public void ResetLevel()
     {
         GameManager.lives = 10;
         GameManager.score = 0;
-        GameManager.stars = 0;
         levelManager = FindObjectOfType<LevelManager>();
         levelManager.LoadTutorialLevel(GameManager.level);
         // SceneManager.LoadScene("Level"+ GameManager.level);
@@ -47,7 +53,6 @@ public class Reset : MonoBehaviour
     public void ResetTutorialLevel() {
         GameManager.lives = 10;
         GameManager.score = 0;
-        GameManager.stars = 0;
         
         AnalyticsManager.instance.process_analytics_one();
         AnalyticsManager.instance.process_analytics_five();
@@ -60,8 +65,9 @@ public class Reset : MonoBehaviour
     public void NextLevel() {
         GameManager.lives = 10;
         GameManager.score = 0;
-        GameManager.stars = 0;
+
         levelManager = FindObjectOfType<LevelManager>();
-        levelManager.LoadTutorialLevel(GameManager.level + 1);
+        int lvl = levelManager.GetNextLevel(GameManager.level);
+        levelManager.LoadTutorialLevel(lvl);
     }
 }
