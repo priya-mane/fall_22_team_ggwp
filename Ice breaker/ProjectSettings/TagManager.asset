@@ -18,6 +18,7 @@ TagManager:
   - rotatingPaddle
   - RotatingPaddle
   - Magnet
+  - star
   - coin
   - safetyWall
   layers:

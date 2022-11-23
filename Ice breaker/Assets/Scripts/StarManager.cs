@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Scoring : MonoBehaviour
+public class StarManager : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,7 +14,6 @@ public class Scoring : MonoBehaviour
     void Update()
     {
         TMPro.TextMeshProUGUI txtMy = this.GetComponent<TMPro.TextMeshProUGUI>();
-        txtMy.text = "Score: " + (GameManager.score + 50 * GameManager.stars);
-        
+        txtMy.text = "" + GameManager.stars + " X";
     }
 }
