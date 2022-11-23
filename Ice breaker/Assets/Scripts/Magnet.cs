@@ -11,9 +11,9 @@ public class Magnet : MonoBehaviour
   public bool shouldRepel = false;
   public bool shouldOscillate = false;
   private Transform circle;
-  private CircleCollider2D collider;
-  private Vector3 delta=new Vector3(-0.03f, -0.03f, 0.0f);
-  private float colliderDelta = -0.03f;
+  private CircleCollider2D fieldcollider;
+  private Vector3 delta=new Vector3(-0.003f, -0.003f, 0.0f);
+  private float colliderDelta = -0.003f;
   private Vector3 initialScale;
   List<Rigidbody2D> caughtRigidbodies = new List<Rigidbody2D>();
 
@@ -21,7 +21,7 @@ public class Magnet : MonoBehaviour
   {
     this.circle = this.gameObject.transform.GetChild(0);
     this.initialScale = this.circle.localScale;
-    this.collider = gameObject.GetComponent<CircleCollider2D>();
+    this.fieldcollider = gameObject.GetComponent<CircleCollider2D>();
   }
   void Update()
   {
@@ -45,7 +45,7 @@ public class Magnet : MonoBehaviour
       colliderDelta = -colliderDelta;
     }
     circle.localScale += delta;
-    collider.radius += colliderDelta;
+    fieldcollider.radius += colliderDelta;
   }
 
   void OnTriggerEnter2D(Collider2D other)

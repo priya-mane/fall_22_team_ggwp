@@ -15,7 +15,7 @@ public class Scoring : MonoBehaviour
     void Update()
     {
         TMPro.TextMeshProUGUI txtMy = this.GetComponent<TMPro.TextMeshProUGUI>();
-        txtMy.text = "Score: " + GameManager.score;
+        txtMy.text = "Score: " + (GameManager.score + 50 * GameManager.stars);
         
     }
 }
