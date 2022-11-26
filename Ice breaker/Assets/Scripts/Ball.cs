@@ -181,6 +181,11 @@ public class Ball : MonoBehaviour
             other.gameObject.SetActive(false);
             GameManager.stars = GameManager.stars + 1;
         }
+        
+        if(other.gameObject.CompareTag("life")){
+            other.gameObject.SetActive(false);
+            GameManager.lives = GameManager.lives + 1;
+        }
     }
     
 }
