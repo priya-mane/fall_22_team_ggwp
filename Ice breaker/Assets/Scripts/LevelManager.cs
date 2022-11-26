@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     public Button[] buttons;
 
     public Dictionary < string, int > levelMapping = new Dictionary < string, int > ();
+    
     void Start()
     {
         levelsUnlocked = PlayerPrefs.GetInt("levelsUnlocked", 1);
@@ -41,6 +42,7 @@ public class LevelManager : MonoBehaviour
         levelMapping["Hard3"]=13;
         levelMapping["Hard4"]=17;
         levelMapping["Hard5"]=35;
+       
     }
 
     public void LoadLevel(int levelInd){
