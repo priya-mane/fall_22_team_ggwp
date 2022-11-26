@@ -21,6 +21,7 @@ TagManager:
   - star
   - coin
   - safetyWall
+  - life
   layers:
   - Default
   - TransparentFX
