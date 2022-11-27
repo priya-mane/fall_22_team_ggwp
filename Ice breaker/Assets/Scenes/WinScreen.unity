@@ -473,7 +473,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6416027627747471206, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
       propertyPath: m_text
-      value: next level
+      value: neXT LEVEL
       objectReference: {fileID: 0}
     - target: {fileID: 6416027627747471206, guid: 6269367b5a331435ba9ae3a88b0b13e1, type: 3}
       propertyPath: m_fontSize
