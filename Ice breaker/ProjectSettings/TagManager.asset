@@ -21,6 +21,9 @@ TagManager:
   - star
   - coin
   - safetyWall
+  - star1
+  - star2
+  - star3
   layers:
   - Default
   - TransparentFX

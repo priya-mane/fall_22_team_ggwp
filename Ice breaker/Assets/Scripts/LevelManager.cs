@@ -12,8 +12,9 @@ public class LevelManager : MonoBehaviour
 
     public static DateTime starttime;
     public Button[] buttons;
+    private Color32 color;
 
-    public Dictionary < string, int > levelMapping = new Dictionary < string, int > ();
+    public static Dictionary < string, int > levelMapping = new Dictionary < string, int > ();
     
     void Start()
     {
@@ -158,6 +159,52 @@ public class LevelManager : MonoBehaviour
 
     public void LoadHome(){
         SceneManager.LoadScene("Home");
+    }
+
+    public void LoadLevels(){
+        int currLevel = GameManager.level;
+        string strLevel = "";
+        foreach(var entry in levelMapping) {
+            if(entry.Value == currLevel){
+                strLevel = entry.Key;
+                break;
+            }
+        }
+        string levelType = getCategory(strLevel);
+        if(levelType == "Easy"){
+            SceneManager.LoadScene("EasyLevels");
+        } else if(levelType == "Medium") {
+            SceneManager.LoadScene("MediumLevels");
+        } else if(levelType == "Hard"){
+            SceneManager.LoadScene("HardLevels");
+        }
+    }
+
+    public void LoadLevelStars(string level) {
+        GameObject imageObject = GameObject.FindGameObjectWithTag("star1");
+        GameObject imageObject2 = GameObject.FindGameObjectWithTag("star2");
+        GameObject imageObject3 = GameObject.FindGameObjectWithTag("star3");
+ 
+        if(imageObject != null && imageObject2 != null && imageObject3 != null){
+            Image star1 = imageObject.GetComponent<Image>();
+            Image star2 = imageObject2.GetComponent<Image>();
+            Image star3 = imageObject3.GetComponent<Image>();
+
+            float star = GameManager.LevelStarMapping[levelMapping[level]];
+            color = new Color32(233, 225, 43, 255);
+            if(star >= 1f){
+                star1.color = color;
+            }
+            if(star>=2f){
+                star1.color = color;
+                star2.color = color;
+            }
+            if(star == 3f){
+                star1.color = color;
+                star2.color = color;
+                star3.color = color; 
+            }
+        }
     }
 
 

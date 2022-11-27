@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 using System;
 
 public class HighScoreManager : MonoBehaviour
@@ -30,6 +31,9 @@ public class HighScoreManager : MonoBehaviour
         
 
         float star = calculateStar();
+
+        GameManager.LevelStarMapping[GameManager.level] = star;
+
         if(star >= 1f){
             star1.color = color;
         }
@@ -42,8 +46,6 @@ public class HighScoreManager : MonoBehaviour
             star2.color = color;
             star3.color = color; 
         }
-
-
     }
 
     // Update is called once per frame
@@ -61,7 +63,7 @@ public class HighScoreManager : MonoBehaviour
 
     }
 
-    private void mapLives(){
+    private void mapLives() {
         levelMinLivesMapping[1] = 2;
         levelMinLivesMapping[2] = 0;
         levelMinLivesMapping[3] = 0;
