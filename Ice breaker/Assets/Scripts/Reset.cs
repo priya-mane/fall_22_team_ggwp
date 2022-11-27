@@ -27,6 +27,7 @@ public class Reset : MonoBehaviour
     {
         GameManager.lives = 10;
         GameManager.score = 0;
+        GameManager.stars = 0;
 
         AnalyticsManager.instance.process_analytics_one();
         AnalyticsManager.instance.process_analytics_five();
@@ -53,6 +54,7 @@ public class Reset : MonoBehaviour
     public void ResetTutorialLevel() {
         GameManager.lives = 10;
         GameManager.score = 0;
+        GameManager.stars = 0;
         
         AnalyticsManager.instance.process_analytics_one();
         AnalyticsManager.instance.process_analytics_five();
@@ -65,6 +67,7 @@ public class Reset : MonoBehaviour
     public void NextLevel() {
         GameManager.lives = 10;
         GameManager.score = 0;
+        GameManager.stars = 0;
 
         levelManager = FindObjectOfType<LevelManager>();
         int lvl = levelManager.GetNextLevel(GameManager.level);
