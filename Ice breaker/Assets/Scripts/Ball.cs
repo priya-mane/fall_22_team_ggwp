@@ -13,6 +13,7 @@ public class Ball : MonoBehaviour
     private Vector3 ballPosition;
     private bool mouseFlag=false;
     public bool withPaddle = false;
+    private bool withPendulum = false;
     public GameObject currentPaddle;
 	//public GameObject door;
     //public GameObject dynamic_lvl_pivot;
@@ -64,6 +65,15 @@ public class Ball : MonoBehaviour
                 mouseFlag = false;
             }
         }
+        if (withPendulum && Input.GetKeyDown(KeyCode.P))
+        {
+            withPaddle = false;
+            withPendulum = false;
+            Rigidbody2D pendulum = this.currentPaddle.transform.parent.GetComponent<Rigidbody2D>();
+            float ballSpeed = this.currentPaddle.GetComponent<TangentRedirect>().GetPendulumBallSpeed();
+            this.rigidbody.velocity = ballSpeed*pendulum.velocity;
+            this.rigidbody.angularVelocity = pendulum.angularVelocity;
+        }
         if(withPaddle){
             // Debug.Log("position with paddle is getting called");
             positionWithPaddle();
@@ -86,8 +96,15 @@ public class Ball : MonoBehaviour
         this.rigidbody.angularVelocity = 0f;
     }
 
+    public void setPendulum(TangentRedirect pendulum){
+        this.withPaddle = true;
+        this.withPendulum = true;
+        this.rigidbody.velocity = Vector2.zero;
+        this.rigidbody.angularVelocity = 0f;
+        this.currentPaddle = pendulum.gameObject;
+    }
     public void positionWithPaddle(){
-        if(this.currentPaddle.tag == "TopPaddle"){
+        if(this.currentPaddle.tag == "TopPaddle" || this.currentPaddle.tag == "Pendulum"){
             this.gameObject.transform.position = this.currentPaddle.transform.position + Vector3.down;
         }
         else if(this.currentPaddle.tag == "RotatingPaddle") {
