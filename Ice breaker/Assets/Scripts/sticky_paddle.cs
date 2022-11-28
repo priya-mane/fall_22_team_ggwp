@@ -41,7 +41,7 @@ public class sticky_paddle : MonoBehaviour
                 progressBar.transform.localScale = pLocalScale;
             }else {
                 startTimer = false;
-                if(ball != null) {
+                if(ball != null && ball.rigidbody.velocity.magnitude == 0) {
                     ball.ResetBall();
                 }
                 progressBar.transform.localScale = new Vector3(1, 1, 1);
