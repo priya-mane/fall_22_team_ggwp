@@ -6,10 +6,19 @@ public class sticky_paddle : MonoBehaviour
 {
 
     private Ball ball;
+    private GameObject progressBar;
+    public bool hasTimer = false;
+    private bool startTimer = false;
+    public float totalTime = 4.0f;
+    private float currentTime;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(hasTimer) 
+        {
+            progressBar = gameObject.transform.GetChild(0).gameObject;
+
+        }
     }
 
     // Update is called once per frame
@@ -24,6 +33,25 @@ public class sticky_paddle : MonoBehaviour
                 ball.gameObject.transform.position = transform.position + temp;
             }
         }
+        if (hasTimer && startTimer) {
+            if(currentTime > 0) {
+                this.currentTime -= Time.deltaTime;
+                Vector3 pLocalScale = progressBar.transform.localScale;
+                pLocalScale.x = this.currentTime/this.totalTime;
+                progressBar.transform.localScale = pLocalScale;
+            }else {
+                startTimer = false;
+                if(ball != null) {
+                    ball.ResetBall();
+                }
+                progressBar.transform.localScale = new Vector3(1, 1, 1);
+            }
+        }
+    }
+
+    public void StartTimer(){
+        this.startTimer = true;
+        this.currentTime = this.totalTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,6 +61,9 @@ public class sticky_paddle : MonoBehaviour
         {
             Vector2 paddlePosition = transform.position;
             ball.rigidbody.velocity = new Vector3(0f, 0f, 0f);
+            if(hasTimer) {
+                StartTimer();
+            }
         }
 
         if (collision.gameObject.tag == "coin")
