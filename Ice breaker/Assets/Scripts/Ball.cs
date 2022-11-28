@@ -105,6 +105,7 @@ public class Ball : MonoBehaviour
     }
     public void positionWithPaddle(){
         if(this.currentPaddle.tag == "TopPaddle" || this.currentPaddle.tag == "Pendulum"){
+            Debug.Log("upon stick this is being called 3");
             this.gameObject.transform.position = this.currentPaddle.transform.position + Vector3.down;
         }
         else if(this.currentPaddle.tag == "RotatingPaddle") {
@@ -120,6 +121,7 @@ public class Ball : MonoBehaviour
             this.currentPaddle = null;
         }
         else{
+            Debug.Log("upon stick this is being called 3");
             this.gameObject.transform.position = this.currentPaddle.transform.position + Vector3.up;
         }
     }
