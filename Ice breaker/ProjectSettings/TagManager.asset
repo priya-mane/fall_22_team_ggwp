@@ -25,6 +25,7 @@ TagManager:
   - star2
   - star3
   - life
+  - Pendulum
   layers:
   - Default
   - TransparentFX
