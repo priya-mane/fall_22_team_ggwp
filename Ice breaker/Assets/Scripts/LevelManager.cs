@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
         levelMapping["Hard2"]=12;
         levelMapping["Hard3"]=13;
         levelMapping["Hard4"]=17;
-        levelMapping["Hard5"]=35;
+        levelMapping["Dynamic1"]=35;
        
     }
 
@@ -156,6 +156,10 @@ public class LevelManager : MonoBehaviour
     public void LoadHardLevels(){
         SceneManager.LoadScene("HardLevels");
     }
+    
+    public void LoadDynamicLevels(){
+        SceneManager.LoadScene("DynamicLevels");
+    }
 
     public void LoadHome(){
         SceneManager.LoadScene("Home");
@@ -177,6 +181,9 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene("MediumLevels");
         } else if(levelType == "Hard"){
             SceneManager.LoadScene("HardLevels");
+        }
+        else if(levelType == "Dynamic"){
+            SceneManager.LoadScene("DynamicLevels");
         }
     }
 

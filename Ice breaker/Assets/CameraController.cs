@@ -34,9 +34,26 @@ public class CameraController : MonoBehaviour
         //transform.position = Vector3.SmoothDamp(transform.position, new Vector3(currentPosX, transform.position.y, transform.position.z), ref velocity, speed);
 
 		//Follow player
-		// transform.position = new Vector3(player.position.x + lookAhead, transform.position.y, transform.position.z);
-		// lookAhead = Mathf.Lerp(lookAhead, (aheadDistance * player.localScale.x), Time.deltaTime * cameraSpeed);
+		if (player.position.x + lookAhead>=0 && player.position.x + lookAhead<Mathf.Abs(nextRoom.position.x))
+		{
+			transform.position = new Vector3(player.position.x + lookAhead, transform.position.y, transform.position.z);
+		}
+		else
+		{
+			if (player.position.x <= 2 * Mathf.Abs(previousRoom.position.x))
+			{
+				transform.position = Vector3.SmoothDamp(transform.position, new Vector3(0,
+					transform.position.y, transform.position.z), ref velocity, speed);
+			}
+			else
+			{
+				transform.position = Vector3.SmoothDamp(transform.position, new Vector3(nextRoom.position.x, transform.position.y,transform.position.z), ref velocity, speed);
 
+			}
+		}
+		lookAhead = Mathf.Lerp(lookAhead, (aheadDistance * player.localScale.x), Time.deltaTime * cameraSpeed);
+		
+		/*
 		if (player.position.x <= 2*Mathf.Abs(previousRoom.position.x))
 		{
 			// in room 1 
@@ -64,6 +81,7 @@ public class CameraController : MonoBehaviour
 			
 		}
         lookAhead = Mathf.Lerp(lookAhead, (aheadDistance * player.localScale.x), Time.deltaTime * cameraSpeed);
+        */
         
     }
 
