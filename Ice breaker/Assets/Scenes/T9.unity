@@ -2323,11 +2323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2744222997491412099, guid: b87ad5be8fb7f459b97af27d9280a63b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 56.37
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 2744222997491412099, guid: b87ad5be8fb7f459b97af27d9280a63b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 39.831
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 2744222997491412099, guid: b87ad5be8fb7f459b97af27d9280a63b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2509,6 +2509,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1864065064}
     m_Modifications:
+    - target: {fileID: 4082089340483631491, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1864065066}
+    - target: {fileID: 4082089340483631491, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Home
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082089340483631491, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: medium
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158524984032244773, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158524984032244773, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 377
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158524984032244773, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -182.38
+      objectReference: {fileID: 0}
     - target: {fileID: 8280813011305482764, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 5
@@ -2617,7 +2641,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
 --- !u!224 &2056407041 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8280813011305482767, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6158524984032244773, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
   m_PrefabInstance: {fileID: 2056407040}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2123974278
