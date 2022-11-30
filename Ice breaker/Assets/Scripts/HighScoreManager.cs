@@ -45,7 +45,7 @@ public class HighScoreManager : MonoBehaviour
             star1.color = color;
             star2.color = color;
         }
-        if(star == 3f){
+        if(star >= 3f){
             star1.color = color;
             star2.color = color;
             star3.color = color; 
