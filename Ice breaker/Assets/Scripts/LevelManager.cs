@@ -43,6 +43,7 @@ public class LevelManager : MonoBehaviour
         levelMapping["Hard3"]=13;
         levelMapping["Hard4"]=17;
         levelMapping["Hard5"]=41;
+        levelMapping["Hard6"]=42;
         levelMapping["Dynamic1"]=35;
         levelMapping["Dynamic2"]=45;
         levelMapping["Gameover"] = 50;
@@ -206,7 +207,7 @@ public class LevelManager : MonoBehaviour
                 star1.color = color;
                 star2.color = color;
             }
-            if(star == 3f){
+            if(star >= 3f){
                 star1.color = color;
                 star2.color = color;
                 star3.color = color; 

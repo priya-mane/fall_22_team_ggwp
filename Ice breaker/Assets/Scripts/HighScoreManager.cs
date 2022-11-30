@@ -94,6 +94,7 @@ public class HighScoreManager : MonoBehaviour
         levelMinLivesMapping[35] = 3;
         levelMinLivesMapping[45] = 3;
         levelMinLivesMapping[41] = 3;
+        levelMinLivesMapping[42] = 2;
 
     }
     private void mapStars() {
@@ -119,7 +120,7 @@ public class HighScoreManager : MonoBehaviour
         levelStarsMapping[35] = 2;
         levelStarsMapping[45] = 0;
         levelStarsMapping[41] = 2;
-
+        levelStarsMapping[42] = 2;
     }
     public int getMinLives(int level){
         return levelMinLivesMapping[level];
