@@ -4,18 +4,32 @@ using UnityEngine;
 
 public class motion_x_axis : MonoBehaviour
 {
-    public float speed = 0.1f;
+    public float speed ;
 	public Rigidbody body;
 	public Vector3 startPos ;
 	private Vector3 endPos;
-	public float oscillation_distance = 3f;
+	private bool reverse;
+	
+	public float oscillation_distance;
     // Start is called before the first frame update
     void Start()
     {
 		startPos =  new Vector3(this.transform.position.x - oscillation_distance,this.transform.position.y, this.transform.position.z);
 		this.transform.position = startPos;
-		this.GetComponent<Rigidbody2D>().velocity = Vector2.right*speed;
+		
 		endPos =  new Vector3(this.transform.position.x + oscillation_distance,this.transform.position.y, this.transform.position.z);
+
+		if (startPos.x > endPos.x)
+		{
+			// reverse
+			this.reverse = true;
+			this.GetComponent<Rigidbody2D>().velocity = -1.0f*Vector2.right*speed;
+		}
+		else
+		{
+			this.reverse = false;
+			this.GetComponent<Rigidbody2D>().velocity = 1.0f*Vector2.right*speed;
+		}
     }
 
     // Update is called once per frame
@@ -36,9 +50,16 @@ public class motion_x_axis : MonoBehaviour
 	void FixedUpdate() 
 	{
 		Vector3 currentPos = this.transform.position;
-		if ((currentPos.x >= endPos.x && this.GetComponent<Rigidbody2D>().velocity.x > 0) || (currentPos.x <= startPos.x  && this.GetComponent<Rigidbody2D>().velocity.x < 0))
+		//if ((currentPos.x >= endPos.x && this.GetComponent<Rigidbody2D>().velocity.x > 0) || (currentPos.x <= startPos.x  && this.GetComponent<Rigidbody2D>().velocity.x < 0)) 
+		
+		if ( (!reverse && ((currentPos.x > endPos.x) || (currentPos.x < startPos.x ))) )
 		{
 			this.GetComponent<Rigidbody2D>().velocity = -1.0f * this.GetComponent<Rigidbody2D>().velocity;
-		}        
-  }
+		} 
+		else if ((reverse && ((currentPos.x < endPos.x) || (currentPos.x > startPos.x))) )
+		{
+			this.GetComponent<Rigidbody2D>().velocity = -1.0f * this.GetComponent<Rigidbody2D>().velocity;
+		}
+		
+	}
 }
