@@ -870,7 +870,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.7232127
+  orthographic size: 5.7232122
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -958,7 +958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 216, y: -209}
+  m_AnchoredPosition: {x: 637, y: 229}
   m_SizeDelta: {x: 187.44998, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &483240699
@@ -1168,7 +1168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 131, y: -208.99998}
+  m_AnchoredPosition: {x: 552, y: 229.00002}
   m_SizeDelta: {x: 187.44998, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496943938
@@ -1979,21 +1979,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 206796936}
     m_Modifications:
-    - target: {fileID: 2025777543095149482, guid: a3f5c678083114105943c5cd5871e555, type: 3}
-      propertyPath: shouldOscillate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025777543095149487, guid: a3f5c678083114105943c5cd5871e555, type: 3}
-      propertyPath: m_Radius
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.3970907
+      value: 6.808262
       objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_LocalScale.y
@@ -2001,7 +1993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.9926
+      value: 14.17
       objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2046,6 +2038,14 @@ PrefabInstance:
     - target: {fileID: 2831126898091595258, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025777543095149482, guid: a3f5c678083114105943c5cd5871e555, type: 3}
+      propertyPath: shouldOscillate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025777543095149487, guid: a3f5c678083114105943c5cd5871e555, type: 3}
+      propertyPath: m_Radius
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
@@ -2367,14 +2367,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1137291660}
     m_Modifications:
-    - target: {fileID: 2025777543095149482, guid: a3f5c678083114105943c5cd5871e555, type: 3}
-      propertyPath: shouldOscillate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025777543095149487, guid: a3f5c678083114105943c5cd5871e555, type: 3}
-      propertyPath: m_Radius
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2433,7 +2425,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595258, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025777543095149482, guid: a3f5c678083114105943c5cd5871e555, type: 3}
+      propertyPath: shouldOscillate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025777543095149487, guid: a3f5c678083114105943c5cd5871e555, type: 3}
+      propertyPath: m_Radius
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
@@ -3703,7 +3703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: -208.99998}
+  m_AnchoredPosition: {x: 466.00003, y: 229.00002}
   m_SizeDelta: {x: 187.44998, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123974280
