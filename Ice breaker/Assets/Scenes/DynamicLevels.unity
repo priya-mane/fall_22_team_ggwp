@@ -173,7 +173,7 @@ MonoBehaviour:
   star1: {fileID: 385174042}
   star2: {fileID: 1982032446}
   star3: {fileID: 163142660}
-  level: Hard5
+  level: Dynamic1
 --- !u!1001 &163142658
 PrefabInstance:
   m_ObjectHideFlags: 0
