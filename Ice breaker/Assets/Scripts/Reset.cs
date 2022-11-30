@@ -41,6 +41,9 @@ public class Reset : MonoBehaviour
         if(levelType == "hard"){
             SceneManager.LoadScene("HardLevels");
         }
+        if(levelType == "dynamic"){
+            SceneManager.LoadScene("DynamicLevels");
+        }
     }
 
     public void ResetLevel()
@@ -71,6 +74,10 @@ public class Reset : MonoBehaviour
 
         levelManager = FindObjectOfType<LevelManager>();
         int lvl = levelManager.GetNextLevel(GameManager.level);
-        levelManager.LoadTutorialLevel(lvl);
+        if(lvl == 50){
+            SceneManager.LoadScene("GameOver");
+        } else {
+            levelManager.LoadTutorialLevel(lvl);
+        }
     }
 }
