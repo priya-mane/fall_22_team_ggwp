@@ -60,7 +60,8 @@ public class sticky_paddle : MonoBehaviour
         {
             Vector2 paddlePosition = transform.position;
             ball.rigidbody.velocity = new Vector3(0f, 0f, 0f);
-            if(hasTimer) {
+            if(hasTimer) 
+            {
                 StartTimer();
             }
         }

@@ -15,9 +15,10 @@ public class spawnDynamicBricks : MonoBehaviour
     public GameObject bluebrickPrefab;
     public GameObject yellowbrickPrefab;
     private int maxBricks = 10;
+    
+    private int coin = 1;
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -38,7 +39,8 @@ public class spawnDynamicBricks : MonoBehaviour
             if (hitColliders.Length == 0)
             {
                 int color  = Random.Range(1, 4);
-                int coin = Random.Range(0, 2);
+                coin = coin % 2;
+                
                 if (color == 1)
                 {
                     Instantiate(redbrickPrefab, center, Quaternion.identity);
