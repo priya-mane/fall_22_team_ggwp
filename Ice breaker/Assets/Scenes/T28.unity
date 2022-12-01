@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1059631271354190861, guid: 9568d39edc8774c708ab27051cf2ff91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.5
+      value: -5.16
       objectReference: {fileID: 0}
     - target: {fileID: 1059631271354190861, guid: 9568d39edc8774c708ab27051cf2ff91, type: 3}
       propertyPath: m_LocalPosition.z
@@ -265,7 +265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1721752026488175898, guid: d96f0d9aca5df43b480e5ab6154ffae1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.5
+      value: 6.32
       objectReference: {fileID: 0}
     - target: {fileID: 1721752026488175898, guid: d96f0d9aca5df43b480e5ab6154ffae1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -951,7 +951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3232328606368533668, guid: dbbe783000974459a940398f6b109e41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.47
+      value: -11.43
       objectReference: {fileID: 0}
     - target: {fileID: 3232328606368533668, guid: dbbe783000974459a940398f6b109e41, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1008,7 +1008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 429352316332413126, guid: 0f74ac0bd3f3f4cde942e01394d3c9a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.69
+      value: 11.09
       objectReference: {fileID: 0}
     - target: {fileID: 429352316332413126, guid: 0f74ac0bd3f3f4cde942e01394d3c9a5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2515,6 +2515,10 @@ PrefabInstance:
       value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 7118282552156461002, guid: 7fa69e5df28d742fcb5cd275e6a27774, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118282552156461002, guid: 7fa69e5df28d742fcb5cd275e6a27774, type: 3}
       propertyPath: m_TagString
       value: safetyWall
       objectReference: {fileID: 0}
@@ -2529,6 +2533,10 @@ PrefabInstance:
     - target: {fileID: 7118282552539405409, guid: 7fa69e5df28d742fcb5cd275e6a27774, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118282552539405439, guid: 7fa69e5df28d742fcb5cd275e6a27774, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7118282552539405439, guid: 7fa69e5df28d742fcb5cd275e6a27774, type: 3}
       propertyPath: m_TagString

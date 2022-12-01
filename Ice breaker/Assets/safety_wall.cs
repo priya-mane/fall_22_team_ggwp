@@ -16,10 +16,23 @@ public class safety_wall : MonoBehaviour
         
     }
 
+	bool ballAtStart()
+	{
+		if(ball.gameObject.transform.position.x == -0.15f && ball.gameObject.transform.position.y==-3.75f )
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
     // Update is called once per frame
     void Update()
     {
-        if (ball.GetComponent<Rigidbody2D>().velocity.magnitude!=0)
+		// 
+        if (ball.GetComponent<Rigidbody2D>().velocity.magnitude!=0 || ballAtStart())
         {
             if (Input.GetKey("w"))
             {
