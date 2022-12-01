@@ -68,7 +68,7 @@ public class sticky_paddle : MonoBehaviour
         if (collision.gameObject.tag == "coin")
         {
             Debug.Log("coin landed");
-            GameManager.score += 200;
+            GameManager.score += 75;
         }
     }
 }
