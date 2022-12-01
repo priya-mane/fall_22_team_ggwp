@@ -17,7 +17,6 @@ public class sticky_paddle : MonoBehaviour
         if(hasTimer) 
         {
             progressBar = gameObject.transform.GetChild(0).gameObject;
-
         }
     }
 
