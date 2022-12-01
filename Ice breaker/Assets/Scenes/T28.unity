@@ -402,7 +402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9074280906187840989, guid: 4523e369a60e743f9af608978e34e217, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 644
+      value: 977
       objectReference: {fileID: 0}
     - target: {fileID: 9074280906187840989, guid: 4523e369a60e743f9af608978e34e217, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1626,9 +1626,9 @@ MonoBehaviour:
   RedButton: {fileID: 1964355629}
   BlueButton: {fileID: 584653351}
   YellowButton: {fileID: 1334004864}
-  RedNewSprite: {fileID: 7482667652216324306, guid: 1fb72d17545c647d990e27f76e28690e, type: 3}
-  BlueNewSprite: {fileID: 7482667652216324306, guid: 1fb72d17545c647d990e27f76e28690e, type: 3}
-  YellowNewSprite: {fileID: 7482667652216324306, guid: 1fb72d17545c647d990e27f76e28690e, type: 3}
+  RedNewSprite: {fileID: 21300000, guid: 1765394a04464432fb6a8cbd8e7664d3, type: 3}
+  BlueNewSprite: {fileID: 21300000, guid: fe5c64d7e8b13483b9924dd8d4c60273, type: 3}
+  YellowNewSprite: {fileID: 21300000, guid: 793b160a17f604b10b77ced7c067a35e, type: 3}
 --- !u!114 &1864065066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2444,6 +2444,10 @@ PrefabInstance:
     - target: {fileID: 7118282550884112891, guid: 7fa69e5df28d742fcb5cd275e6a27774, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118282550884112891, guid: 7fa69e5df28d742fcb5cd275e6a27774, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.56
       objectReference: {fileID: 0}
     - target: {fileID: 7118282551033054033, guid: 7fa69e5df28d742fcb5cd275e6a27774, type: 3}
       propertyPath: m_Name
