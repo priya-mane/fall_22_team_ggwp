@@ -2192,7 +2192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4082089340483631491, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: medium
+      value: dynamic
       objectReference: {fileID: 0}
     - target: {fileID: 6158524984032244773, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
       propertyPath: m_RootOrder
