@@ -50,6 +50,7 @@ public class HighScoreManager : MonoBehaviour
             star2.color = color;
             star3.color = color; 
         }
+        Debug.Log(star);
     }
 
     // Update is called once per frame
@@ -80,6 +81,8 @@ public class HighScoreManager : MonoBehaviour
         levelMinLivesMapping[6] = 0;
         levelMinLivesMapping[7] = 0;
         levelMinLivesMapping[20] = 0;
+        levelMinLivesMapping[21] = 1;
+        levelMinLivesMapping[22] = 1;
         levelMinLivesMapping[8] = 0;
         levelMinLivesMapping[9] = 1;
         levelMinLivesMapping[10] = 0;
