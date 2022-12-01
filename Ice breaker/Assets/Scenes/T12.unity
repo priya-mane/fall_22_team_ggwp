@@ -2097,9 +2097,9 @@ MonoBehaviour:
   RedButton: {fileID: 878497798}
   BlueButton: {fileID: 891820783}
   YellowButton: {fileID: 645891886}
-  RedNewSprite: {fileID: 7482667652216324306, guid: 1fb72d17545c647d990e27f76e28690e, type: 3}
-  BlueNewSprite: {fileID: 7482667652216324306, guid: 1fb72d17545c647d990e27f76e28690e, type: 3}
-  YellowNewSprite: {fileID: 7482667652216324306, guid: 1fb72d17545c647d990e27f76e28690e, type: 3}
+  RedNewSprite: {fileID: 21300000, guid: 1765394a04464432fb6a8cbd8e7664d3, type: 3}
+  BlueNewSprite: {fileID: 21300000, guid: fe5c64d7e8b13483b9924dd8d4c60273, type: 3}
+  YellowNewSprite: {fileID: 21300000, guid: 793b160a17f604b10b77ced7c067a35e, type: 3}
 --- !u!114 &1864065066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2138,7 +2138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2961415976126488278, guid: b2e510062f697469698e303e5ddbe34e, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2961415976126488278, guid: b2e510062f697469698e303e5ddbe34e, type: 3}
       propertyPath: m_LocalScale.x
@@ -2577,68 +2577,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6158524984032244773, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
   m_PrefabInstance: {fileID: 2027708081}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2107663095
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6141739673204134096, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141739673204134096, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141739673204134096, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141739673204134096, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141739673204134096, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141739673204134096, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141739673204134096, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141739673204134096, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141739673204134096, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141739673204134096, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141739673204134096, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141739673204134097, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141739673204134098, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-      propertyPath: m_Name
-      value: Blocker
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2107663097, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: f190f75e84b434078992e4be47d44bd0, type: 3}
 --- !u!1001 &687370987925623150
 PrefabInstance:
   m_ObjectHideFlags: 0

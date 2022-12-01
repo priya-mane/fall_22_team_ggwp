@@ -1832,9 +1832,9 @@ MonoBehaviour:
   RedButton: {fileID: 2123974280}
   BlueButton: {fileID: 496943938}
   YellowButton: {fileID: 483240699}
-  RedNewSprite: {fileID: 7482667652216324306, guid: 1fb72d17545c647d990e27f76e28690e, type: 3}
-  BlueNewSprite: {fileID: 7482667652216324306, guid: 1fb72d17545c647d990e27f76e28690e, type: 3}
-  YellowNewSprite: {fileID: 7482667652216324306, guid: 1fb72d17545c647d990e27f76e28690e, type: 3}
+  RedNewSprite: {fileID: 21300000, guid: 02422b57e7ec14176ab3def1a9984d0c, type: 3}
+  BlueNewSprite: {fileID: 21300000, guid: f2a480ccbcd0d40a484b80c885c5cdd2, type: 3}
+  YellowNewSprite: {fileID: 21300000, guid: 7a7d30c465e0e4e5f8acad3e2e708e7c, type: 3}
 --- !u!114 &1864065066
 MonoBehaviour:
   m_ObjectHideFlags: 0
