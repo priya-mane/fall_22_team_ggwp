@@ -20,12 +20,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level12.unity
     guid: dd244c11af3f143f7bacd90921a375d2
+  - enabled: 1
+    path: Assets/Scenes/T22.unity
+    guid: 6519201665aff4bdb839cd7398af7c0d
   - enabled: 0
-    path: Assets/Scenes/T41 1.unity
+    path: 
     guid: 6b38967beacb846a99c1d75a9f21980b
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/LostScreen.unity
+    guid: de65697edf864489195f53cec2eb395e
+  - enabled: 1
+    path: Assets/Scenes/T21.unity
+    guid: 1c6eecf5ccf8a4eeaaf4b56597b4741d
   - enabled: 1
     path: Assets/Scenes/DynamicLevels.unity
     guid: 4b176adfebb5c460d9d46fc2cdc331a8

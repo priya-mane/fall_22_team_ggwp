@@ -2097,14 +2097,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 206796936}
     m_Modifications:
-    - target: {fileID: 2025777543095149482, guid: a3f5c678083114105943c5cd5871e555, type: 3}
-      propertyPath: shouldOscillate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025777543095149487, guid: a3f5c678083114105943c5cd5871e555, type: 3}
-      propertyPath: m_Radius
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2164,6 +2156,14 @@ PrefabInstance:
     - target: {fileID: 2831126898091595258, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025777543095149482, guid: a3f5c678083114105943c5cd5871e555, type: 3}
+      propertyPath: shouldOscillate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025777543095149487, guid: a3f5c678083114105943c5cd5871e555, type: 3}
+      propertyPath: m_Radius
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
@@ -2388,14 +2388,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1137291660}
     m_Modifications:
-    - target: {fileID: 2025777543095149482, guid: a3f5c678083114105943c5cd5871e555, type: 3}
-      propertyPath: shouldOscillate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025777543095149487, guid: a3f5c678083114105943c5cd5871e555, type: 3}
-      propertyPath: m_Radius
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 2831126898091595256, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2455,6 +2447,14 @@ PrefabInstance:
     - target: {fileID: 2831126898091595258, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025777543095149482, guid: a3f5c678083114105943c5cd5871e555, type: 3}
+      propertyPath: shouldOscillate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025777543095149487, guid: a3f5c678083114105943c5cd5871e555, type: 3}
+      propertyPath: m_Radius
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 741d7a7ee447e4ac1abbc17b979f145b, type: 3}
@@ -3735,9 +3735,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1864065064}
     m_Modifications:
+    - target: {fileID: 4082089340483631491, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1864065066}
+    - target: {fileID: 4082089340483631491, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Home
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082089340483631491, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: dynamic
+      objectReference: {fileID: 0}
     - target: {fileID: 6158524984032244773, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158524984032244773, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 418
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158524984032244773, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -181.47
       objectReference: {fileID: 0}
     - target: {fileID: 8280813011305482764, guid: 4426d11365e8745dc95d9be59ec140c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -106,6 +106,8 @@ public class HighScoreManager : MonoBehaviour
         levelStarsMapping[6] = 2;
         levelStarsMapping[7] = 2;
         levelStarsMapping[20] = 2;
+        levelStarsMapping[21] = 2;
+        levelStarsMapping[22] = 1;
         levelStarsMapping[8] = 2;
         levelStarsMapping[9] = 2;
         levelStarsMapping[10] = 2;
