@@ -6,6 +6,9 @@ public class Ball : MonoBehaviour
     [SerializeField] FlashImage _flashImage = null;
     public new Rigidbody2D rigidbody { get; private set; }
     private float speed = 300f;
+    
+    private float minSpeed = 5f;
+    
     private Vector3 initialPosition;
     private Vector3 startPosition;
     private Vector3 endPosition;
@@ -50,6 +53,11 @@ public class Ball : MonoBehaviour
     }
     private void Update() 
     {
+        
+        if(this.rigidbody.velocity.magnitude != 0){
+            this.rigidbody.velocity = this.rigidbody.velocity.normalized * minSpeed;
+        }
+        
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.back*-10;
         this.ballPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         if(mouseFlag){

@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 6b38967beacb846a99c1d75a9f21980b
+  - enabled: 1
+    path: Assets/Scenes/T28.unity
+    guid: b7aaf9382094742d28ff0f3f064c6908
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

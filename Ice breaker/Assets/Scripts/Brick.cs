@@ -19,6 +19,8 @@ public class Brick : MonoBehaviour
 	private Color blue_color;
     private Color yellow_color;
 	public GameObject coinPrefab;
+
+	public bool releaseCoin;
     
     private void Awake() 
 	{
@@ -131,7 +133,7 @@ public class Brick : MonoBehaviour
 					
 				}
 
-				if (coinPrefab != null)
+				if (coinPrefab != null || releaseCoin==true)
 				{
 					Instantiate(coinPrefab, this.gameObject.transform.position, Quaternion.identity);
 				}

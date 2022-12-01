@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 831812189722440869, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}
       propertyPath: m_Name
-      value: Yellow brick
+      value: Yellow brick Variant
       objectReference: {fileID: 0}
     - target: {fileID: 831812189722440870, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}
       propertyPath: m_Color.b
@@ -74,6 +74,10 @@ PrefabInstance:
     - target: {fileID: 831812189722440870, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}
       propertyPath: m_Color.r
       value: 0.6981132
+      objectReference: {fileID: 0}
+    - target: {fileID: 831812189722440871, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}
+      propertyPath: m_Size.x
+      value: 2.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0a043aba92e44aa1ab7b4036a9b5aec, type: 3}

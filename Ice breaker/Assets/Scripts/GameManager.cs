@@ -7,6 +7,7 @@ using System;
 public class GameManager : MonoBehaviour
 {  
     public static int score = 0;
+    public static int coinsCollected = 0;
     public static int level = 1;
     public static int lives = 10;
     public static int stars = 0;
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
 	 private Color blue_color;
     private Color yellow_color;
     public LevelManager levelManager;
+    
+    public static int crushedBricks = 0;
 
     public static Dictionary<int, float> LevelStarMapping = new Dictionary<int, float>();
     private void Awake()
@@ -30,8 +33,7 @@ public class GameManager : MonoBehaviour
         red_color = (Color) (Color32) new Color(149f/255f,73f/255f,62f/255f,1);
         blue_color = (Color) (Color32) new Color(60f/255f,75f/255f,161f/255f,1);
         yellow_color = (Color) (Color32) new Color(178f/255f,150f/255f,53f/255f,1);
-		
-
+        
        SceneManager.sceneLoaded += OnLevelLoaded;
     } 
     private void Start() {
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour
 
     public void Hit(Brick brick) {
 		score += brick.points;
+        crushedBricks += 1;
         if(LevelManager.timeLeft > 0 ){
             AnalyticsManager.instance.brick_hit(level);
         }

@@ -83,6 +83,7 @@ public class HighScoreManager : MonoBehaviour
         levelMinLivesMapping[20] = 0;
         levelMinLivesMapping[21] = 1;
         levelMinLivesMapping[22] = 1;
+        levelMinLivesMapping[28] = 3;
         levelMinLivesMapping[8] = 0;
         levelMinLivesMapping[9] = 1;
         levelMinLivesMapping[10] = 0;
@@ -111,6 +112,7 @@ public class HighScoreManager : MonoBehaviour
         levelStarsMapping[20] = 2;
         levelStarsMapping[21] = 2;
         levelStarsMapping[22] = 1;
+        levelStarsMapping[28] = 0;
         levelStarsMapping[8] = 2;
         levelStarsMapping[9] = 2;
         levelStarsMapping[10] = 2;
