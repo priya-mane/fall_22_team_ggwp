@@ -49,6 +49,7 @@ public class LevelManager : MonoBehaviour
         levelMapping["Dynamic1"]=35;
         levelMapping["Dynamic2"]=45;
         levelMapping["Dynamic3"]=28;
+        levelMapping["Dynamic4"]=29;
         levelMapping["Gameover"] = 50;
        
     }
@@ -191,6 +192,8 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene("MediumLevels");
         } else if(levelType == "Hard"){
             SceneManager.LoadScene("HardLevels");
+        } else if(levelType == "Dynamic"){
+            SceneManager.LoadScene("DynamicLevels");
         }
     }
 
