@@ -1809,6 +1809,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2961415976126488280, guid: b2e510062f697469698e303e5ddbe34e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b2e510062f697469698e303e5ddbe34e, type: 3}
+--- !u!1 &1952542086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2961415976126488274, guid: b2e510062f697469698e303e5ddbe34e, type: 3}
+  m_PrefabInstance: {fileID: 1952542085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1964355627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2453,6 +2458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: safety_walls
       objectReference: {fileID: 0}
+    - target: {fileID: 7118282551033054034, guid: 7fa69e5df28d742fcb5cd275e6a27774, type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1952542086}
     - target: {fileID: 7118282551033054035, guid: 7fa69e5df28d742fcb5cd275e6a27774, type: 3}
       propertyPath: m_RootOrder
       value: 12
