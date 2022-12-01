@@ -29,6 +29,7 @@ public class coin : MonoBehaviour
 
         if (collision.gameObject.tag=="safetyWall")
         {
+            GameManager.coinsCollected += 1;
             Destroy(this.gameObject);
         }
     }

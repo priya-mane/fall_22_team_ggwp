@@ -7,6 +7,7 @@ using System;
 public class GameManager : MonoBehaviour
 {  
     public static int score = 0;
+    public static int coinsCollected = 0;
     public static int level = 1;
     public static int lives = 10;
     public static int stars = 0;

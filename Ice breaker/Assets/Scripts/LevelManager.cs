@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
         levelMapping["Dynamic1"]=35;
         levelMapping["Dynamic2"]=45;
         levelMapping["Dynamic9"]=135;
-        levelMapping["Dynamic144"]=144;
+        levelMapping["Dynamic28"]=28;
         levelMapping["Gameover"] = 50;
        
     }
