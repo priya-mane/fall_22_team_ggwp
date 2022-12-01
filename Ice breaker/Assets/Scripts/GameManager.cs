@@ -152,21 +152,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void GameOver() {
+    private void LostScreen() {
         // AnalyticsManager.instance.Send(level, 0, lives);
         // NewGame();
         UnregisterPaddles();
-
-        int num = SumArray(NumerOfBrickCleared());
         
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("LostScreen");
     }
 
     public void Miss() {
         lives--;
 
         if(lives == 0) {
-            GameOver();
+            LostScreen();
         } 
     }
     private int SumArray(int[] toBeSummed)
