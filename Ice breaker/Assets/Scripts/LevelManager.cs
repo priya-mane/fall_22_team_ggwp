@@ -30,7 +30,9 @@ public class LevelManager : MonoBehaviour
         levelMapping["Easy5"]=5;
         levelMapping["Easy6"]=6;
         levelMapping["Easy7"]=7;
-        levelMapping["Easy8"]=20;
+        levelMapping["Easy8"]=21;
+        levelMapping["Easy9"]=20;
+        levelMapping["Easy10"]=22;
         levelMapping["Medium1"]=8;
         levelMapping["Medium2"]=9;
         levelMapping["Medium3"]=10;
@@ -117,6 +119,9 @@ public class LevelManager : MonoBehaviour
             }
             else if(cat == "Medium"){
                 nextLevel = "Hard1";
+            }
+            else if(cat == "Hard"){
+                nextLevel = "Dynamic1";
             }
             else{
                 nextLevel = "Gameover";
