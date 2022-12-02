@@ -24,9 +24,9 @@ public class ring : MonoBehaviour
             //    -this.transform.rotation.z);
              flag *= -1;
         }
-        // rot_ang = flag *50.0f * 0.008f;
+        rot_ang = flag *50.0f * 0.008f;
         // rot_ang = flag *27.0f * 0.008f;
-        rot_ang = flag * 7.0f * 0.008f;
+        // rot_ang = flag * 7.0f * 0.008f;
         this.transform.Rotate(0,0,rot_ang);
     //    Debug.Log(rot_ang);
     }
