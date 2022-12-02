@@ -18,6 +18,7 @@ public class Ball : MonoBehaviour
     public bool withPaddle = false;
     private bool withPendulum = false;
     public GameObject currentPaddle;
+	public bool inRing = false;
 	//public GameObject door;
     //public GameObject dynamic_lvl_pivot;
 	//public GameObject support;
@@ -54,7 +55,8 @@ public class Ball : MonoBehaviour
     private void Update() 
     {
         
-        if(this.rigidbody.velocity.magnitude != 0){
+        if(this.rigidbody.velocity.magnitude != 0 && inRing==false) 
+		{
             this.rigidbody.velocity = this.rigidbody.velocity.normalized * minSpeed;
         }
         

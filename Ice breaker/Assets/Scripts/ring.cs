@@ -25,7 +25,8 @@ public class ring : MonoBehaviour
              flag *= -1;
         }
         // rot_ang = flag *50.0f * 0.008f;
-        rot_ang = flag *27.0f * 0.008f;
+        // rot_ang = flag *27.0f * 0.008f;
+        rot_ang = flag * 7.0f * 0.008f;
         this.transform.Rotate(0,0,rot_ang);
     //    Debug.Log(rot_ang);
     }
@@ -48,6 +49,8 @@ public class ring : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(0.0f, -2.8f, 0.0f), ForceMode2D.Impulse);
             ball_inside = true;
             
+            Ball script = other.gameObject.GetComponent<Ball>();
+            script.inRing = true;
         }
         
     }
