@@ -7,6 +7,8 @@ public class DragObject : MonoBehaviour
     private Vector3 mOffset;
     private float zCord;
     public bool vertical;
+    public GameObject leftWall;
+    public GameObject rightWall;
 
     void OnMouseDown(){
         zCord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
@@ -25,6 +27,12 @@ public class DragObject : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePosition);
     }
     void OnMouseDrag(){
-        transform.position = GetMosPosition() + mOffset;
+        var v = GetMosPosition() + mOffset;
+        if(v.x < leftWall.transform.position.x){
+            v.x = leftWall.transform.position.x;
+        }else if(v.x > rightWall.transform.position.x){
+            v.x = rightWall.transform.position.x;
+        }
+        transform.position = v;
     }
 }
