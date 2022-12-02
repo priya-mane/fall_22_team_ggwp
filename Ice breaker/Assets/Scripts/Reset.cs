@@ -28,6 +28,7 @@ public class Reset : MonoBehaviour
         GameManager.lives = 10;
         GameManager.score = 0;
         GameManager.stars = 0;
+        GameManager.crushedBricks = 0;
 
         AnalyticsManager.instance.process_analytics_one();
         AnalyticsManager.instance.process_analytics_five();
@@ -50,6 +51,7 @@ public class Reset : MonoBehaviour
     {
         GameManager.lives = 10;
         GameManager.score = 0;
+        GameManager.crushedBricks = 0;
         levelManager = FindObjectOfType<LevelManager>();
         levelManager.LoadTutorialLevel(GameManager.level);
         // SceneManager.LoadScene("Level"+ GameManager.level);
@@ -58,6 +60,7 @@ public class Reset : MonoBehaviour
         GameManager.lives = 10;
         GameManager.score = 0;
         GameManager.stars = 0;
+        GameManager.crushedBricks = 0;
         
         AnalyticsManager.instance.process_analytics_one();
         AnalyticsManager.instance.process_analytics_five();
@@ -71,6 +74,7 @@ public class Reset : MonoBehaviour
         GameManager.lives = 10;
         GameManager.score = 0;
         GameManager.stars = 0;
+        GameManager.crushedBricks = 0;
 
         levelManager = FindObjectOfType<LevelManager>();
         int lvl = levelManager.GetNextLevel(GameManager.level);

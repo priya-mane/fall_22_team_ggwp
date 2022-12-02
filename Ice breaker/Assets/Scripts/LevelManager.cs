@@ -57,6 +57,7 @@ public class LevelManager : MonoBehaviour
     public void LoadLevel(int levelInd){
         GameManager.level = levelInd;
         GameManager.lives = 10;
+        GameManager.crushedBricks = 0;
         // AnalyticsManager.instance.Send2(levelInd);
         SceneManager.LoadScene("Level" + levelInd);
     }
@@ -141,6 +142,7 @@ public class LevelManager : MonoBehaviour
         starttime = DateTime.Now;
         GameManager.level = levelInd;
         GameManager.lives = 10;
+        GameManager.crushedBricks = 0;
         //AnalyticsManager.instance.Send2(levelInd);
         SceneManager.LoadScene("T" + levelInd);
     }
@@ -152,6 +154,8 @@ public class LevelManager : MonoBehaviour
         int lvl = levelMapping[levelInd];
         GameManager.level = lvl;
         GameManager.lives = 10;
+        GameManager.crushedBricks = 0;
+
         //AnalyticsManager.instance.Send2(levelInd);
         SceneManager.LoadScene("T" + lvl);
     }

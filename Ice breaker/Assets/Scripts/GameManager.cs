@@ -55,7 +55,8 @@ public class GameManager : MonoBehaviour
 		score = 0;
         lives = 10;
         stars = 0;
-
+        crushedBricks = 0;
+        
         foreach(var entry in LevelManager.levelMapping){
             LevelStarMapping[entry.Value] = 0f;
             Debug.Log(LevelStarMapping[1]);
